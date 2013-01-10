@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+
+<launch>
+  <include file="$(find atlas_utils)/launch/atlas_position_controllers.launch" />
+</launch>
