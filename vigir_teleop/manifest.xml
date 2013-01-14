@@ -1,0 +1,14 @@
+<package>
+  <description brief="vigir_teleop">
+
+     vigir_teleop
+
+  </description>
+  <author>kohlbrecher</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/vigir_teleop</url>
+
+</package>
+
+
