@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch>
+    
+    <!--Launch all IK related stuff (from markers to actual joint commands for the robot)-->
+    <include file="$(find vigir_ik_position_control)/launch/marker_to_joint_commands.launch" />
+    
+    <!--Launch ground truth to tf publishing-->
+    <include file="$(find vigir_sim_test_1)/launch/ground_truth_pose_to_tf.launch" /> 
+    
+</launch>
