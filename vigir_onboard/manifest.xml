@@ -1,0 +1,16 @@
+<package>
+  <description brief="vigir_onboard">
+
+     vigir_onboard
+
+  </description>
+  <author>vigir</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/vigir_onboard</url>
+  <depend package="vigir_lidar_processing"/>
+  <depend package="vigir_state_estimation"/>
+
+</package>
+
+

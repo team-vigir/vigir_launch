@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <!-- Convert laser scan to 3D point cloud in sensor frame -->
+  <node pkg="hector_laserscan_to_pointcloud" type="laserscan_to_pointcloud_node" name="scan_to_ptcld" >
+    <remap from="/scan" to="/multisense_sl/laser/scan" />
+  </node>
+
+  <!-- Filter the scan cloud to remove robot intersections -->
+  <node pkg="robot_self_filter" type="self_filter" name="self_filter_lidar" output="screen">
+    <remap from="cloud_in" to="/scan_cloud" />
+    <remap from="cloud_out" to="/scan_cloud_filtered" />
+    <rosparam file="$(find vigir_self_filter)/config/atlas_lidar_self_filter.yaml" command="load" />
+  </node>
+
+  <!-- Use the self-filtered robot scan cloud for the mapping -->
+  <node pkg="octomap_server" type="octomap_server_node" name="octomap_server">
+    <param name="resolution" value="0.05" />
+    
+    <!-- fixed map frame (set to 'map' if SLAM or localization running!) -->
+    <param name="frame_id" type="string" value="world" />
+    
+    <!-- maximum range to integrate (speedup!) -->
+    <param name="sensor_model/max_range" value="25.0" />
+    
+    <!-- data source to integrate (PointCloud2) -->
+    <remap from="cloud_in" to="/scan_cloud_filtered" />
+  
+  </node>
+
+  <!-- Assemble a rolling buffer of point clouds to use with visualization and template fits -->
+  <!--   This node provides a service, which may be called by other components; nothing is published -->
+<!--
+  ** OK - this node takes PointCloud not PointCloud2, just skip for now
+  <node type="point_cloud_assembler" pkg="laser_assembler"  name="scancloud_assembler">
+    <remap from="cloud" to="scan_cloud_filtered"/>
+    <param name="max_clouds" type="int" value="400" />
+    <param name="fixed_frame" type="string" value="world" />
+  </node>
+-->
+
+  <!-- Start the spindle with default speed -->
+  <node type="rostopic" pkg="rostopic" name="spindle_speed_cmd" args="pub --once /multisense_sl/set_spindle_speed std_msgs/Float64 '{data: 3.0}'" output="screen"  />
+
+
+</launch>
+

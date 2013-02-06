@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<!-- This launches the components affiliated with state estimation -->
+<include file="$(find vigir_state_estimation)/launch/state_estimation.launch"/>
+
+<!-- This launches the components affiliated with lidar processing and lidar-based mapping -->
+<include file="$(find vigir_lidar_processing)/launch/lidar_processing.launch"/>
+
+</launch>
+

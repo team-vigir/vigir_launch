@@ -1,0 +1,24 @@
+<package>
+  <description brief="vigir_lidar_processing">
+
+     vigir_lidar_processing
+
+  </description>
+  <author>David Conner (conner@torcrobotics.com)</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/vigir_lidar_processing</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="tf"/>
+  <depend package="pcl_ros"/>
+  <depend package="octomap_server"/>
+  <depend package="octomap_msgs"/>
+  <depend package="octomap_ros"/>
+  <depend package="robot_self_filter"/>
+  <depend package="laser_assembler"/>
+  <depend package="hector_laserscan_to_pointcloud"/>
+
+</package>
+
+
