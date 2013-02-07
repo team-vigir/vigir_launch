@@ -14,21 +14,6 @@
     <rosparam file="$(find vigir_self_filter)/config/atlas_lidar_self_filter.yaml" command="load" />
   </node>
 
-  <!-- Use the self-filtered robot scan cloud for the mapping -->
-  <node pkg="octomap_server" type="octomap_server_node" name="octomap_server">
-    <param name="resolution" value="0.05" />
-    
-    <!-- fixed map frame (set to 'map' if SLAM or localization running!) -->
-    <param name="frame_id" type="string" value="world" />
-    
-    <!-- maximum range to integrate (speedup!) -->
-    <param name="sensor_model/max_range" value="25.0" />
-    
-    <!-- data source to integrate (PointCloud2) -->
-    <remap from="cloud_in" to="/scan_cloud_filtered" />
-  
-  </node>
-
   <!-- Assemble a rolling buffer of point clouds to use with visualization and template fits -->
   <!--   This node provides a service, which may be called by other components; nothing is published -->
 <!--

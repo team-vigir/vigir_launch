@@ -8,5 +8,11 @@
 <!-- This launches the components affiliated with lidar processing and lidar-based mapping -->
 <include file="$(find vigir_lidar_processing)/launch/lidar_processing.launch"/>
 
+<!-- Include file to launch octomap server (can swap for _large cell version) -->
+<include file="$(find vigir_lidar_processing)/launch/octomapping.launch"/>
+
+<!-- This launches the components affiliated with simple position based control -->
+<include file="$(find vigir_joint_controller)/launch/simple_position_control.launch" />
+
 </launch>
 
