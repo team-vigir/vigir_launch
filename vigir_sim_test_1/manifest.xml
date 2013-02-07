@@ -14,6 +14,7 @@
   <depend package="message_to_tf" />
   <depend package="octomap_server" />
   <depend package="hector_laserscan_to_pointcloud" />
+  <depend package="vigir_joint_controller"/>
   
 </package>
 
