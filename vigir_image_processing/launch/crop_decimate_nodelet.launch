@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<!--
+This launch file initializes the crop/decimate nodelet needed for the image viewer -->
+
+<launch>
+
+   <node name="crop_decimate_node" pkg="vigir_crop_decimate_nodelet" type="crop_decimate_node" output="screen"/>
+
+</launch>
+

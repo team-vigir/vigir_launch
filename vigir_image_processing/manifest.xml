@@ -1,0 +1,17 @@
+<package>
+  <description brief="vigir_image_processing">
+
+     vigir_image_processing
+
+  </description>
+  <author>vigir</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/vigir_image_processing</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="vigir_crop_decimate_nodelet"/>
+
+</package>
+
+
