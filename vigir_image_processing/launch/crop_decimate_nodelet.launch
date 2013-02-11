@@ -3,7 +3,7 @@
 <launch>
   <!--Publish tf information based on ground truth data published by gazebo plugin-->
   <node pkg="vigir_crop_decimate_nodelet" type="crop_decimate_node" name="l_image_crop_decimate" output="screen">
-    <remap from="camera" to="multisense_sl/left/" />
+    <remap from="camera" to="multisense_sl/camera/left/" />
     <remap from="camera_out" to="l_image_cropped" />    
   </node>
 
