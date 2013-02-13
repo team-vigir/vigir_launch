@@ -14,8 +14,9 @@
 <!-- This launches the components affiliated with simple position based control -->
 <include file="$(find vigir_joint_controller)/launch/simple_position_control.launch" />
 
-<!-- This launches the crop/decimate nodelet -->
-<include file="$(find vigir_image_processing)/launch/crop_decimate_nodelet.launch" />
+<!-- This launches the image crop/decimate nodelets -->
+<include file="$(find vigir_image_processing)/launch/image_crop_decimate_nodelet.launch" />
+<include file="$(find vigir_image_processing)/launch/image_full_decimate_nodelet.launch" />
 
 </launch>
 
