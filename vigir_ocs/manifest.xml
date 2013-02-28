@@ -1,0 +1,16 @@
+<package>
+  <description brief="vigir_ocs">
+
+     vigir_ocs
+
+  </description>
+  <author>vigir</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/vigir_ocs</url>
+  <depend package="geometry_msgs"/>
+  <depend package="hector_interactive_marker_pose_server"/>
+
+</package>
+
+
