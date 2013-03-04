@@ -19,6 +19,10 @@
 <!-- Launch a controller group if specifed (e.g. simple_controller:=1) -->
 <!-- otherwise, just launch the perception code -->
 <group if="$(arg wbc_controller)" >
+
+<!-- Publish topic to pin hip -->
+ <node type="rostopic" pkg="rostopic" name="/atlas/vel_cmd" args="pub --once /atlas/vel_cmd geometry_msgs/Twist '{ linear: { x: 0.0, y: 0.0, z: 0.0 }, angular: { x: 0.0, y: 0.0, z: 0.0 } }'" output="screen"  />
+
 <include file="$(find vigir_joint_controller)/launch/wbc_control.launch" />
 </group>
 
@@ -27,6 +31,8 @@
 </group>
 
 <group if="$(arg ik_controller)" >
+<!-- Publish topic to pin hip -->
+ <node type="rostopic" pkg="rostopic" name="/atlas/vel_cmd" args="pub --once /atlas/vel_cmd geometry_msgs/Twist '{ linear: { x: 0.0, y: 0.0, z: 0.0 }, angular: { x: 0.0, y: 0.0, z: 0.0 } }'" output="screen"  />
 <include file="$(find vigir_ik_position_control)/launch/marker_to_joint_commands.launch" />
 <include file="$(find vigir_joint_controller)/launch/simple_position_control.launch" />
 </group>
