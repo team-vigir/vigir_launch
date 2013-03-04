@@ -2,6 +2,11 @@
 
 <launch>
 
+<arg name="simple_controller" default="false" />
+<arg name="ik_controller"     default="false" />
+<arg name="wbc_controller"    default="false" />
+<arg name="bdi_controller"    default="false" />
+
 <!-- This launches the components affiliated with state estimation -->
 <include file="$(find vigir_state_estimation)/launch/state_estimation.launch"/>
 
@@ -11,8 +16,24 @@
 <!-- Include file to launch octomap server (can swap for _large cell version) -->
 <!--<include file="$(find vigir_lidar_processing)/launch/octomapping.launch"/>-->
 
-<!-- This launches the components affiliated with simple position based control -->
+<!-- Launch a controller group if specifed (e.g. simple_controller:=1) -->
+<!-- otherwise, just launch the perception code -->
+<group if="$(arg wbc_controller)" >
+<include file="$(find vigir_joint_controller)/launch/wbc_control.launch" />
+</group>
+
+<group if="$(arg bdi_controller)" >
+<include file="$(find vigir_joint_controller)/launch/bdi_control.launch" />
+</group>
+
+<group if="$(arg ik_controller)" >
+<include file="$(find vigir_ik_position_control)/launch/marker_to_joint_commands.launch" />
 <include file="$(find vigir_joint_controller)/launch/simple_position_control.launch" />
+</group>
+
+<group if="$(arg simple_controller)" >
+<include file="$(find vigir_joint_controller)/launch/simple_position_control.launch" />
+</group>
 
 <!-- This launches the image crop/decimate nodelets -->
 <include file="$(find vigir_image_processing)/launch/image_crop_decimate_nodelet.launch" />
