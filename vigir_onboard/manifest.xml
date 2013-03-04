@@ -11,6 +11,7 @@
   <depend package="vigir_lidar_processing"/>
   <depend package="vigir_state_estimation"/>
   <depend package="vigir_image_processing"/>
+  <depend package="vigir_worldmodel_main"/>
 
 </package>
 

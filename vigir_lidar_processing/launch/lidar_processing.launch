@@ -8,26 +8,10 @@
   </node>
 
   <!-- Filter the scan cloud to remove robot intersections -->
-  <node pkg="robot_self_filter" type="self_filter" name="self_filter_lidar" output="screen">
-    <remap from="cloud_in" to="/scan_cloud" />
-    <remap from="cloud_out" to="/scan_cloud_filtered" />
-    <rosparam file="$(find vigir_self_filter)/config/atlas_lidar_self_filter.yaml" command="load" />
-  </node>
-
-  <!-- Assemble a rolling buffer of point clouds to use with visualization and template fits -->
-  <!--   This node provides a service, which may be called by other components; nothing is published -->
-<!--
-  ** OK - this node takes PointCloud not PointCloud2, just skip for now
-  <node type="point_cloud_assembler" pkg="laser_assembler"  name="scancloud_assembler">
-    <remap from="cloud" to="scan_cloud_filtered"/>
-    <param name="max_clouds" type="int" value="400" />
-    <param name="fixed_frame" type="string" value="world" />
-  </node>
--->
-
+  <include file="$(find vigir_self_filter)/launch/self_filter_lidar.launch" />
+  
   <!-- Start the spindle with default speed -->
   <node type="rostopic" pkg="rostopic" name="spindle_speed_cmd" args="pub --once /multisense_sl/set_spindle_speed std_msgs/Float64 '{data: 3.0}'" output="screen"  />
-
 
 </launch>
 
