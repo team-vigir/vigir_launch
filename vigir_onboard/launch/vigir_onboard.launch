@@ -42,8 +42,7 @@
 </group>
 
 <!-- This launches the image crop/decimate nodelets -->
-<include file="$(find vigir_image_processing)/launch/image_crop_decimate_nodelet.launch" />
-<include file="$(find vigir_image_processing)/launch/image_full_decimate_nodelet.launch" />
+<include file="$(find vigir_image_processing)/launch/onboard_crop_decimate_nodelets.launch" />
 
 <!-- This launches the main worldmodel node -->
 <include file="$(find vigir_worldmodel_main)/launch/worldmodel_default.launch" />

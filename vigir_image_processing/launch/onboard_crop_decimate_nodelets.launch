@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <!--Start nodelet manager that will contain all crop_decimate nodelets-->
+  <node pkg="nodelet" type="nodelet" name="crop_decimate_nodelet_manager"  args="manager"/>
+  
+  <!--Add nodelet intended for full image decimation-->
+  <node pkg="nodelet" type="nodelet" name="l_image_full_decimate"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
+    <remap from="camera" to="multisense_sl/camera/left/" />
+    <remap from="camera_out" to="l_image_full" />
+  </node>
+  
+  <!--Add nodelet intended for region of interest image crop/decimation-->
+  <node pkg="nodelet" type="nodelet" name="l_image_crop_decimate"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
+    <remap from="camera" to="multisense_sl/camera/left/" />
+    <remap from="camera_out" to="l_image_cropped" />
+  </node>
+   
+</launch>
+
