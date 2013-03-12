@@ -4,7 +4,7 @@
     
     <node pkg="hector_interactive_marker_pose_server" type="interactive_marker_pose_server" name="template_marker_pose_server"  >
       <param name="marker_name" value="template_pose_marker" />
-      <param name="frame_id" value="pelvis" />
+      <param name="frame_id" value="/pelvis" />
       <remap from="pose" to="/template_pose" />
     </node>    
         
