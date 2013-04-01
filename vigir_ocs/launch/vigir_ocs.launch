@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+    
+        
+<!-- Start the OCS -->
+    <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" output="screen" />
+    <node name="vigir_ocs_template_manager" pkg="vigir_ocs_template_manager" type="template_manager" output="screen" />
+    <node name="vigir_ocs_waypoint_nodelet" pkg="vigir_ocs_waypoint_nodelet" type="waypoint_nodelet" output="screen" />
+
+    <node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" output="screen" />
+
+</launch>
