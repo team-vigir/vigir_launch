@@ -1,10 +1,12 @@
 <?xml version="1.0"?>
 
 <launch>
-    
-        
+
+
 <!-- Start the OCS -->
-    <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" output="screen" />
+    <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" output="screen" >
+      <remap from="/template/template_match_feedback" to="/grasp_control/template_selection" />
+    </node>
     <node name="vigir_ocs_template_manager" pkg="vigir_ocs_template_manager" type="template_manager" output="screen" />
     <node name="vigir_ocs_waypoint_nodelet" pkg="vigir_ocs_waypoint_nodelet" type="waypoint_nodelet" output="screen" />
 
