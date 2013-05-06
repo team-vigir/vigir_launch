@@ -3,13 +3,18 @@
 <launch>
     
   <!--Publish tf information based on ground truth data published by gazebo plugin-->
-  <!--  This version depends on the TF nodes published by drcsim -->
-
-  <node pkg="message_to_tf" type="message_to_tf" name="state_to_tf" output="screen">
-    <param name="odometry_topic" value="/ground_truth_odom" />
-    <param name="footprint_frame_id" value="/pelvis_footprint" />
-    <param name="stabilized_frame_id" value="/pelvis_stabilized" />
-    <param name="child_frame_id" value="/pelvis" />    
-  </node>
+  <!--  This version depends on the TF nodes published by drcsim -->  
+  <group if="$(optenv VRC_CHEATS_ENABLED 0)">
+    <node pkg="message_to_tf" type="message_to_tf" name="state_to_tf" output="screen">
+      <param name="odometry_topic" value="/ground_truth_odom" />
+      <param name="footprint_frame_id" value="/pelvis_footprint" />
+      <param name="stabilized_frame_id" value="/pelvis_stabilized" />
+      <param name="child_frame_id" value="/pelvis" />    
+    </node>
+  </group>
+  
+  <group unless="$(optenv VRC_CHEATS_ENABLED 0)">
+    <node pkg="flor_bdi_to_tf_utils" type="bdi_to_tf_node" name="bdi_to_tf_node" output="screen"/>      
+  </group>
     
 </launch>
