@@ -11,6 +11,7 @@
     <node name="vigir_ocs_waypoint_nodelet" pkg="vigir_ocs_waypoint_nodelet" type="waypoint_nodelet" output="screen" />
     <node name="vigir_ocs_waypoint_manager" pkg="vigir_ocs_waypoint_manager" type="waypoint_manager" output="screen" />
     <node name="vigir_ocs_joystick_ui"      pkg="vigir_ocs_joystick"         type="joystick" output="screen" />
+    <node name="vigir_ocs_time_widget"      pkg="vigir_ocs_time_widget"      type="time_widget" output="screen" />
 
     <node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" output="screen" />
 
