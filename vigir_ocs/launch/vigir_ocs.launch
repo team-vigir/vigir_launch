@@ -3,27 +3,27 @@
 <launch>
 
 <!-- Temporary:  simple GUI for changing controller mode -->
-    <node name="controller_mode_ui"           pkg="vigir_rqt_control_mode"     type="control_mode"    /> <!--  output="screen" / -->
+    <node name="controller_mode_ui"           pkg="vigir_rqt_control_mode"     type="control_mode"    /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
 
 
 <!-- Start the OCS -->
-    <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" output="screen" >
+    <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" > <!--  output="screen" launch-prefix="xterm -e" / -->
       <remap from="/template/template_match_feedback" to="/grasp_control/template_selection" />
     </node>
-    <node name="vigir_ocs_template_manager"   pkg="vigir_ocs_template_manager" type="template_manager"/> <!--   output="screen" / -->
-    <node name="vigir_ocs_waypoint_nodelet"   pkg="vigir_ocs_waypoint_nodelet" type="waypoint_nodelet"/> <!--   output="screen" / -->
-    <node name="vigir_ocs_waypoint_manager"   pkg="vigir_ocs_waypoint_manager" type="waypoint_manager"/> <!--   output="screen" / -->
-    <node name="vigir_ocs_joystick_ui"        pkg="vigir_ocs_joystick"         type="joystick"        /> <!--   output="screen" / -->
-    <node name="vigir_ocs_time_widget"        pkg="vigir_ocs_time_widget"      type="time_widget"     /> <!--   output="screen" / -->
-    <node name="vigir_ocs_main_3d_view"       pkg="vigir_ocs_main_3d_view"     type="main_3d_view"     output="screen" />
-    <node name="vigir_ocs_map_view"           pkg="vigir_ocs_map_view"         type="map_view"         output="screen" />
-    <node name="vigir_ocs_camera_view_custom" pkg="vigir_camera_view_custom"   type="main_3d_view"     output="screen" />
+    <node name="vigir_ocs_template_manager"     pkg="vigir_ocs_template_manager"     type="template_manager"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_waypoint_nodelet"     pkg="vigir_ocs_waypoint_nodelet"     type="waypoint_nodelet"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_waypoint_manager"     pkg="vigir_ocs_waypoint_manager"     type="waypoint_manager"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_joystick_ui"          pkg="vigir_ocs_joystick"             type="joystick"              /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_time_widget"          pkg="vigir_ocs_time_widget"          type="time_widget"           /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_main_3d_view"         pkg="vigir_ocs_main_3d_view"         type="main_3d_view"          /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"              /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_camera_viewer_custom" pkg="vigir_ocs_camera_viewer_custom" type="camera_viewer_custom"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
     <!-- Starting individually now to avoid threading issue with python -->
     <!-- node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" output="screen" / -->
 
-    <node name="right_grasp_ui" pkg="vigir_ocs_grasp_widget" type="grasp_widget" output="screen" >
+    <node name="right_grasp_ui" pkg="vigir_ocs_grasp_widget" type="grasp_widget" > <!--  output="screen" launch-prefix="xterm -e"  -->
         <param name="/graspWidget/hand" value="right" />
 
         <!-- Publications -->
@@ -37,7 +37,7 @@
 
     </node>
 
-    <node name="left_grasp_ui" pkg="vigir_ocs_grasp_widget" type="grasp_widget" output="screen" >
+    <node name="left_grasp_ui" pkg="vigir_ocs_grasp_widget" type="grasp_widget" > <!--  output="screen" launch-prefix="xterm -e"  -->
         <param name="/graspWidget/hand" value="left" />
 
         <!-- Publications -->
