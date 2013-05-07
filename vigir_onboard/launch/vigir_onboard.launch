@@ -53,14 +53,14 @@
 <!-- Start the grasping controllers -->
 <include file="$(find vigir_grasp_testing)/launch/grasp_testing.launch" />
 
-<!-- Start the template matcher here -->
-<node pkg="vigir_object_template_matcher" type="object_template_alignment_node" name="object_template_alignment_node" output="screen" launch-prefix="xterm -e" >
+<!-- DO NOT Start the template matcher here -->
+<!-- node pkg="vigir_object_template_matcher" type="object_template_alignment_node" name="object_template_alignment_node" output="screen" launch-prefix="xterm -e" >
     <param name="template_path"  value="$(find templates)" />
     <param name="template_files" value="grasp_templates.txt" />
     <param name="inflation_factor" value="0.9" />
     <remap from="/template_req" to="/template/template_selected"/>
     <remap from="/template_matching_result" to="/grasp_control/template_selection" />
-</node>
+</node -->
 
 
 </launch>
