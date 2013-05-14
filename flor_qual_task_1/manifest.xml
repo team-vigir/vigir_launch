@@ -1,0 +1,14 @@
+<package>
+  <description brief="flor_qual_task_1">
+
+     flor_qual_task_1
+
+  </description>
+  <author>drcsim</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/flor_qual_task_1</url>
+
+</package>
+
+
