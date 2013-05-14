@@ -20,6 +20,7 @@
     <node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"              /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_camera_viewer_custom" pkg="vigir_ocs_camera_viewer_custom" type="camera_viewer_custom"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_rqt_position_mode"        pkg="vigir_rqt_position_mode"        type="position_mode"         /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"        type="joint_control"         /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
     <!-- Starting individually now to avoid threading issue with python -->
     <!-- node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" output="screen" / -->
