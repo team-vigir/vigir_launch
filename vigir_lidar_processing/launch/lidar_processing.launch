@@ -4,6 +4,7 @@
   
   <!-- Convert laser scan to 3D point cloud in sensor frame -->
   <node pkg="hector_laserscan_to_pointcloud" type="laserscan_to_pointcloud_node" name="scan_to_ptcld" >
+    <param name="min_range" value="0.2" />    
     <remap from="/scan" to="/multisense_sl/laser/scan" />
   </node>
 
