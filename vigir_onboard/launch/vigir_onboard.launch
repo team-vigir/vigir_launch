@@ -53,6 +53,10 @@
 <!-- Start the grasping controllers -->
 <include file="$(find vigir_grasp_testing)/launch/grasp_testing.launch" />
 
+<!-- Start the default vrc footstep planner setup -->
+<include file="$(find flor_footstep_planner)/launch/flor_footstep_planner_vrc_default.launch" />
+
+
 <!-- DO NOT Start the template matcher here -->
 <!-- node pkg="vigir_object_template_matcher" type="object_template_alignment_node" name="object_template_alignment_node" output="screen" launch-prefix="xterm -e" >
     <param name="template_path"  value="$(find templates)" />
