@@ -2,6 +2,8 @@
 
 <launch>
 
+<!-- This launches the components affiliated with lidar processing and lidar-based mapping -->
+<include file="$(find vigir_lidar_processing)/launch/lidar_processing.launch"/>
 
 <!-- This launches the image crop/decimate nodelets -->
 <include file="$(find vigir_image_processing)/launch/onboard_crop_decimate_nodelets.launch" />
