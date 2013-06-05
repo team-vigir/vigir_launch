@@ -6,7 +6,7 @@
 <!-- Include files intended to launch on field computer 2 -->
 <include file="$(find vigir_onboard)/launch/vigir_onboard_fc2.launch" />
 
-<include file="$(find vigir_comms_bridge)/launch/bridge_image_field.launch" />
+<include file="$(find vigir_comms_bridge)/launch/field_bridge_images.launch" />
 
 
 </launch>
