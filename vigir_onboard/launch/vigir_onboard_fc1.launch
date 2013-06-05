@@ -2,6 +2,8 @@
 
 <launch>
 
+<include file="$(find vigir_state_estimation)/launch/state_estimation.launch"/>
+
 <!-- This launches the main controller node -->
 <include file="$(find vigir_gravity_controller_plugin)/launch/gravity_controller.launch" />
 
