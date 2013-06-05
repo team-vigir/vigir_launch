@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<launch>
+
+
+<!-- Include files intended to launch on field computer 1 -->
+<include file="$(find vigir_onboard)/launch/vigir_onboard_fc1.launch" />
+
+  <node pkg="vigir_comms_bridge" name="bridge_state_field" type="bridge_state_field">
+    <rosparam file="$(find vigir_comms_bridge)/config/bridge_state_field.yaml" command="load" />
+  </node>
+
+  <node pkg="vigir_comms_bridge" name="bridge_cmd_field" type="bridge_cmd_field">
+    <rosparam file="$(find vigir_comms_bridge)/config/bridge_cmd_field.yaml" command="load" />
+  </node>
+
+
+</launch>
+

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+
+
+<!-- This launches the image crop/decimate nodelets -->
+<include file="$(find vigir_image_processing)/launch/onboard_crop_decimate_nodelets.launch" />
+
+<!-- This launches the main worldmodel node -->
+<include file="$(find vigir_worldmodel_main)/launch/worldmodel_default.launch" />
+
+</launch>
+
