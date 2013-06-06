@@ -5,7 +5,11 @@
 <!-- Temporary:  simple GUI for changing controller mode -->
     <node name="controller_mode_ui"           pkg="vigir_rqt_control_mode"     type="control_mode"    /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
-
+    <arg name="left_hand_robot_model" default="$(find flor_sandia_hands_tools)/urdf/sandia_hand_left.urdf"/>
+    <param name="left_hand_robot_description" textfile="$(arg left_hand_robot_model)" />
+    
+    <arg name="right_hand_robot_model" default="$(find flor_sandia_hands_tools)/urdf/sandia_hand_right.urdf"/>
+    <param name="right_hand_robot_description" textfile="$(arg right_hand_robot_model)" />
 
 <!-- Start the OCS -->
     <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" > <!--  output="screen" launch-prefix="xterm -e" / -->
