@@ -56,6 +56,7 @@
         <remap from="/template/template_match_feedback" to="/grasp_control/template_selection" />
 
     </node>
-
+    
+    <node name="vigir_ocs_bandwidth_widget"        pkg="vigir_ocs_bandwidth_widget"        type="bandwidth_widget"         /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
 </launch>
