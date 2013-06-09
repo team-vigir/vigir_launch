@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <node name="relay_controller_status"            pkg="topic_tools" type="relay"  args="/flor/controller/status             /flor_robot_status" />
+  <node name="relay_grasp_planning_r_hand_status" pkg="topic_tools" type="relay"  args="/grasp_planning/r_hand/status       /flor_robot_status" />
+  <node name="relay_grasp_planning_l_hand_status" pkg="topic_tools" type="relay"  args="/grasp_planning/l_hand/status       /flor_robot_status" />
+  <node name="relay_grasp_control_r_hand_status"  pkg="topic_tools" type="relay"  args="/grasp_control/r_hand/grasp_status  /flor_robot_status" />
+  <node name="relay_grasp_control_l_hand_status"  pkg="topic_tools" type="relay"  args="/grasp_control/l_hand/grasp_status  /flor_robot_status" />
+
+</launch>
+

@@ -13,5 +13,7 @@
 <!-- Start the default vrc footstep planner setup -->
 <include file="$(find flor_footstep_planner)/launch/flor_footstep_planner_vrc_default.launch" />
 
+<include file="$(find vigir_onboard)/launch/vigir_status_relay.launch" />
+
 </launch>
 

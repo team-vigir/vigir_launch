@@ -51,6 +51,11 @@
     <node name="vigir_ocs_camera_viewer_custom" pkg="vigir_ocs_camera_viewer_custom" type="camera_viewer_custom"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_rqt_position_mode"        pkg="vigir_rqt_position_mode"        type="position_mode"         /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"        type="joint_control"         /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="status_window"                  pkg="vigir_ocs_status_window"        type="status_window"   >
+      <remap from="/robot_status" to="/flor_robot_status" />
+      <param name="robotErrorFileLocation" value="$(find flor_ocs_msgs)/include/flor_ocs_msgs/messages.csv"/>
+    </node>
+
 
     <!-- Starting individually now to avoid threading issue with python -->
     <!-- node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" output="screen" / -->
