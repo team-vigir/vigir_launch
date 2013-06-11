@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+
+
+    <!-- Start the Auxiliary OCS -->
+    <node name="vigir_ocs_time_widget"          pkg="vigir_ocs_time_widget"          type="time_widget"           /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_main_3d_view"         pkg="vigir_ocs_main_3d_view"         type="main_3d_view"          /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"         type="control_mode"          />
+    <node name="vigir_ocs_camera_viewer_custom" pkg="vigir_ocs_camera_viewer_custom" type="camera_viewer_custom"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
+
+</launch>
