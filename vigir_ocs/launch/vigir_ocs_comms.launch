@@ -8,4 +8,6 @@
 
 <include file="$(find vigir_ocs)/launch/vigir_status_ui.launch" />
 
+<include file="$(find vigir_onboard)/launch/vigir_status_relay.launch" />
+
 </launch>

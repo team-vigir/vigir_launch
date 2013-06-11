@@ -26,5 +26,11 @@
     <param name="tcp_port"      value="3854"      />
   </node>
 
+  <node name="bridge_footstep_planner_field" pkg="vigir_comms_bridge" type="bridge_footstep_planner_field" >
+    <param name="field_address" value="10.0.0.53" />
+    <param name="ocs_address"   value="11.8.0.2"  />
+    <param name="tcp_port"      value="3855"      />
+  </node>
+
 </launch>
 
