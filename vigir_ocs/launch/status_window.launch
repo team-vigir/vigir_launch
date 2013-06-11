@@ -2,7 +2,7 @@
 
 <launch>
     
-    <node name="status_window"                  pkg="vigir_ocs_status_window"        type="status_window"   >
+    <node name="$(anon status_window)"                  pkg="vigir_ocs_status_window"        type="status_window"   >
       <remap from="/robot_status" to="/flor_robot_status" />
       <param name="robotErrorFileLocation" value="$(find flor_ocs_msgs)/include/flor_ocs_msgs/messages.csv"/>
     </node>
