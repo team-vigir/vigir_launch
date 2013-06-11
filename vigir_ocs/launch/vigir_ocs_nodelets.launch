@@ -42,5 +42,8 @@
     <node name="vigir_ocs_template_manager"     pkg="vigir_ocs_template_manager"     type="template_manager"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_waypoint_nodelet"     pkg="vigir_ocs_waypoint_nodelet"     type="waypoint_nodelet"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_waypoint_manager"     pkg="vigir_ocs_waypoint_manager"     type="waypoint_manager"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    
+    <!--Starts the ocs model node and loads URDF and SRDF to parameters server-->
+    <include file="$(find flor_moveit_ocs_model)/launch/moveit_ocs_model.launch" />
 
 </launch>
