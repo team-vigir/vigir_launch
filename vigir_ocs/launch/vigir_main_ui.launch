@@ -16,8 +16,9 @@
     <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"        type="joint_control"         /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_camera_viewer_custom" pkg="vigir_ocs_camera_viewer_custom" type="camera_viewer_custom"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
     
-    <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget" type="ghost_control"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit" 	type="joint_limit"    /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget" type="ghost_control"    /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit" 	type="joint_limit"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_motion_selector"      pkg="vigir_ocs_motion_selector" 	type="motion_selector"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
     <!-- go ahead and start the manager UI for this -->
     <node name="vigir_ocs_template_manager"     pkg="vigir_ocs_template_manager"     type="template_manager"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
