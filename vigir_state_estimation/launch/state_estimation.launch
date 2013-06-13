@@ -17,6 +17,6 @@
     <node pkg="flor_bdi_to_tf_utils" type="bdi_to_tf_node" name="bdi_to_tf_node" output="screen"/>      
   </group>-->
   
-  <node pkg="flor_bdi_to_tf_utils" type="bdi_to_tf_node" name="bdi_to_tf_node" output="screen"/>   
+  <node pkg="flor_bdi_to_tf_utils" type="bdi_to_tf_node" name="bdi_to_tf_node" output="screen"  respawn="true"/>   
     
 </launch>

@@ -4,17 +4,17 @@
 
 
     <!-- Start the Auxiliary OCS -->
-    <node name="$(anon vigir_ocs_time_widget)"          pkg="vigir_ocs_time_widget"          type="time_widget"           /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="$(anon vigir_ocs_main_3d_view)"         pkg="vigir_ocs_main_3d_view"         type="main_3d_view"          /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="$(anon controller_mode_ui)"             pkg="vigir_rqt_control_mode"         type="control_mode"          />
-    <node name="$(anon vigir_ocs_camera_viewer_custom)" pkg="vigir_ocs_camera_viewer_custom" type="camera_viewer_custom"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="$(anon vigir_ocs_time_widget)"          pkg="vigir_ocs_time_widget"          type="time_widget"          respawn="true"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="$(anon vigir_ocs_main_3d_view)"         pkg="vigir_ocs_main_3d_view"         type="main_3d_view"         respawn="true"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="$(anon controller_mode_ui)"             pkg="vigir_rqt_control_mode"         type="control_mode"         respawn="true"  />
+    <node name="$(anon vigir_ocs_camera_viewer_custom)" pkg="vigir_ocs_camera_viewer_custom" type="camera_viewer_custom" respawn="true"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
     
     <!-- go ahead and start the manager UI for this -->
-    <node name="$(anon vigir_ocs_template_manager)"     pkg="vigir_ocs_template_manager"     type="template_manager"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="$(anon vigir_ocs_waypoint_manager)"     pkg="vigir_ocs_waypoint_manager"     type="waypoint_manager"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="$(anon vigir_ocs_ghost_control_widget)" pkg="vigir_ocs_ghost_control_widget" type="ghost_control"    /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="$(anon vigir_ocs_template_manager)"     pkg="vigir_ocs_template_manager"     type="template_manager"     respawn="true" /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="$(anon vigir_ocs_waypoint_manager)"     pkg="vigir_ocs_waypoint_manager"     type="waypoint_manager"     respawn="true" /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="$(anon vigir_ocs_ghost_control_widget)" pkg="vigir_ocs_ghost_control_widget" type="ghost_control"        respawn="true" /> <!--  output="screen" launch-prefix="xterm -e" / -->
     
-    <node name="$(anon vigir_ocs_back_joint_limit)"     pkg="vigir_ocs_back_joint_limit" 	type="joint_limit"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="$(anon vigir_ocs_motion_selector)"      pkg="vigir_ocs_motion_selector" 	type="motion_selector"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="$(anon vigir_ocs_back_joint_limit)"     pkg="vigir_ocs_back_joint_limit" 	type="joint_limit"           respawn="true" /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="$(anon vigir_ocs_motion_selector)"      pkg="vigir_ocs_motion_selector" 	type="motion_selector"       respawn="true" /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
 </launch>

@@ -9,22 +9,22 @@
 
     <!-- Start the OCS -->
     <!--<node name="vigir_ocs_joystick_ui"          pkg="vigir_ocs_joystick"             type="joystick"              />--> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_main_3d_view"         pkg="vigir_ocs_main_3d_view"         type="main_3d_view"          /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"         type="control_mode"          />
-    <node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"              /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_rqt_position_mode"        pkg="vigir_rqt_position_mode"        type="position_mode"         /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"        type="joint_control"         /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_camera_viewer_custom" pkg="vigir_ocs_camera_viewer_custom" type="camera_viewer_custom"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_main_3d_view"         pkg="vigir_ocs_main_3d_view"         type="main_3d_view"         respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"         type="control_mode"         respawn="true"      />
+    <node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"             respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_position_mode"        pkg="vigir_rqt_position_mode"        type="position_mode"        respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"        type="joint_control"        respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_camera_viewer_custom" pkg="vigir_ocs_camera_viewer_custom" type="camera_viewer_custom" respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     
-    <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget" type="ghost_control"    /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit" 	type="joint_limit"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_motion_selector"      pkg="vigir_ocs_motion_selector" 	type="motion_selector"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget" type="ghost_control"        respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit" 	type="joint_limit"           respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_motion_selector"      pkg="vigir_ocs_motion_selector" 	type="motion_selector"       respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
     <!-- go ahead and start the manager UI for this -->
-    <node name="vigir_ocs_template_manager"     pkg="vigir_ocs_template_manager"     type="template_manager"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_waypoint_manager"     pkg="vigir_ocs_waypoint_manager"     type="waypoint_manager"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_template_manager"     pkg="vigir_ocs_template_manager"     type="template_manager"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_waypoint_manager"     pkg="vigir_ocs_waypoint_manager"     type="waypoint_manager"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
-    <node name="right_grasp_ui" pkg="vigir_ocs_grasp_widget" type="grasp_widget" > <!--  output="screen" launch-prefix="xterm -e"  -->
+    <node name="right_grasp_ui" pkg="vigir_ocs_grasp_widget" type="grasp_widget"     respawn="true"> <!--  output="screen" launch-prefix="xterm -e"  -->
         <param name="/graspWidget/hand" value="right" />
 
         <!-- Publications -->
@@ -38,7 +38,7 @@
 
     </node>
 
-    <node name="left_grasp_ui" pkg="vigir_ocs_grasp_widget" type="grasp_widget" > <!--  output="screen" launch-prefix="xterm -e"  -->
+    <node name="left_grasp_ui" pkg="vigir_ocs_grasp_widget" type="grasp_widget"  respawn="true"> <!--  output="screen" launch-prefix="xterm -e"  -->
         <param name="/graspWidget/hand" value="left" />
 
         <!-- Publications -->

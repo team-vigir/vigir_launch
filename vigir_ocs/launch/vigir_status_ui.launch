@@ -4,11 +4,11 @@
 
     <!-- Start the OCS -->
     <!--<node name="vigir_ocs_joystick_ui"          pkg="vigir_ocs_joystick"             type="joystick"              />--> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="$(anon status_window)"                  pkg="vigir_ocs_status_window"   type="status_window"   >
+    <node name="$(anon status_window)"                  pkg="vigir_ocs_status_window"   type="status_window"    respawn="true" >
       <param name="robotErrorFileLocation" value="$(find flor_ocs_msgs)/include/flor_ocs_msgs/messages.csv"/>
     </node>    
-    <node name="$(anon vigir_ocs_bandwidth_widget)"   pkg="vigir_ocs_bandwidth_widget"  type="bandwidth_widget"     /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="$(anon vigir_ocs_time_widget)"        pkg="vigir_ocs_time_widget"       type="time_widget"          /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="$(anon vigir_rqt_system_command)"     pkg="vigir_rqt_system_command"    type="system_command"       /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="$(anon vigir_ocs_bandwidth_widget)"   pkg="vigir_ocs_bandwidth_widget"  type="bandwidth_widget" respawn="true"    /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="$(anon vigir_ocs_time_widget)"        pkg="vigir_ocs_time_widget"       type="time_widget"      respawn="true"    /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="$(anon vigir_rqt_system_command)"     pkg="vigir_rqt_system_command"    type="system_command"   respawn="true"    /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
 </launch>
