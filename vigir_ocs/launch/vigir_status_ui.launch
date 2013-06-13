@@ -5,7 +5,6 @@
     <!-- Start the OCS -->
     <!--<node name="vigir_ocs_joystick_ui"          pkg="vigir_ocs_joystick"             type="joystick"              />--> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="$(anon status_window)"                  pkg="vigir_ocs_status_window"   type="status_window"   >
-      <remap from="/robot_status" to="/flor_robot_status" />
       <param name="robotErrorFileLocation" value="$(find flor_ocs_msgs)/include/flor_ocs_msgs/messages.csv"/>
     </node>    
     <node name="$(anon vigir_ocs_bandwidth_widget)"   pkg="vigir_ocs_bandwidth_widget"  type="bandwidth_widget"     /> <!--  output="screen" launch-prefix="xterm -e" / -->
