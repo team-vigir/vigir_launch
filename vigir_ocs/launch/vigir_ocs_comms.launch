@@ -10,4 +10,7 @@
 
 <include file="$(find vigir_onboard)/launch/vigir_status_relay.launch" />
 
+<!-- plan to start ocs logging on frodo -->
+<!-- include file="$(find vigir_ocs)/launch/ocs_logging.launch" / -->
+
 </launch>
