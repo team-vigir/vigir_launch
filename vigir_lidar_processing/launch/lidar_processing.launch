@@ -12,7 +12,7 @@
   <include file="$(find vigir_self_filter)/launch/self_filter_lidar.launch" />
   
   <!-- Start the spindle with default speed -->
-  <node type="rostopic" pkg="rostopic" name="spindle_speed_cmd" respawn="true" args="pub --once /multisense_sl/set_spindle_speed std_msgs/Float64 '{data: 3.0}'" output="screen"  />
+  <node type="rostopic" pkg="rostopic" name="spindle_speed_cmd" respawn="false" args="pub --once /multisense_sl/set_spindle_speed std_msgs/Float64 '{data: 3.0}'" output="screen"  />
 
 </launch>
 
