@@ -2,7 +2,7 @@
 
 <launch>
 
-<node pkg="rosbag" type="rosbag" name="rosbag_record_field"
+<node pkg="rosbag" type="record" name="rosbag_record_field"
        args="record -o ~/task_logs/vrc_run \
        /atlas/atlas_command \
        /atlas/atlas_sim_interface_command \
