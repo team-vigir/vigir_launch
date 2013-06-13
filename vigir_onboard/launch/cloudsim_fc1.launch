@@ -30,6 +30,8 @@
     <param name="field_address" value="10.0.0.52" />
     <param name="ocs_address"   value="11.8.0.2"  />
     <param name="tcp_port"      value="3855"      />
+    <param name="field_udp_port" value="3866"     />
+    <param name="ocs_udp_port"   value="3867"     />
   </node>
 
   <node name="bridge_moveit_planner_field" pkg="vigir_comms_bridge" type="bridge_moveit_planner_field" >

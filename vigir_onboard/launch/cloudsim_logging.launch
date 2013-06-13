@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<node pkg="rosbag" type="rosbag" name="rosbag_record_field"
+       args="record -o ~/task_logs/vrc_run \
+       /atlas/atlas_command \
+       /atlas/atlas_sim_interface_command \
+       /atlas/atlas_sim_interface_state \
+       /atlas/atlas_state \
+       /atlas/imu \
+       /multisense_sl/imu \
+       /pelvis_pose_world \
+       /vrc_data \
+       /sandia_hands/l_hand/joint_states \
+       /sandia_hands/r_hand/joint_states \
+       /flor/worldmodel/ocs_octomap \
+       /l_image_full/image_raw \
+       /r_image_full/image_raw \
+       /lhl_image_full/image_raw \
+       /lhr_image_full/image_raw \
+       /rhl_image_full/image_raw \
+       /rhr_image_full/image_raw \
+       /flor/controller/mode_command \
+       /flor/controller/mode \
+       /flor/controller/status \
+       /flor/behavior/start_task \
+       /flor/behavior/smach_outcome \
+       /grasp_control/r_hand/grasp_status \
+       /grasp_control/l_hand/grasp_status      " />
+
+</launch>
+
