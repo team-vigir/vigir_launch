@@ -11,8 +11,5 @@
 <!-- This launches the main worldmodel node -->
 <include file="$(find vigir_worldmodel_main)/launch/worldmodel_default.launch" />
 
-<!-- This launches the onboard logging node -->
-<include file="$(find vigir_onboard)/launch/cloudsim_logging.launch" />
-
 </launch>
 

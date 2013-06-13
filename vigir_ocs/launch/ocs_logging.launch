@@ -3,7 +3,7 @@
 <launch>
 
 <node pkg="rosbag" type="record" name="rosbag_record_ocs"
-       args="record -o ~/task_logs/vrc_ocs_run \
+       args=" -o ~/task_logs/vrc_ocs_run \
        /atlas/joint_states \
        /comms_bridge_reference_pose \
        /vrc_data \
