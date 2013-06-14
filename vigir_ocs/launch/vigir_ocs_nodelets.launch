@@ -42,6 +42,7 @@
 
     <!--Starts the ocs model node and loads URDF and SRDF to parameters server-->
     <include file="$(find flor_moveit_ocs_model)/launch/moveit_ocs_model.launch" />
+	
     
     
 </launch>

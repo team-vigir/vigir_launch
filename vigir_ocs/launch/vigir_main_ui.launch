@@ -12,7 +12,6 @@
     <node name="vigir_ocs_main_3d_view"         pkg="vigir_ocs_main_3d_view"         type="main_3d_view"         respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"         type="control_mode"         respawn="true"      />
     <node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"             respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_rqt_position_mode"        pkg="vigir_rqt_position_mode"        type="position_mode"        respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"        type="joint_control"        respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_camera_viewer_custom" pkg="vigir_ocs_camera_viewer_custom" type="camera_viewer_custom" respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     
@@ -54,5 +53,7 @@
 
 <!-- =============  Also run the status widgets on the main UI screen ========= -->
 <include file="$(find vigir_ocs)/launch/vigir_status_ui.launch" />
+<include file="$(find vigir_rqt_position_mode)/launch/hand_positions.launch" />
+<include file="$(find vigir_rqt_position_mode)/launch/arm_camera.launch" />
 
 </launch>
