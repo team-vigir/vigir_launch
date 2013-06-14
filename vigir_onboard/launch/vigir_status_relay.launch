@@ -11,7 +11,6 @@
   <node name="relay_motion_service_status"        pkg="topic_tools" type="relay"  args="/flor/motion_service/status         /flor_robot_status" />
   <node name="relay_behavior_status"              pkg="topic_tools" type="relay"  args="/flor/behavior/status               /flor_robot_status" />
   <node name="relay_moveit_planner_status"        pkg="topic_tools" type="relay"  args="/flor/planning/upper_body/status    /flor_robot_status" />
-  <node name="footstep_planner_status"            pkg="topic_tools" type="relay"  args="/flor/footstep_planner/status       /flor_robot_status" />
   <node name="bridge_status"                      pkg="topic_tools" type="relay"  args="/flor/comms_bridge_status           /flor_robot_status" />
 
 </launch>
