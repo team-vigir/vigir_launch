@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<include file="$(find vigir_ocs)/launch/vigir_aux_ui.launch" />
+<include file="$(find vigir_ocs)/launch/ocs_logging.launch"  />
+
+</launch>

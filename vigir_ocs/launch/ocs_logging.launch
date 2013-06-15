@@ -3,80 +3,80 @@
 <launch>
 
 <node pkg="rosbag" type="record" name="rosbag_record_ocs"
-       args=" -o ~/task_logs/vrc_ocs_run \
-       /atlas/joint_states \
-       /comms_bridge_reference_pose \
-       /vrc_data \
-       /sim_pelvis_pose_world/pose \
-       /syscommand \
-       /rhl_image_full/image_raw \
-       /rhl_image_cropped/image_raw \
-       /rhr_image_full/image_raw \
-       /rhr_image_cropped/image_raw \
-       /lhl_image_full/image_raw \
-       /lhl_image_cropped/image_raw \
-       /lhr_image_full/image_raw \
-       /lhr_image_cropped/image_raw \
-       /l_image_full/image_raw \
-       /l_image_cropped/image_raw \
-       /r_image_full/image_raw \
-       /r_image_cropped/image_raw \
-       /grasp_control/l_hand/active_state \
-       /grasp_control/l_hand/grasp_selection \
-       /grasp_control/l_hand/grasp_status \
-       /grasp_control/l_hand/mode_command \
-       /grasp_control/l_hand/release_grasp \
-       /grasp_control/l_hand/sandia_states \
-       /grasp_control/r_hand/active_state \
-       /grasp_control/r_hand/grasp_selection \
-       /grasp_control/r_hand/grasp_status \
-       /grasp_control/r_hand/mode_command \
-       /grasp_control/r_hand/release_grasp \
-       /grasp_control/r_hand/sandia_states \
-       /grasp_control/template_selection \
-       /grasp_planning/l_hand/status \
-       /grasp_planning/r_hand/status \
-       /goalpose \
-       /flor_ocs_bandwidth \
-       /flor/worldmodel/ocs/gridmap_request \
-       /flor/worldmodel/ocs/gridmap_result \
-       /flor/worldmodel/ocs/octomap_request \
-       /flor/worldmodel/ocs/octomap_result \
-       /flor/motion_service/motion_command \
-       /flor/motion_service/status \
-       /flor/neck_controller/function_update \
-       /flor/ocs/planning/plan_to_joint_state \
-       /flor/ocs/planning/plan_to_pose_state \
-       /flor/planning/upper_body/configuration \
-       /flor/planning/upper_body/plan_request \
-       /flor/planning/upperbody/status \
-       /flor/behavior/autonomy_level\
-       /flor/behavior/input_request \
-       /flor/behavior/input_response \
-       /flor/behavior/preempt \
-       /flor/behavior/silent \
-       /flor/behavior/smach_initialization \
-       /flor/behavior/smach_outcome \
-       /flor/behavior/smach_outcome_request \
-       /flor/behavior/smach_state \
-       /flor/behavior/start_task \
-       /flor/behavior/state \
-       /flor/behavior/status \
-       /flor/behavior/transition \
-       /flor/comms_bridge_status \
-       /flor/controller/bdi_desired_pelvis_pose \
-       /flor/controller/mode \
-       /flor/controller/mode_command \
-       /flor/controller/stability \
-       /flor/controller/statistics \
-       /flor/controller/status \
-       /flor/footstep_planner/status \
-       /flor/ghost/get_joint_states \
-       /flor/ghost/pose/left_hand \
-       /flor/ghost/pose/right_hand \
-       /flor/ghost/robot_state_vis \
-       /flor/ghost/set_appendage_poses \
-       /flor/ghost/set_joint_states \
+       args=" -o ~/task_logs/vrc_ocs_run 
+       /atlas/joint_states 
+       /comms_bridge_reference_pose 
+       /vrc_data 
+       /sim_pelvis_pose_world/pose 
+       /syscommand 
+       /rhl_image_full/image_raw 
+       /rhl_image_cropped/image_raw 
+       /rhr_image_full/image_raw 
+       /rhr_image_cropped/image_raw 
+       /lhl_image_full/image_raw 
+       /lhl_image_cropped/image_raw 
+       /lhr_image_full/image_raw 
+       /lhr_image_cropped/image_raw 
+       /l_image_full/image_raw 
+       /l_image_cropped/image_raw 
+       /r_image_full/image_raw 
+       /r_image_cropped/image_raw 
+       /grasp_control/l_hand/active_state 
+       /grasp_control/l_hand/grasp_selection 
+       /grasp_control/l_hand/grasp_status 
+       /grasp_control/l_hand/mode_command 
+       /grasp_control/l_hand/release_grasp 
+       /grasp_control/l_hand/sandia_states 
+       /grasp_control/r_hand/active_state 
+       /grasp_control/r_hand/grasp_selection 
+       /grasp_control/r_hand/grasp_status 
+       /grasp_control/r_hand/mode_command 
+       /grasp_control/r_hand/release_grasp 
+       /grasp_control/r_hand/sandia_states 
+       /grasp_control/template_selection 
+       /grasp_planning/l_hand/status 
+       /grasp_planning/r_hand/status 
+       /goalpose 
+       /flor_ocs_bandwidth 
+       /flor/worldmodel/ocs/gridmap_request 
+       /flor/worldmodel/ocs/gridmap_result 
+       /flor/worldmodel/ocs/octomap_request 
+       /flor/worldmodel/ocs/octomap_result 
+       /flor/motion_service/motion_command 
+       /flor/motion_service/status 
+       /flor/neck_controller/function_update 
+       /flor/ocs/planning/plan_to_joint_state 
+       /flor/ocs/planning/plan_to_pose_state 
+       /flor/planning/upper_body/configuration 
+       /flor/planning/upper_body/plan_request 
+       /flor/planning/upperbody/status 
+       /flor/behavior/autonomy_level 
+       /flor/behavior/input_request 
+       /flor/behavior/input_response 
+       /flor/behavior/preempt 
+       /flor/behavior/silent 
+       /flor/behavior/smach_initialization 
+       /flor/behavior/smach_outcome 
+       /flor/behavior/smach_outcome_request 
+       /flor/behavior/smach_state 
+       /flor/behavior/start_task 
+       /flor/behavior/state 
+       /flor/behavior/status 
+       /flor/behavior/transition 
+       /flor/comms_bridge_status 
+       /flor/controller/bdi_desired_pelvis_pose 
+       /flor/controller/mode 
+       /flor/controller/mode_command 
+       /flor/controller/stability 
+       /flor/controller/statistics 
+       /flor/controller/status 
+       /flor/footstep_planner/status 
+       /flor/ghost/get_joint_states 
+       /flor/ghost/pose/left_hand 
+       /flor/ghost/pose/right_hand 
+       /flor/ghost/robot_state_vis 
+       /flor/ghost/set_appendage_poses 
+       /flor/ghost/set_joint_states 
        /flor/ghost/set_root_pose            " />
 
 </launch>
