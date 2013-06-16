@@ -9,14 +9,14 @@
 
     <!-- Start the OCS -->
     <!--<node name="vigir_ocs_joystick_ui"          pkg="vigir_ocs_joystick"             type="joystick"              />--> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_main_3d_view"         pkg="vigir_ocs_main_3d_view"         type="main_3d_view"         respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"         type="control_mode"         respawn="true"      />
-    <node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"             respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"        type="joint_control"        respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_camera_viewer_custom" pkg="vigir_ocs_camera_viewer_custom" type="camera_viewer_custom" respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_glance_hub"           pkg="vigir_ocs_glance_hub"           type="glance_hub"		 respawn="true"      /> 
-     
-    <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget" type="ghost_control"        respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_main_3d_view"         pkg="vigir_ocs_main_3d_view"         type="main_3d_view"             respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"         type="control_mode"             respawn="true"      />
+    <node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"                 respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"        type="joint_control"            respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_camera_viewer_custom" pkg="vigir_ocs_camera_viewer_custom" type="camera_viewer_custom"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_glance_hub"           pkg="vigir_ocs_glance_hub"           type="glance_hub"		     respawn="true"      /> 
+    <node name="flor_bounding_box_widget"       pkg="flor_bounding_box_widget"       type="flor_bounding_box_widget" respawn="true"  />     
+    <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget" type="ghost_control"            respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit" 	type="joint_limit"           respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_motion_selector"      pkg="vigir_ocs_motion_selector" 	type="motion_selector"       respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
