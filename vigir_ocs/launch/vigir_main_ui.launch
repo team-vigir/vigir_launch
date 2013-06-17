@@ -19,7 +19,10 @@
     <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget" type="ghost_control"            respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit" 	type="joint_limit"           respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_motion_selector"      pkg="vigir_ocs_motion_selector" 	type="motion_selector"       respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
-
+    <node name="vigir_rqt_step_interface"       pkg="vigir_rqt_step_interface" 	type="step_interface"       respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="flor_bounding_box_widget"       pkg="flor_bounding_box_widget" 	type="flor_bounding_box_widget"       respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_bdi_pelvis_pose"      pkg="vigir_rqt_bdi_pelvis_pose" 	type="pelvis_pose"       respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    
     <!-- go ahead and start the manager UI for this -->
     <node name="vigir_ocs_template_manager"     pkg="vigir_ocs_template_manager"     type="template_manager"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_waypoint_manager"     pkg="vigir_ocs_waypoint_manager"     type="waypoint_manager"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
@@ -57,5 +60,7 @@
 <include file="$(find vigir_ocs)/launch/vigir_status_ui.launch" />
 <include file="$(find vigir_rqt_position_mode)/launch/hand_positions.launch" />
 <include file="$(find vigir_rqt_position_mode)/launch/arm_camera.launch" />
+
+
 
 </launch>
