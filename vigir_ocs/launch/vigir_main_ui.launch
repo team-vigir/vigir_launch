@@ -22,6 +22,8 @@
     <node name="vigir_rqt_step_interface"       pkg="vigir_rqt_step_interface" 	type="step_interface"       respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_rqt_bdi_pelvis_pose"      pkg="vigir_rqt_bdi_pelvis_pose" 	type="pelvis_pose"       respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     
+    <node name="rqt_gui"                        pkg="rqt_gui"                  	type="rqt_gui"       respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+       
     <!-- go ahead and start the manager UI for this -->
     <node name="vigir_ocs_template_manager"     pkg="vigir_ocs_template_manager"     type="template_manager"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_waypoint_manager"     pkg="vigir_ocs_waypoint_manager"     type="waypoint_manager"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
@@ -60,6 +62,8 @@
 <include file="$(find vigir_rqt_position_mode)/launch/hand_positions.launch" />
 <include file="$(find vigir_rqt_position_mode)/launch/arm_camera.launch" />
 
+<node name="rviz" pkg="rviz" type="rviz" respawn="false" args="-d $(find vigir_ocs)/rviz/ocs_default.rviz"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    
 
 
 </launch>
