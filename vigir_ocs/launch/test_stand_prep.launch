@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+<include file="$(find flor_behavior_widget)/launch/behavior_ocs.launch" />
+<!-- node name="rqt" pkg="rqt_gui" type="rqt_gui" output="screen" / -->
+<!-- node name="behavior_sm" pkg="flor_behavior_widget" type="behavior_widget_sm" output="screen" / -->
+
+<node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"         type="control_mode"         respawn="true"      />
+<node name="vigir_ocs_motion_selector"      pkg="vigir_ocs_motion_selector"     type="motion_selector"       respawn="true"      />
+
+</launch>
