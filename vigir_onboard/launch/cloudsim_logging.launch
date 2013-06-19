@@ -16,11 +16,6 @@
        /sandia_hands/r_hand/joint_states 
        /flor/worldmodel/ocs_octomap 
        /l_image_full/image_raw 
-       /r_image_full/image_raw 
-       /lhl_image_full/image_raw 
-       /lhr_image_full/image_raw 
-       /rhl_image_full/image_raw 
-       /rhr_image_full/image_raw 
        /flor/controller/mode_command 
        /flor/controller/mode 
        /flor/controller/status 
