@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Robot Description -->
+  <param name="robot_description" textfile="$(find atlas_sandia_hands)/atlas_sandia_hands.urdf"/>
+  <param name="use_sim_time" value="true" />
+
+   <!-- Include all images from fc2 -->
+  <include file="$(find flor_robot_controller)/launch/flor_robot_controller.launch" />
+
+
+</launch>
