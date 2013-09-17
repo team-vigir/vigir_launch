@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
 
+<!--
+Allows running MoveIt! motion planning and moving arms. Does not retrieve Octomap data
+(as worldmodel is not started along with this launch file)
+-->
+
 <launch>
   
   <include file="$(find vigir_state_estimation)/launch/state_estimation.launch"/>

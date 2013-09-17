@@ -1,5 +1,11 @@
 <?xml version="1.0"?>
 
+<!--
+Minimal launch file for running footstep_planner and testing walking.
+Loads a empty/free environment map and does not use any sensor data.
+Thus, also does not avoid any obstacles.
+-->
+
 <launch>
   
   <!-- Main Robot Controller-->
