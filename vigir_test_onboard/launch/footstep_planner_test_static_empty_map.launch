@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <!-- Main Robot Controller-->
+  <include file="$(find flor_robot_controller)/launch/flor_sim_controller.launch" />
+
+  <!--State Estimation, provides /world -> /pelvis transform-->
+  <include file="$(find vigir_state_estimation)/launch/state_estimation.launch"/>
+  
+  <!-- Start the default vrc footstep planner setup -->
+  <include file="$(find flor_footstep_planner)/launch/flor_footstep_planner_vrc_default.launch" />
+  
+  <!-- Two map servers for publishing maps  -->
+  <node name="map_server_ground_level" pkg="map_server" type="map_server" args="$(find flor_environment_maps)/maps/empty_map.yaml">
+    <param name="frame_id" value="/world"/>
+    <remap from="map" to="/flor/worldmodel/grid_map"/>
+  </node>  
+    
+</launch>
