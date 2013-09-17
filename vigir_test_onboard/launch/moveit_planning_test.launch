@@ -26,8 +26,7 @@
     
     <remap from="get_plan" to="/plan_for_grasp" />
     <remap from="get_plan_joints" to="/plan_for_joint_state" />
-    </node>
+  </node>
 
 </launch>
     
-</launch>
