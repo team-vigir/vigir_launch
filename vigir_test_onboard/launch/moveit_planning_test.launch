@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <include file="$(find vigir_state_estimation)/launch/state_estimation.launch"/>
+  
+  <include file="$(find atlas_moveit_config)/launch/test_sim_robot.launch"/>
+    
+</launch>
