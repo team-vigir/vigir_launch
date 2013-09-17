@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Loads our local Robot Description instead of simulator model -->
+  <!-- param name="robot_description" textfile="$(find atlas_sandia_hands)/atlas_sandia_hands.urdf"/ -->
+  
+  <param name="use_sim_time" value="true" /> <!-- required = false for hardware -->
+
+  <include file="$(find flor_robot_controller)/launch/flor_sim_controller.launch" />
+
+</launch>

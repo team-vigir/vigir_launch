@@ -11,27 +11,7 @@ Allows running MoveIt! motion planning and moving arms. Does not retrieve Octoma
   
   <include file="$(find atlas_moveit_config)/launch/test_sim_robot.launch"/>
   
-  <node name="pose_to_plan_node" pkg="flor_pose_to_plan_node" type="pose_to_plan_node" > <!-- output="screen" -->
+  <include file="$(find vigir_onboard/launch/moveit_planning.launch"/>
   
-    <!--Trajectory command topics-->
-    <remap from="l_arm_trajectory" to="/flor/l_arm_controller/trajectory" />
-    <remap from="r_arm_trajectory" to="/flor/r_arm_controller/trajectory" />
-    <remap from="torso_trajectory" to="/flor/torso_controller/trajectory" />
-  
-    <!--Incoming requests-->
-    <remap from="plan_request" to="/flor/planning/upper_body/plan_request" />
-    <remap from="plan_joint_request" to="/flor/planning/upper_body/plan_joint_request" />
-    <remap from="plan_status" to="flor/planning/upper_body/status" />
-  
-    <!--Status feedback for grasping-->
-    <remap from="l_grasp_plan_request" to="/grasp_control/l_hand/plan_request" />
-    <remap from="r_grasp_plan_request" to="/grasp_control/r_hand/plan_request" />
-    <remap from="l_grasp_status" to="/grasp_planning/l_hand/status" />
-    <remap from="r_grasp_status" to="/grasp_planning/r_hand/status" />
-    
-    <remap from="get_plan" to="/plan_for_grasp" />
-    <remap from="get_plan_joints" to="/plan_for_joint_state" />
-  </node>
-
 </launch>
     
