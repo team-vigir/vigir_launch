@@ -9,6 +9,9 @@
   <!-- Include files intended to launch on field computer 2 -->
   <include file="$(find vigir_onboard)/launch/vigir_onboard_fc2.launch" />
 
+  <!-- Include files intended to launch on field computer 3 -->
+  <include file="$(find vigir_onboard)/launch/vigir_onboard_fc3.launch" />
+
 
 </launch>
 

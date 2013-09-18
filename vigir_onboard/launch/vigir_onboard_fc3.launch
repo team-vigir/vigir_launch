@@ -5,8 +5,8 @@
 <include file="$(find vigir_state_estimation)/launch/state_estimation.launch"/>
 
 <!-- Start the Grasp controllers -->
-<include file="$(find grasp_testing)/launch/right_hand_grasping.launch"/>
-<include file="$(find grasp_testing)/launch/left_hand_grasping.launch"/>
+<include file="$(find vigir_grasp_testing)/launch/right_hand_grasping.launch"/>
+<include file="$(find vigir_grasp_testing)/launch/left_hand_grasping.launch"/>
 
 <include file="$(find vigir_onboard)/launch/moveit_planning.launch" />
 
