@@ -6,6 +6,7 @@ Allows running MoveIt! motion planning and moving arms. Does not retrieve Octoma
 -->
 
 <launch>
+<!--  <include file="$(find vigir_gravity_controller_plugin)/launch/gravity_controller.launch" />-->
   
   <include file="$(find vigir_state_estimation)/launch/state_estimation.launch"/>
   
@@ -32,6 +33,8 @@ Allows running MoveIt! motion planning and moving arms. Does not retrieve Octoma
     <remap from="get_plan" to="/plan_for_grasp" />
     <remap from="get_plan_joints" to="/plan_for_joint_state" />
   </node>
+  
+  <param name="/move_group/always_ignore_environment_geometry" value="true"/>
 
 </launch>
     
