@@ -8,9 +8,6 @@ Thus, also does not avoid any obstacles.
 
 <launch>
   
-  <!-- Main Robot Controller-->
-  <include file="$(find flor_robot_controller)/launch/flor_sim_controller.launch" />
-
   <!--State Estimation, provides /world -> /pelvis transform-->
   <include file="$(find vigir_state_estimation)/launch/state_estimation.launch"/>
   
