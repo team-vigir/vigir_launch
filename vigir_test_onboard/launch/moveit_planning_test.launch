@@ -6,7 +6,7 @@ Allows running MoveIt! motion planning and moving arms. Does not retrieve Octoma
 -->
 
 <launch>
-<!--  <include file="$(find vigir_gravity_controller_plugin)/launch/gravity_controller.launch" />-->
+<!--  <include file="$(find flor_robot_controller)/launch/flor_sim_controller.launch" />-->
 
   <include file="$(find vigir_state_estimation)/launch/state_estimation.launch"/>
 
