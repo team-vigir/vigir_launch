@@ -8,7 +8,7 @@
 <!-- arg name="find_robot_type" default="flor_$(env FLOR_ROBOT_TYPE)_moveit_config" / -->
 
 <!-- For simulation -->
-<include file="$(find flor_atlas_v3_v1_sandia_moveit_config)/launch/test_sim_robot.launch"/>
+<include file="$(find flor_atlas_v1_v3_joints_sandia_hands_moveit_config)/launch/test_sim_robot.launch"/>
 
 <node name="pose_to_plan_node" pkg="flor_pose_to_plan_node" type="pose_to_plan_node" > <!-- output="screen" -->
   
