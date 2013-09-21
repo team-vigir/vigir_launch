@@ -10,7 +10,7 @@ Allows running MoveIt! motion planning and moving arms. Does not retrieve Octoma
 
   <include file="$(find vigir_state_estimation)/launch/state_estimation.launch"/>
 
-  <include file="$(find flor__moveit_config)/launch/onboard_planner.launch"/>
+  <include file="$(find flor_moveit_config)/launch/onboard_planner.launch"/>
 
   <node name="pose_to_plan_node" pkg="flor_pose_to_plan_node" type="pose_to_plan_node" > <!-- output="screen" -->
 
