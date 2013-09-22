@@ -4,7 +4,8 @@
 
 
 <!-- Include files intended to launch on field computer 1 -->
-<include file="$(find vigir_onboard)/launch/vigir_onboard_fc1.launch" />
+<include file="$(find vigir_onboard)/launch/vigir_onboard_sim.launch" />
+<include file="$(find vigir_onboard)/launch/vigir_onboard_fc3.launch" /> <!-- drc split -->
 
   <node pkg="vigir_comms_bridge" name="bridge_state_field" type="bridge_state_field">
     <rosparam file="$(find vigir_comms_bridge)/config/bridge_state_field.yaml" command="load" />

@@ -1,13 +1,13 @@
 <package>
-  <description brief="vigir_atlas_bringup">
+  <description brief="vigir_test_onboard">
 
-     vigir_atlas_bringup
+     vigir_test_onboard
 
   </description>
   <author>kohlbrecher</author>
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
-  <url>http://ros.org/wiki/vigir_atlas_bringup</url>
+  <url>http://ros.org/wiki/vigir_test_onboard</url>
 
 </package>
 
