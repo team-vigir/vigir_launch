@@ -1,0 +1,14 @@
+<package>
+  <description brief="vigir_onboard_machines">
+
+     vigir_onboard_machines
+
+  </description>
+  <author>kohlbrecher</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/vigir_onboard_machines</url>
+
+</package>
+
+
