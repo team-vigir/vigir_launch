@@ -2,6 +2,7 @@
 
 <launch>
 
+    <!-- Ghost robot state publishers -->
     <node pkg="message_to_tf" type="message_to_tf" name="ghost_left_hand_state_to_tf" output="screen" respawn="true">
       <param name="pose_topic" value="/ghost_left_hand_pose" /> <!-- frame_id in the pose has to be /world -->
       <param name="footprint_frame_id" value="/ghost_left_hand_footprint" />
@@ -43,7 +44,7 @@
     <node name="vigir_ocs_interactive_marker_server_nodelet"     pkg="vigir_ocs_interactive_marker_server_nodelet"     type="interactive_marker_server_nodelet"  respawn="true"    /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
     <!--Starts the ocs model node and loads URDF and SRDF to parameters server-->
-    <include file="$(find flor_moveit_launch)/launch/ocs_model.launch" />
+    <include file="$(find flor_moveit_ocs_model)/launch/moveit_ocs_model.launch" />
 	
     
     

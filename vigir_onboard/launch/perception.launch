@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- This launches the components affiliated with lidar processing and lidar-based mapping -->
+  <include file="$(find vigir_lidar_processing)/launch/lidar_processing.launch"/>
+
+  <!-- This launches the image crop/decimate nodelets -->
+  <include file="$(find vigir_image_processing)/launch/onboard_crop_decimate_nodelets.launch" />
+
+  <!-- This launches the main worldmodel node -->
+  <include file="$(find vigir_worldmodel_main)/launch/worldmodel_default.launch" />
+
+  <include file="$(find vigir_state_estimation)/launch/state_estimation.launch"/>
+
+</launch>
+

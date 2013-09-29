@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <node name="ocs_control_mode"       pkg="vigir_rqt_control_mode"  type="control_mode"   respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="ocs_joint_control"      pkg="vigir_rqt_joint_control" type="joint_control"  respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="vigir_ocs_motion_selector"      pkg="vigir_ocs_motion_selector" 	type="motion_selector"       respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    
+</launch>

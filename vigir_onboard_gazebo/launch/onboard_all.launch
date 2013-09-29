@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<launch>
+
+
+  <!-- Launch robot controller -->
+  <include file="$(find flor_robot_controller)/launch/flor_sim_controller.launch">
+    <arg name="launch_prefix" value=""/>
+  </include>
+
+  <include file="$(find vigir_onboard)/launch/perception.launch" />
+
+  <include file="$(find vigir_onboard)/launch/motion.launch" />
+
+</launch>
+

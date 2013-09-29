@@ -2,25 +2,8 @@
 
 <launch>
 
-<include file="$(find vigir_state_estimation)/launch/state_estimation.launch"/>
-
-<!-- This launches the main controller node -->
-<include file="$(find vigir_gravity_controller_plugin)/launch/gravity_controller.launch" />
-
-<!-- Start the grasping controllers -->
-<include file="$(find vigir_grasp_testing)/launch/grasp_testing.launch" />
-
-<!-- Start the default vrc footstep planner setup -->
-<include file="$(find flor_footstep_planner)/launch/flor_footstep_planner_vrc_default.launch" />
-
-<!--  Moving this to OCS side as relevant status are currently being transmitted via TCP links -->
-<!-- include file="$(find vigir_onboard)/launch/vigir_status_relay.launch" / -->
-
-<!--  Start the behavior engine -->
-<include file="$(find florbe_onboard)/launch/behavior_onboard.launch" />
-
-<!--  Start motion server  -->
-<node name="motion_service" pkg="flor_motion" type="motion_service" respawn="true"/>
+<!-- This launches the main controller node for simulation  -->
+<include file="$(find vigir_onboard)/launch/vigir_onboard_sim.launch" />
 
 </launch>
 
