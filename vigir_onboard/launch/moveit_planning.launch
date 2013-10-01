@@ -4,10 +4,7 @@
   
 <arg name="launch_prefix" default=""/>
 
-<!-- Construct the command we want to excute -->
-<!-- arg name="find_robot_type" default="flor_$(env FLOR_ROBOT_TYPE)_moveit_config" / -->
-
-<!-- For simulation -->
+<!-- Load robot specific configuration -->
 <include file="$(find flor_moveit_launch)/launch/onboard_planner.launch"/>
 
 <node name="pose_to_plan_node" pkg="flor_pose_to_plan_node" type="pose_to_plan_node" > <!-- output="screen" -->
