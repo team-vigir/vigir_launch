@@ -9,7 +9,7 @@ Thus, also does not avoid any obstacles.
 <launch>
   
   <!--State Estimation, provides /world -> /pelvis transform-->
-  <include file="$(find vigir_state_estimation)/launch/state_estimation.launch"/>
+  <!-- include file="$(find vigir_state_estimation)/launch/state_estimation.launch"/ -->
   
   <!-- Start the default vrc footstep planner setup -->
   <include file="$(find flor_footstep_planner)/launch/flor_footstep_planner_vrc_default.launch" />
