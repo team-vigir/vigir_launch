@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<!-- Make depend on FLOR_HAND_TYPE -->
+<include file="$(find flor_grasp_controllers)/launch/sandia_l_grasp_control.launch"/>
+<include file="$(find flor_grasp_controllers)/launch/sandia_r_grasp_control.launch"/>
+
+</launch>
+
