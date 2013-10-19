@@ -3,6 +3,6 @@
 <launch>
 
 <include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets_irobot.launch" />
-<include file="$(find vigir_ocs)/launch/vigir_main_ui.launch" />
+<include file="$(find vigir_ocs)/launch/vigir_main_ui_irobot.launch" />
 
 </launch>
