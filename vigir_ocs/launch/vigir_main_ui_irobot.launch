@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <!-- Starting individually now to avoid threading issue with python -->
+    <!-- node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" output="screen" / -->
+
+    <!-- Start the OCS -->
+    <!--<node name="vigir_ocs_joystick_ui"          pkg="vigir_ocs_joystick"             type="joystick"              />--> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_main_3d_view"         pkg="vigir_ocs_main_3d_view"         type="main_3d_view"             respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"         type="control_mode"             respawn="true"      />
+    <node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"                 respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"        type="joint_control"            respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_camera_viewer_custom" pkg="vigir_ocs_camera_viewer_custom" type="camera_viewer_custom"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_glance_hub"           pkg="vigir_ocs_glance_hub"           type="glance_hub"		     respawn="true"      /> 
+    <node name="flor_bounding_box_widget"       pkg="flor_bounding_box_widget"       type="flor_bounding_box_widget" respawn="true"  />     
+    <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget" type="ghost_control"            respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit" 	type="joint_limit"           respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_motion_selector"      pkg="vigir_ocs_motion_selector" 	type="motion_selector"       respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_step_interface"       pkg="vigir_rqt_step_interface" 	type="step_interface"       respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_bdi_pelvis_pose"      pkg="vigir_rqt_bdi_pelvis_pose" 	type="pelvis_pose"       respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    
+    <node name="rqt_gui"                        pkg="rqt_gui"                  	type="rqt_gui"       respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+       
+    <!-- go ahead and start the manager UI for this -->
+    <node name="vigir_ocs_template_manager"     pkg="vigir_ocs_template_manager"     type="template_manager"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_waypoint_manager"     pkg="vigir_ocs_waypoint_manager"     type="waypoint_manager"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_image_manager"     pkg="vigir_ocs_image_manager"     type="image_manager"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+
+    <node name="right_grasp_ui" pkg="vigir_ocs_grasp_widget" type="grasp_widget"     respawn="true"> <!--  output="screen" launch-prefix="xterm -e"  -->
+        <param name="/grasp_widget/hand" value="right" />
+	<param name="/grasp_widget/hand_type" value="irobot" />
+
+        <!-- Publications -->
+        <remap from="/template/grasp_mode_command" to="/grasp_control/r_hand/mode_command" />
+        <remap from="/template/grasp_selection"    to="/grasp_control/r_hand/grasp_selection" />
+        <remap from="/template/release_grasp"      to="/grasp_control/r_hand/release_grasp" />
+
+        <!-- Subscriptions -->
+        <remap from="/template/active_state"            to="/grasp_control/r_hand/active_state" />
+        <remap from="/template/template_match_feedback" to="/grasp_control/template_selection" />
+
+    </node>
+
+    <node name="left_grasp_ui" pkg="vigir_ocs_grasp_widget" type="grasp_widget"  respawn="true"> <!--  output="screen" launch-prefix="xterm -e"  -->
+        <param name="/grasp_widget/hand" value="left" />
+	<param name="/grasp_widget/hand_type" value="irobot" />
+
+        <!-- Publications -->
+        <remap from="/template/grasp_mode_command" to="/grasp_control/l_hand/mode_command" />
+        <remap from="/template/grasp_selection"    to="/grasp_control/l_hand/grasp_selection" />
+        <remap from="/template/release_grasp"      to="/grasp_control/l_hand/release_grasp" />
+
+        <!-- Subscriptions -->
+        <remap from="/template/active_state"            to="/grasp_control/l_hand/active_state" />
+        <remap from="/template/template_match_feedback" to="/grasp_control/template_selection" />
+
+    </node>
+
+<!-- =============  Also run the status widgets on the main UI screen ========= -->
+<include file="$(find vigir_ocs)/launch/vigir_status_ui.launch" />
+<include file="$(find vigir_rqt_position_mode)/launch/hand_positions.launch" />
+<include file="$(find vigir_rqt_position_mode)/launch/arm_camera.launch" />
+
+<node name="rviz" pkg="rviz" type="rviz" respawn="false" args="-d $(find vigir_ocs)/rviz/ocs_default.rviz"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    
+
+
+</launch>
