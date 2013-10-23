@@ -10,6 +10,9 @@
 <!-- Start the default vrc footstep planner setup -->
 <include file="$(find flor_footstep_planner)/launch/flor_footstep_planner_vrc_default.launch" />
 
+<!-- Start the default vrc walk monitor -->
+<include file="$(find flor_walk_monitor)/launch/walk_monitor_default.launch" />
+
 <!--  Start the behavior engine -->
 <include file="$(find florbe_onboard)/launch/behavior_onboard.launch" />
 
