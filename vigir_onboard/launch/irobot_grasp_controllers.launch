@@ -5,7 +5,5 @@
 <include file="$(find flor_grasp_controllers)/launch/irobot_l_grasp_control.launch"/>
 <include file="$(find flor_grasp_controllers)/launch/irobot_r_grasp_control.launch"/>
 
-<include file="$(find handle_launch)/launch/control_twohands.launch"/>
-
 </launch>
 
