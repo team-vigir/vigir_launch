@@ -1,21 +1,25 @@
 <?xml version="1.0"?>
 
 <launch>
+	<param name="/flor/ocs/grasp/hand_type" value="sandia" />
+	
     <!-- Start the OCS -->
-    <!--<node name="vigir_ocs_joystick_ui"          pkg="vigir_ocs_joystick"             type="joystick"              />--> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_global_hotkey"        pkg="vigir_ocs_global_hotkey"        type="global_hotkey"		     respawn="true"      /> 
+    
     <node name="vigir_ocs_main_view"            pkg="vigir_ocs_main_view"            type="main_view"                respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"                 respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_camera_view" 	        pkg="vigir_ocs_camera_view"          type="camera_view"              respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    
     <node name="vigir_ocs_glance_hub"           pkg="vigir_ocs_glance_hub"           type="glance_hub"		         respawn="true"      /> 
     <node name="flor_bounding_box_widget"       pkg="flor_bounding_box_widget"       type="flor_bounding_box_widget" respawn="true"      />     
     <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget" type="ghost_control"            respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit" 	 type="joint_limit"              respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_motion_selector"      pkg="vigir_ocs_motion_selector" 	 type="motion_selector"          respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_image_manager"        pkg="vigir_ocs_image_manager"        type="image_manager"            respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <!--<node name="vigir_ocs_motion_selector"      pkg="vigir_ocs_motion_selector" 	 type="motion_selector"          respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <!--<node name="vigir_ocs_image_manager"        pkg="vigir_ocs_image_manager"        type="image_manager"            respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     
     <node name="right_grasp_ui" pkg="vigir_ocs_grasp_widget" type="grasp_widget"     respawn="true"> <!--  output="screen" launch-prefix="xterm -e"  -->
-        <param name="/graspWidget/hand" value="right" />
+        <param name="/grasp_widget/hand" value="right" />
+		<param name="/grasp_widget/hand_type" value="sandia" />
 
         <!-- Publications -->
         <remap from="/template/grasp_mode_command" to="/grasp_control/r_hand/mode_command" />
@@ -29,7 +33,8 @@
     </node>
 
     <node name="left_grasp_ui" pkg="vigir_ocs_grasp_widget" type="grasp_widget"  respawn="true"> <!--  output="screen" launch-prefix="xterm -e"  -->
-        <param name="/graspWidget/hand" value="left" />
+        <param name="/grasp_widget/hand" value="left" />
+		<param name="/grasp_widget/hand_type" value="sandia" />
 
         <!-- Publications -->
         <remap from="/template/grasp_mode_command" to="/grasp_control/l_hand/mode_command" />
@@ -43,7 +48,7 @@
     </node>
     
     <!-- loading rqt widgets as well -->
-    <node name="vigir_rqt_step_interface"       pkg="vigir_rqt_step_interface" 	     type="step_interface"           respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <!--<node name="vigir_rqt_step_interface"       pkg="vigir_rqt_step_interface" 	     type="step_interface"           respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_rqt_bdi_pelvis_pose"      pkg="vigir_rqt_bdi_pelvis_pose" 	 type="pelvis_pose"              respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"         type="control_mode"             respawn="true"      />
     <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"        type="joint_control"            respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->

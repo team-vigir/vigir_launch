@@ -6,14 +6,14 @@
       <param name="pose_topic" value="/ghost_left_hand_pose" /> <!-- frame_id in the pose has to be /world -->
       <param name="footprint_frame_id" value="/ghost_left_hand_footprint" />
       <param name="stabilized_frame_id" value="/ghost_left_hand_stabilized" />
-      <param name="child_frame_id" value="/left_hand_model/left_palm" />    
+      <param name="child_frame_id" value="/left_palm" />    
     </node>
     
     <node pkg="message_to_tf" type="message_to_tf" name="ghost_right_hand_state_to_tf" output="screen" respawn="true">
       <param name="pose_topic" value="/ghost_right_hand_pose" /> <!-- frame_id in the pose has to be /world -->
       <param name="footprint_frame_id" value="/ghost_right_hand_footprint" />
       <param name="stabilized_frame_id" value="/ghost_right_hand_stabilized" />
-      <param name="child_frame_id" value="/right_hand_model/right_palm" />    
+      <param name="child_frame_id" value="/right_palm" />    
     </node>
     
     <node name="ghost_left_hand_state_publisher" pkg="robot_state_publisher" type="state_publisher" respawn="true">
