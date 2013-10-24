@@ -8,11 +8,6 @@
   <include file="$(find flor_atlas_bringup)/launch/robot_description.launch" />
   <include file="$(find flor_atlas_bringup)/launch/state_publishers.launch" />
   <include file="$(find flor_atlas_bringup)/launch/robot_controller.launch" />
-  
-  <include file="$(find handle_launch)/launch/control_twohands.launch"  >
-    <param name="right_hand_name" value="10.66.171.23" />
-    <param name="left_hand_name" value="10.66.171.22" />
-</include>
 
 
 </launch>
