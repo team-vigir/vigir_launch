@@ -3,6 +3,7 @@
 <launch>
 
   <!--  Start motion server  -->
-  <node name="motion_service" pkg="flor_motion" type="motion_service" respawn="true"/>
+  <node name="motion_service"  pkg="flor_motion" type="motion_service"/>
+  <node name="motion_selector" pkg="vigir_ocs_motion_selector" type="motion_selector" />
     
 </launch>

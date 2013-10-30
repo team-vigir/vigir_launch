@@ -6,14 +6,14 @@
       <param name="pose_topic" value="/ghost_left_hand_pose" /> <!-- frame_id in the pose has to be /world -->
       <param name="footprint_frame_id" value="/ghost_left_hand_footprint" />
       <param name="stabilized_frame_id" value="/ghost_left_hand_stabilized" />
-      <param name="child_frame_id" value="/left_palm" />    
+      <param name="child_frame_id" value="/left_hand_model/base" />    
     </node>
     
     <node pkg="message_to_tf" type="message_to_tf" name="ghost_right_hand_state_to_tf" output="screen" respawn="true">
       <param name="pose_topic" value="/ghost_right_hand_pose" /> <!-- frame_id in the pose has to be /world -->
       <param name="footprint_frame_id" value="/ghost_right_hand_footprint" />
       <param name="stabilized_frame_id" value="/ghost_right_hand_stabilized" />
-      <param name="child_frame_id" value="/right_palm" />    
+      <param name="child_frame_id" value="/right_hand_model/base" />    
     </node>
     
     <node name="ghost_left_hand_state_publisher" pkg="robot_state_publisher" type="state_publisher" respawn="true">
@@ -29,16 +29,16 @@
     </node>
 
     <!-- Robot descriptions for the ghost data -->
-    <arg name="left_hand_robot_model" default="$(find flor_sandia_hands_tools)/urdf/sandia_hand_left.urdf"/>
+    <arg name="left_hand_robot_model" default="$(find flor_irobot_hands_tools)/urdf/irobot_hand_left.urdf"/>
     <param name="left_hand_robot_description" textfile="$(arg left_hand_robot_model)" />
     
-    <arg name="right_hand_robot_model" default="$(find flor_sandia_hands_tools)/urdf/sandia_hand_right.urdf"/>
+    <arg name="right_hand_robot_model" default="$(find flor_irobot_hands_tools)/urdf/irobot_hand_right.urdf"/>
     <param name="right_hand_robot_description" textfile="$(arg right_hand_robot_model)" />
     
-    <arg name="left_hand_robot_model_semantic" default="$(find flor_sandia_hands_tools)/urdf/sandia_hand_left.srdf"/>
+    <arg name="left_hand_robot_model_semantic" default="$(find flor_irobot_hands_tools)/urdf/irobot_hand_left.srdf"/>
     <param name="left_hand_robot_description_semantic" textfile="$(arg left_hand_robot_model_semantic)" />
     
-    <arg name="right_hand_robot_model_semantic" default="$(find flor_sandia_hands_tools)/urdf/sandia_hand_right.srdf"/>
+    <arg name="right_hand_robot_model_semantic" default="$(find flor_irobot_hands_tools)/urdf/irobot_hand_right.srdf"/>
     <param name="right_hand_robot_description_semantic" textfile="$(arg right_hand_robot_model_semantic)" />
 
     <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->

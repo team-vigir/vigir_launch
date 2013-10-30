@@ -5,8 +5,7 @@
 <include file="$(find vigir_state_estimation)/launch/state_estimation.launch"/>
 
 <!-- Start the Grasp controllers -->
-<include file="$(find vigir_grasp_testing)/launch/right_hand_grasping.launch"/>
-<include file="$(find vigir_grasp_testing)/launch/left_hand_grasping.launch"/>
+<include file="$(find vigir_onboard)/launch/grasp_controllers.launch"/>
 
 <include file="$(find vigir_onboard)/launch/moveit_planning.launch" />
 
@@ -14,7 +13,7 @@
 <include file="$(find flor_footstep_planner)/launch/flor_footstep_planner_vrc_default.launch" />
 
 <!--  Start the behavior engine -->
-<include file="$(find flor_behavior_idle)/launch/behavior_onboard.launch" />
+<include file="$(find florbe_onboard)/launch/behavior_onboard.launch" />
 
 <!--  Start motion server  -->
 <node name="motion_service" pkg="flor_motion" type="motion_service" respawn="true"/>

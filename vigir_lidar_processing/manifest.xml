@@ -9,7 +9,7 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/vigir_lidar_processing</url>
   <depend package="vigir_self_filter"/>
-  <depend package="hector_laserscan_to_pointcloud"/>
+  <depend package="flor_laserscan_to_pointcloud"/>
 
 </package>
 

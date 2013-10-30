@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets_sandia.launch" />
+<include file="$(find vigir_ocs)/launch/vigir_main_ui.launch" />
+
+</launch>
