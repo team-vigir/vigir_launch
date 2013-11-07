@@ -36,6 +36,12 @@
     
     <arg name="right_hand_robot_model" default="$(find flor_sandia_hands_tools)/urdf/sandia_hand_right.urdf"/>
     <param name="right_hand_robot_description" textfile="$(arg right_hand_robot_model)" />
+    
+    <arg name="left_hand_robot_model_semantic" default="$(find flor_sandia_hands_tools)/urdf/sandia_hand_left.srdf"/>
+    <param name="left_hand_robot_description_semantic" textfile="$(arg left_hand_robot_model_semantic)" />
+    
+    <arg name="right_hand_robot_model_semantic" default="$(find flor_sandia_hands_tools)/urdf/sandia_hand_right.srdf"/>
+    <param name="right_hand_robot_description_semantic" textfile="$(arg right_hand_robot_model_semantic)" />
 
     <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
       <remap from="/template/template_match_feedback" to="/grasp_control/template_selection" />
