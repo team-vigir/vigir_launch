@@ -16,6 +16,7 @@
       <param name="child_frame_id" value="/right_palm" />    
     </node>
     
+    <!--
     <node name="ghost_left_hand_state_publisher" pkg="robot_state_publisher" type="state_publisher" respawn="true">
       <remap from="robot_description" to="left_hand_robot_description" />
       <remap from="joint_states" to="/ghost_left_hand/joint_states" />
@@ -27,6 +28,7 @@
       <remap from="joint_states" to="/ghost_right_hand/joint_states" />
       <param name="tf_prefix" value="/right_hand_model"/>
     </node>
+    -->
 
     <!-- Robot descriptions for the ghost data -->
     <arg name="left_hand_robot_model" default="$(find flor_sandia_hands_tools)/urdf/sandia_hand_left.urdf"/>
