@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 
 <launch>
-
+	<arg name="launch_prefix" default="xterm -e gdb -ex run -args"/> <!--gdb -ex run -args"/> -->
     <!-- Starting individually now to avoid threading issue with python -->
     <!-- node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" output="screen" / -->
 
 	<param name="/flor/ocs/grasp/hand_type" value="irobot" />
 
     <!-- Start the OCS -->
-    <node name="vigir_ocs_main_3d_view"         pkg="vigir_ocs_main_3d_view"         type="main_3d_view"             respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_main_3d_view"         pkg="vigir_ocs_main_3d_view"         type="main_3d_view"             respawn="true"      /> <!--  output="screen" launch-prefix="$(arg launch_prefix)" / -->
     <node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"                 respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_camera_viewer_custom" pkg="vigir_ocs_camera_viewer_custom" type="camera_viewer_custom"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
     

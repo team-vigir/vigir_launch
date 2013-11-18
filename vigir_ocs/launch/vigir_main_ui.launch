@@ -4,8 +4,6 @@
 
     <!-- Starting individually now to avoid threading issue with python -->
     <!-- node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" output="screen" / -->
-    
-	<param name="/flor/ocs/grasp/hand_type" value="sandia" />
 
     <!-- Start the OCS -->
     <node name="vigir_ocs_main_3d_view"         pkg="vigir_ocs_main_3d_view"         type="main_3d_view"             respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
@@ -29,33 +27,8 @@
     <!--<node name="vigir_ocs_waypoint_manager"     pkg="vigir_ocs_waypoint_manager"     type="waypoint_manager"     respawn="true"      /> --><!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_image_manager"     pkg="vigir_ocs_image_manager"     type="image_manager"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
-    <node name="right_grasp_ui" pkg="vigir_ocs_grasp_widget" type="grasp_widget"     respawn="true"> <!--  output="screen" launch-prefix="xterm -e"  -->
-        <param name="/grasp_widget/hand" value="right" />
-
-        <!-- Publications -->
-        <remap from="/template/grasp_mode_command" to="/grasp_control/r_hand/mode_command" />
-        <remap from="/template/grasp_selection"    to="/grasp_control/r_hand/grasp_selection" />
-        <remap from="/template/release_grasp"      to="/grasp_control/r_hand/release_grasp" />
-
-        <!-- Subscriptions -->
-        <remap from="/template/active_state"            to="/grasp_control/r_hand/active_state" />
-        <remap from="/template/template_match_feedback" to="/grasp_control/template_selection" />
-
-    </node>
-
-    <node name="left_grasp_ui" pkg="vigir_ocs_grasp_widget" type="grasp_widget"  respawn="true"> <!--  output="screen" launch-prefix="xterm -e"  -->
-        <param name="/grasp_widget/hand" value="left" />
-
-        <!-- Publications -->
-        <remap from="/template/grasp_mode_command" to="/grasp_control/l_hand/mode_command" />
-        <remap from="/template/grasp_selection"    to="/grasp_control/l_hand/grasp_selection" />
-        <remap from="/template/release_grasp"      to="/grasp_control/l_hand/release_grasp" />
-
-        <!-- Subscriptions -->
-        <remap from="/template/active_state"            to="/grasp_control/l_hand/active_state" />
-        <remap from="/template/template_match_feedback" to="/grasp_control/template_selection" />
-
-    </node>
+    <include file="$(find vigir_ocs)/launch/$(env FLOR_LEFT_HAND_TYPE)_grasp_widget.launch" />
+    <include file="$(find vigir_ocs)/launch/$(env FLOR_RIGHT_HAND_TYPE)_grasp_widget.launch" />
 
 <!-- =============  Also run the status widgets on the main UI screen ========= -->
 <include file="$(find vigir_ocs)/launch/vigir_status_ui.launch" />

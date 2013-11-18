@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<!--
+Test the ghost robot standalone (only OCS)
+-->
+
+<launch>
+
+  <include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets.launch" />
+  
+  <include file="$(find flor_atlas_description)/launch/xacrodisplay.launch" />
+  
+  <include file="$(find vigir_onboard)/launch/moveit_planning.launch" />
+  
+  <node pkg="tf" type="static_transform_publisher" name="world_to_pelvis_tf_pub" args="0 0 0.8 0 0 0 /world /pelvis 100"/>
+
+  <node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"         type="control_mode"             respawn="true"      />
+  <node name="vigir_ocs_main_3d_view"         pkg="vigir_ocs_main_3d_view"         type="main_3d_view"             respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget" type="ghost_control"            respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"        type="joint_control"            respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+
+</launch>
