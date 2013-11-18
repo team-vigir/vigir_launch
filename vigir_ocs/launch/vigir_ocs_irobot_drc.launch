@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-
-<launch>
-
-<include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets_irobot_drc.launch" />
-<include file="$(find vigir_ocs)/launch/vigir_main_ui_irobot_drc.launch" />
-
-</launch>
