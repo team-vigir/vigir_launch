@@ -13,6 +13,13 @@ Test the ghost robot standalone (only OCS)
   <include file="$(find vigir_onboard)/launch/moveit_planning.launch" />
   
   <node pkg="tf" type="static_transform_publisher" name="world_to_pelvis_tf_pub" args="0 0 0.8 0 0 0 /world /pelvis 100"/>
+  
+  <node pkg="hector_interactive_marker_pose_server" type="interactive_marker_pose_server" name="center_interactive_marker_pose_server"  >
+    <param name="marker_name" value="center_im" />
+    <param name="frame_id" value="/world" />
+    <remap from="pose" to="/rotation_center_pose" />
+  </node>
+     
 
   <node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"         type="control_mode"             respawn="true"      />
   <node name="vigir_ocs_main_3d_view"         pkg="vigir_ocs_main_3d_view"         type="main_3d_view"             respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
