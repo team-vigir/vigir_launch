@@ -25,7 +25,7 @@
     <!-- go ahead and start the manager UI for this -->
     <!--<node name="vigir_ocs_template_manager"     pkg="vigir_ocs_template_manager"     type="template_manager"     respawn="true"      /> --> <!--  output="screen" launch-prefix="xterm -e" / -->
     <!--<node name="vigir_ocs_waypoint_manager"     pkg="vigir_ocs_waypoint_manager"     type="waypoint_manager"     respawn="true"      /> --><!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_image_manager"     pkg="vigir_ocs_image_manager"     type="image_manager"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_image_video_manager"     pkg="vigir_ocs_image_video_manager"     type="image_video_manager"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
     <include file="$(find vigir_ocs)/launch/$(env FLOR_LEFT_HAND_TYPE)_grasp_widget.launch" />
     <include file="$(find vigir_ocs)/launch/$(env FLOR_RIGHT_HAND_TYPE)_grasp_widget.launch" />
