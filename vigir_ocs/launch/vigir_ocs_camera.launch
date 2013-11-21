@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<!-- Load camera configuration for the UI nodes and nodelets -->
+	<rosparam command="load" file="$(find vigir_ocs)/launch/atlas_camera_topics.yaml" />
+	<rosparam command="load" file="$(find vigir_ocs)/launch/$(env FLOR_LEFT_HAND_TYPE)_camera_topics.yaml" />
+	<rosparam command="load" file="$(find vigir_ocs)/launch/$(env FLOR_RIGHT_HAND_TYPE)_camera_topics.yaml" />
+
+	<node name="vigir_ocs_image_nodelet"       pkg="vigir_ocs_image_nodelet"       type="image_nodelet"       respawn="false"/>
+    <node name="vigir_ocs_main_camera_view"    pkg="vigir_ocs_main_camera_view"    type="main_camera_view"    respawn="false"/>
+    <node name="vigir_ocs_image_video_manager" pkg="vigir_ocs_image_video_manager" type="image_video_manager" respawn="false"/> 
+
+</launch>
