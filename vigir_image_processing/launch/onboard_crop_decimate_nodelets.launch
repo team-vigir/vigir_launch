@@ -3,7 +3,7 @@
 <launch>
   
   <!--Start nodelet manager that will contain all crop_decimate nodelets-->
-  <node pkg="nodelet" type="nodelet" name="crop_decimate_nodelet_manager"  args="manager" output="screen"/>
+  <node pkg="nodelet" type="nodelet" name="crop_decimate_nodelet_manager"  args="manager" />
   <node pkg="nodelet" type="nodelet" name="crop_decimate_requester_nodelet_manager"  args="manager"/>
 
   <!--Head-LEFT CAMERA-->
@@ -40,7 +40,7 @@
   <!-- RAW FISHEYE -->
   <!--Add nodelet intended for full image decimation-->
   <node pkg="nodelet" type="nodelet" name="rsa_image_full_decimate" respawn="true"
-        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager" output="screen">
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager" >
     <remap from="camera" to="sa/right" />
     <remap from="camera_out" to="rsa_image_full" />
   </node>
@@ -105,7 +105,7 @@
 
   <!-- SA PANORAMA-->
   <node pkg="nodelet" type="nodelet" name="psa_image_full_decimate" respawn="true"
-        args="load vigir_crop_decimate_requester_nodelet/CropDecimateRequesterNodelet crop_decimate_requester_nodelet_manager" output="screen">
+        args="load vigir_crop_decimate_requester_nodelet/CropDecimateRequesterNodelet crop_decimate_requester_nodelet_manager" >
     <remap from="camera" to="sa/panorama" />
     <remap from="camera_out" to="psa_image_full" />
     <param name="max_video_framerate" value="0" />
