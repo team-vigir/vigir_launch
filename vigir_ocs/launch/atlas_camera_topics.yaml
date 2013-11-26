@@ -8,7 +8,7 @@
             #   <prefix>_full/image_request, 
             #   <prefix>_cropped/image_raw, 
             #   <prefix>_cropped/image_request
-            topic_prefix:["/l_image","/r_image","/lsa_image","/rsa_image","/lrsa_image","/rrsa_image","/sa/panorama"], 
+            topic_prefix:["/l_image","/r_image","/lsa_image","/rsa_image","/lrsa_image","/rrsa_image","/psa_image"], 
             
             # Name the cameras for the OCS
             name:["Head Camera (Left)", "Head Camera (Right)", "Left Fisheye", "Right Fisheye", "Left Fisheye (Rectified)", "Right Fisheye (Rectified)", "Panorama"],
