@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 
 <launch>
-
-    <!-- Starting individually now to avoid threading issue with python -->
-    <!-- node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" output="screen" / -->
+	<node name="vigir_ocs_global_hotkey" pkg="vigir_ocs_global_hotkey" type="global_hotkey" respawn="true" />  
 
     <!-- Start the OCS -->
     <node name="vigir_ocs_main_view"         pkg="vigir_ocs_main_view"         type="main_view"             respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
