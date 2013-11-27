@@ -3,7 +3,9 @@
 <launch>
 
   <!--  Start hand interfaces here -->
+  <include file="$(find flor_atlas_bringup)/launch/hand_hardware.launch" />
 
+  <!--  Start misc motion control, behaviors, grasping interfaces here -->
   <include file="$(find vigir_onboard)/launch/motion.launch" />
 
   <!-- Start the default vrc footstep planner setup -->
