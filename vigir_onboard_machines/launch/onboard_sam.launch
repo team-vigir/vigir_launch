@@ -9,7 +9,7 @@
   <include file="$(find vigir_onboard)/launch/motion.launch" />
 
   <!-- Start the default vrc footstep planner setup -->
-  <include file="$(find flor_footstep_planner)/launch/flor_footstep_planner_atlas_real_testing.launch" />
+  <include file="$(find flor_footstep_planner)/launch/flor_footstep_planner_atlas_real_test.launch" />
 
   <!-- Comms bridge -->
   <include file="$(find vigir_comms_bridge)/launch/field_bridge_sam.launch" />
