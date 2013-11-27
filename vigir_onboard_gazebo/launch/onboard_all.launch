@@ -2,7 +2,6 @@
 
 <launch>
 
-
   <!-- Launch robot controller -->
   <include file="$(find flor_robot_controller)/launch/flor_sim_controller.launch">
     <arg name="launch_prefix" value=""/>
@@ -11,6 +10,9 @@
   <include file="$(find vigir_onboard)/launch/perception.launch" />
 
   <include file="$(find vigir_onboard)/launch/motion.launch" />
+
+  <!-- Start the default vrc footstep planner setup -->
+  <include file="$(find flor_footstep_planner)/launch/flor_footstep_planner_drc_default.launch" />
 
 </launch>
 

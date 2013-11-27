@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Robot description and main robot controller interface -->
+  <include file="$(find vigir_onboard_machines)/launch/basic_controller_setup.launch" />
+
+  <!-- Comms bridge -->
+  <include file="$(find vigir_comms_bridge)/launch/field_bridge_aragorn.launch" />
+
+</launch>
+
