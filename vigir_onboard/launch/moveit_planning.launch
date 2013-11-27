@@ -17,6 +17,8 @@
   <!--Incoming requests-->
   <remap from="plan_request" to="/flor/planning/upper_body/plan_request" />
   <remap from="plan_joint_request" to="/flor/planning/upper_body/plan_joint_request" />
+  <remap from="plan_circular_request" to="/flor/planning/upper_body/plan_circular_request" />
+  <remap from="plan_cartesian_request" to="/flor/planning/upper_body/plan_cartesian_request" />
   <remap from="plan_status" to="flor/planning/upper_body/status" />
   
   <!--Status feedback for grasping-->
