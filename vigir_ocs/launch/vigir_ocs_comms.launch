@@ -2,8 +2,12 @@
 
 <launch>
 
+<rosparam command="load" file="$(find vigir_ocs)/launch/atlas_camera_topics.yaml" />
+<rosparam command="load" file="$(find vigir_ocs)/launch/$(env FLOR_LEFT_HAND_TYPE)_camera_topics.yaml" />
+<rosparam command="load" file="$(find vigir_ocs)/launch/$(env FLOR_RIGHT_HAND_TYPE)_camera_topics.yaml" />
+
 <!-- top-level launch file for starting the comms bridge connections -->
-<include file="$(find vigir_comms_bridge)/launch/ocs_bridge.launch" />
+<!-- include file="$(find vigir_comms_bridge)/launch/ocs_bridge.launch" / -->
 
 <!--  misc ocs nodelets used to synchronize stations -->
 <include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets.launch" />
