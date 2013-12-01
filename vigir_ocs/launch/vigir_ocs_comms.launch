@@ -1,14 +1,18 @@
 <?xml version="1.0"?>
 
 <launch>
-  
-<include file="$(find vigir_comms_bridge)/launch/cloudsim_ocs.launch" />
 
+<!-- top-level launch file for starting the comms bridge connections -->
+<include file="$(find vigir_comms_bridge)/launch/ocs_bridge.launch" />
+
+<!--  misc ocs nodelets used to synchronize stations -->
 <include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets.launch" />
 
 <include file="$(find vigir_ocs)/launch/vigir_status_ui.launch" />
 
 <include file="$(find vigir_onboard)/launch/vigir_status_relay.launch" />
+
+<node name="ocs_supervisor"         pkg="vigir_ocs_supervisor"    type="supervisor"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
 <!-- plan to start ocs logging on frodo -->
 <!-- include file="$(find vigir_ocs)/launch/ocs_logging.launch" / -->

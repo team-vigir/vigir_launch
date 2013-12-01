@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Multisense, SA, and rear camera interfaces -->
+  <include file="$(find flor_atlas_bringup)/launch/camera_sensors.launch" />
+
+  <!-- Onboard software -->
+  <include file="$(find vigir_onboard)/launch/perception.launch" />
+
+  <!-- Comms bridge -->
+  <include file="$(find vigir_comms_bridge)/launch/field_bridge_legolas.launch" />
+
+</launch>
+

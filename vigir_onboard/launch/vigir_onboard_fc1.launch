@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-
-<launch>
-
-<!-- This launches the main controller node for simulation  -->
-<include file="$(find vigir_onboard)/launch/vigir_onboard_sim.launch" />
-
-</launch>
-
