@@ -8,7 +8,7 @@
 	<rosparam command="load" file="$(find vigir_ocs)/launch/$(env FLOR_RIGHT_HAND_TYPE)_camera_topics.yaml" />
 
 	<!--<node name="vigir_ocs_image_nodelet"       pkg="vigir_ocs_image_nodelet"       type="image_nodelet"       respawn="false"/>-->
-    <node name="vigir_ocs_main_camera_view"    pkg="vigir_ocs_main_camera_view"    type="main_camera_view"    respawn="false"  output="screen"/>
+    <node name="vigir_ocs_main_camera_view_gandalf"    pkg="vigir_ocs_main_camera_view"    type="main_camera_view"    respawn="false"  output="screen" launch-prefix="xterm -e gdb -ex r"/>
     <!--<node name="vigir_ocs_image_video_manager" pkg="vigir_ocs_image_video_manager" type="image_video_manager" respawn="false"  output="screen"/> -->
 
 </launch>
