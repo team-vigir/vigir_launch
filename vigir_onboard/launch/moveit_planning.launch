@@ -13,6 +13,7 @@
   <remap from="l_arm_trajectory" to="/flor/l_arm_controller/trajectory" />
   <remap from="r_arm_trajectory" to="/flor/r_arm_controller/trajectory" />
   <remap from="torso_trajectory" to="/flor/torso_controller/trajectory" />
+  <remap from="neck_trajectory" to="/flor/neck_controller/trajectory" />
   
   <!--Incoming requests-->
   <remap from="plan_request" to="/flor/planning/upper_body/plan_request" />
@@ -22,6 +23,12 @@
   
   <!--Execute incoming plans-->
   <remap from="execute_trajectory" to="/flor/planning/upper_body/execute_trajectory" />
+  
+  <remap from="refine_l_arm_trajectory" to="/flor/planning/l_arm/refine_trajectory" />
+  <remap from="refine_r_arm_trajectory" to="/flor/planning/r_arm/refine_trajectory" />
+  <remap from="refine_torso_trajectory" to="/flor/planning/torso/refine_trajectory" />
+  <remap from="refine_neck_trajectory" to="/flor/planning/neck/refine_trajectory" />
+  
   
   <remap from="plan_status" to="flor/planning/upper_body/status" />
   
