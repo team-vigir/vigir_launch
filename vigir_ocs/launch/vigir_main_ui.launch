@@ -1,22 +1,25 @@
 <?xml version="1.0"?>
 
 <launch>
+    <param name="l_hand_type" value="$(env FLOR_LEFT_HAND_TYPE)" />
+    <param name="r_hand_type" value="$(env FLOR_RIGHT_HAND_TYPE)" />
+
 	<node name="vigir_ocs_global_hotkey" pkg="vigir_ocs_global_hotkey" type="global_hotkey" respawn="true" />  
 
     <!-- Start the OCS -->
-    <node name="vigir_ocs_main_view"         pkg="vigir_ocs_main_view"         type="main_view"             respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_main_view"            pkg="vigir_ocs_main_view"            type="main_view"                respawn="true"/> <!--  output="screen" launch-prefix="xterm -e gdb -ex r" / -->
     <node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"                 respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_main_camera_view" pkg="vigir_ocs_main_camera_view" type="main_camera_view"     respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_main_camera_view"     pkg="vigir_ocs_main_camera_view"     type="main_camera_view"         respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
 
-    <node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"         type="control_mode"             respawn="true"      />
-    <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"        type="joint_control"            respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_glance_hub"           pkg="vigir_ocs_glance_hub"           type="glance_hub"				 respawn="true"      /> 
-    <node name="flor_bounding_box_widget"       pkg="flor_bounding_box_widget"       type="flor_bounding_box_widget" respawn="true"  />     
-    <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget" type="ghost_control"            respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit"	 type="joint_limit"           	 respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"         type="control_mode"             respawn="true"/>
+    <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"        type="joint_control"            respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_glance_hub"           pkg="vigir_ocs_glance_hub"           type="glance_hub"			   respawn="true"/> 
+    <node name="flor_bounding_box_widget"       pkg="flor_bounding_box_widget"       type="flor_bounding_box_widget" respawn="true"/>     
+    <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget" type="ghost_control"            respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit"	  type="joint_limit"           	   respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     <!--<node name="vigir_ocs_motion_selector"      pkg="vigir_ocs_motion_selector" 	type="motion_selector"       respawn="true"      /> --> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <!--<node name="vigir_rqt_step_interface"       pkg="vigir_rqt_step_interface" 	type="step_interface"       respawn="true"      /> --><!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_rqt_bdi_pelvis_pose"      pkg="vigir_rqt_bdi_pelvis_pose" 	type="pelvis_pose"       respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_step_interface"       pkg="vigir_rqt_step_interface" 	  type="step_interface"           respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_bdi_pelvis_pose"      pkg="vigir_rqt_bdi_pelvis_pose"      type="pelvis_pose"              respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     
     <!--<node name="rqt_gui"                        pkg="rqt_gui"                  	type="rqt_gui"       respawn="true"      /> --> <!--  output="screen" launch-prefix="xterm -e" / -->
        
