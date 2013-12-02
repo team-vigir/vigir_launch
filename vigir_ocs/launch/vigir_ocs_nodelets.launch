@@ -15,5 +15,9 @@
 
     <!--Starts the ocs model node and loads URDF and SRDF to parameters server-->
     <include file="$(find flor_moveit_launch)/launch/ocs_model.launch" />
+  
+    <!--Below allows using inverse reachability and generating simple cartesian plans on OCS-->
+    <node pkg="flor_inv_reach_manager" type="inv_reach_manager_node" name="inv_reach_manager_node" output="screen"/>
+    <include file="$(find simox_inv_reach_ros)/launch/vigir_onboard.launch" />
     
 </launch>
