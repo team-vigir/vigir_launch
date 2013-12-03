@@ -10,7 +10,7 @@
     </node>
     
     <!-- Robot descriptions for the ghost data -->
-    <param name="left_hand_robot_description" command="$(find xacro)/xacro.py '$(find flor_irobot_hands_tools)/urdf/irobot_hand_left.urdf.xacro'" />
+    <param name="left_hand_robot_description" command="$(find xacro)/xacro.py '$(find irobot_hand_tools)/urdf/irobot_hand_left.urdf.xacro" />
     
     <arg name="left_hand_robot_model_semantic" default="$(find flor_irobot_hands_tools)/urdf/irobot_hand_left.srdf"/>
     <param name="left_hand_robot_description_semantic" textfile="$(arg left_hand_robot_model_semantic)" />    
