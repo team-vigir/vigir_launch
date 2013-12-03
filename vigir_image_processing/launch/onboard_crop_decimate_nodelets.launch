@@ -54,7 +54,7 @@
   <!-- RECTIFIED -->
   <!--Add nodelet intended for full image decimation-->
   <node pkg="nodelet" type="nodelet" name="rrsa_image_full_decimate" respawn="true"
-        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
+        args="load vigir_crop_decimate_requester_nodelet/CropDecimateRequesterNodelet crop_decimate_requester_nodelet_manager" >
     <remap from="camera" to="sa/right/equirectangular" />
     <remap from="camera_out" to="rrsa_image_full" />
     <param name="max_video_framerate" value="0" />
@@ -62,7 +62,7 @@
   </node>
   <!--Add nodelet intended for region of interest image crop/decimation-->
   <node pkg="nodelet" type="nodelet" name="rrsa_image_crop_decimate" respawn="true"
-        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
+        args="load vigir_crop_decimate_requester_nodelet/CropDecimateRequesterNodelet crop_decimate_requester_nodelet_manager">
     <remap from="camera" to="sa/right/equirectangular" />
     <remap from="camera_out" to="rrsa_image_cropped" />
     <param name="max_video_framerate" value="0" />
@@ -88,7 +88,7 @@
   <!-- RECTIFIED -->
   <!--Add nodelet intended for full image decimation-->
   <node pkg="nodelet" type="nodelet" name="lrsa_image_full_decimate" respawn="true"
-        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
+        args="load vigir_crop_decimate_requester_nodelet/CropDecimateRequesterNodelet crop_decimate_requester_nodelet_manager" >
     <remap from="camera" to="sa/left/equirectangular" />
     <remap from="camera_out" to="lrsa_image_full" />
     <param name="max_video_framerate" value="0" />
@@ -96,7 +96,7 @@
   </node>
   <!--Add nodelet intended for region of interest image crop/decimation-->
   <node pkg="nodelet" type="nodelet" name="lrsa_image_crop_decimate" respawn="true"
-        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
+        args="load vigir_crop_decimate_requester_nodelet/CropDecimateRequesterNodelet crop_decimate_requester_nodelet_manager">
     <remap from="camera" to="sa/left/equirectanglar" />
     <remap from="camera_out" to="lrsa_image_cropped" />
     <param name="max_video_framerate" value="0" />
@@ -109,7 +109,7 @@
     <remap from="camera" to="sa/panorama" />
     <remap from="camera_out" to="psa_image_full" />
     <param name="max_video_framerate" value="0" />
-    <param name="cam_request_topic" value="request"/>
+    <param name="cam_request_topic" value="request"/>    
   </node>
 
   <!--Left hand-LEFT CAMERA-->
