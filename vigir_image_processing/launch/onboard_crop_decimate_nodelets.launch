@@ -4,7 +4,7 @@
   
   <!--Start nodelet manager that will contain all crop_decimate nodelets-->
   <node pkg="nodelet" type="nodelet" name="crop_decimate_nodelet_manager"  args="manager" />
-  <node pkg="nodelet" type="nodelet" name="crop_decimate_requester_nodelet_manager"  args="manager"/>
+  <node pkg="nodelet" type="nodelet" name="crop_decimate_requester_nodelet_manager"  args="manager" />
 
   <!--Head-LEFT CAMERA-->
   <!--Add nodelet intended for full image decimation-->
@@ -96,8 +96,8 @@
   </node>
   <!--Add nodelet intended for region of interest image crop/decimation-->
   <node pkg="nodelet" type="nodelet" name="lrsa_image_crop_decimate" respawn="true"
-        args="load vigir_crop_decimate_requester_nodelet/CropDecimateRequesterNodelet crop_decimate_requester_nodelet_manager">
-    <remap from="camera" to="sa/left/equirectanglar" />
+        args="load vigir_crop_decimate_requester_nodelet/CropDecimateRequesterNodelet crop_decimate_requester_nodelet_manager" >
+    <remap from="camera" to="sa/left/equirectangular" />
     <remap from="camera_out" to="lrsa_image_cropped" />
     <param name="max_video_framerate" value="0" />
     <param name="cam_request_topic" value="request"/>
@@ -108,6 +108,14 @@
         args="load vigir_crop_decimate_requester_nodelet/CropDecimateRequesterNodelet crop_decimate_requester_nodelet_manager" >
     <remap from="camera" to="sa/panorama" />
     <remap from="camera_out" to="psa_image_full" />
+    <param name="max_video_framerate" value="0" />
+    <param name="cam_request_topic" value="request"/>    
+  </node>
+  
+  <node pkg="nodelet" type="nodelet" name="psa_image_crop_decimate" respawn="true"
+        args="load vigir_crop_decimate_requester_nodelet/CropDecimateRequesterNodelet crop_decimate_requester_nodelet_manager" >
+    <remap from="camera" to="sa/panorama" />
+    <remap from="camera_out" to="psa_image_cropped" />
     <param name="max_video_framerate" value="0" />
     <param name="cam_request_topic" value="request"/>    
   </node>
