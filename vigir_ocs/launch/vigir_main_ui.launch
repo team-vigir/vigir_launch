@@ -8,13 +8,13 @@
 
     <!-- Start the OCS -->
     <node name="vigir_ocs_main_view"            pkg="vigir_ocs_main_view"            type="main_view"                respawn="true"> <!--  output="screen" launch-prefix="xterm -e gdb -ex r" / -->
-      <remap from="/flor/worldmodel/ocs/cloud_result" to="/flor/worldmodel/ocs/dist_query_pointcloud_result" /> 
+      <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> 
     </node>
     <node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"                 respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
-      <remap from="/flor/worldmodel/ocs/cloud_result" to="/flor/worldmodel/ocs/dist_query_pointcloud_result" /> 
+      <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> 
     </node>
     <node name="vigir_ocs_main_camera_view"     pkg="vigir_ocs_main_camera_view"     type="main_camera_view"         respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
-      <remap from="/flor/worldmodel/ocs/cloud_result" to="/flor/worldmodel/ocs/dist_query_pointcloud_result" /> 
+      <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> 
     </node>
 
     <node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"         type="control_mode"             respawn="true"/>
