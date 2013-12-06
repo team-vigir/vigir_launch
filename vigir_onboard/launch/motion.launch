@@ -7,6 +7,9 @@
 
 <include file="$(find vigir_onboard)/launch/moveit_planning.launch" />
 
+<!-- Start footstep planner -->
+<include file="$(find flor_footstep_planner)/launch/flor_footstep_planner_drc_default.launch"/>
+
 <!--  Start the behavior engine -->
 <include file="$(find florbe_onboard)/launch/behavior_onboard.launch" />
 
