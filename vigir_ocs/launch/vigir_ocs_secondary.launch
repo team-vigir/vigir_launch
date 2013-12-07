@@ -2,6 +2,24 @@
 
 <launch>
 <env name="ROS_NAMESPACE" value="secondary_ocs" />
-<include file="$(find vigir_ocs)/launch/vigir_ocs.launch" />
+
+<!-- Load camera configuration for the UI nodes and nodelets -->
+<rosparam command="load" file="$(find vigir_ocs)/launch/atlas_camera_topics.yaml" />
+<rosparam command="load" file="$(find vigir_ocs)/launch/$(env FLOR_LEFT_HAND_TYPE)_camera_topics.yaml" />
+<rosparam command="load" file="$(find vigir_ocs)/launch/$(env FLOR_RIGHT_HAND_TYPE)_camera_topics.yaml" />
+
+<param name="l_hand_type" value="$(env FLOR_LEFT_HAND_TYPE)" />
+<param name="r_hand_type" value="$(env FLOR_RIGHT_HAND_TYPE)" />
+
+<node name="vigir_ocs_main_3d_view"         pkg="vigir_ocs_main_3d_view"         type="main_3d_view"             respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+<node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"                 respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+
+<node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"        type="joint_control"            respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+<node name="vigir_ocs_main_camera_view"     pkg="vigir_ocs_main_camera_view"     type="main_camera_view"         respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
+<remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> 
+</node>
+
+<include file="$(find vigir_rqt_position_mode)/launch/hand_positions.launch" />
+
 
 </launch>

@@ -11,8 +11,5 @@
 
   <include file="$(find vigir_onboard)/launch/motion.launch" />
 
-  <!-- Start the default vrc footstep planner setup -->
-  <include file="$(find flor_footstep_planner)/launch/flor_footstep_planner_drc_default.launch" />
-
 </launch>
 
