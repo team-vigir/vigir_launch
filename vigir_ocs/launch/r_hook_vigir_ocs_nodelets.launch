@@ -1,5 +1,21 @@
 <?xml version="1.0"?>
 
 <launch>  
+   
+    <node pkg="message_to_tf" type="message_to_tf" name="ghost_right_hand_state_to_tf" output="screen" respawn="true">
+      <param name="pose_topic" value="/ghost_right_hand_pose" />
+      <param name="footprint_frame_id" value="/ghost_right_hand_footprint" />
+      <param name="stabilized_frame_id" value="/ghost_right_hand_stabilized" />
+      <param name="child_frame_id" value="/right_hand_model/base" />    
+    </node>
+    
+    <!-- Robot descriptions for the ghost data 
+    <arg name="right_hand_robot_model" command="rosrun xacro xacro.py $(find flor_robot_description)/hands/l_hook.urdf.xacro"/>
+    <param name="right_hand_robot_description" textfile="$(arg right_hand_robot_model)" />
+    -->
+    <param name="right_hand_robot_description" command="rosrun xacro xacro.py $(find flor_hook_hands_tools)/urdf/hook_hand_right.urdf.xacro" />
+    
+    <arg name="right_hand_robot_model_semantic" default="$(find flor_hook_hands_tools)/urdf/hook_hand_right.srdf"/>
+    <param name="right_hand_robot_description_semantic" textfile="$(arg right_hand_robot_model_semantic)" />           
     
 </launch>
