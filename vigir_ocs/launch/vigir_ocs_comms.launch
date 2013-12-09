@@ -18,7 +18,7 @@
 
 <include file="$(find vigir_onboard)/launch/vigir_status_relay.launch" />
 
-<node name="ocs_supervisor"         pkg="vigir_ocs_supervisor"    type="supervisor"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+<node name="comms_supervisor"         pkg="vigir_ocs_supervisor"    type="supervisor"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
 <!-- plan to start ocs logging on frodo -->
 <!-- include file="$(find vigir_ocs)/launch/ocs_logging.launch" / -->
