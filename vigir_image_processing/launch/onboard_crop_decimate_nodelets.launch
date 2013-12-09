@@ -10,14 +10,16 @@
   <!--Add nodelet intended for full image decimation-->
   <node pkg="nodelet" type="nodelet" name="l_image_full_decimate" respawn="true"
         args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
-    <remap from="camera" to="multisense_sl/camera/left/" />
+    <remap from="camera" to="multisense_sl/left/" />
     <remap from="camera_out" to="l_image_full" />
+    <remap from="image_raw" to="image_color_rect" />
   </node>
   <!--Add nodelet intended for region of interest image crop/decimation-->
   <node pkg="nodelet" type="nodelet" name="l_image_crop_decimate" respawn="true"
         args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
-    <remap from="camera" to="multisense_sl/camera/left/" />
+    <remap from="camera" to="multisense_sl/left/" />
     <remap from="camera_out" to="l_image_cropped" />
+    <remap from="image_raw" to="image_color_rect" />
   </node>
 
   <!--Head-RIGHT CAMERA-->
