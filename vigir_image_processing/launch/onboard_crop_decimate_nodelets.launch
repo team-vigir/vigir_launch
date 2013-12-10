@@ -3,8 +3,8 @@
 <launch>
   
   <!--Start nodelet manager that will contain all crop_decimate nodelets-->
-  <node pkg="nodelet" type="nodelet" name="crop_decimate_nodelet_manager"  args="manager" />
-  <node pkg="nodelet" type="nodelet" name="crop_decimate_requester_nodelet_manager"  args="manager" />
+  <node pkg="nodelet" type="nodelet" name="crop_decimate_nodelet_manager"  args="manager" respawn="true" />
+  <node pkg="nodelet" type="nodelet" name="crop_decimate_requester_nodelet_manager"  args="manager" respawn="true"/>
 
   <!--Head-LEFT CAMERA-->
   <!--Add nodelet intended for full image decimation-->

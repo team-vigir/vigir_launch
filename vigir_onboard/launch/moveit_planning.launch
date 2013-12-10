@@ -7,7 +7,7 @@
 <!-- Load robot specific configuration -->
 <include file="$(find flor_moveit_launch)/launch/onboard_planner.launch"/>
 
-<node name="pose_to_plan_node" pkg="flor_pose_to_plan_node" type="pose_to_plan_node" > <!-- output="screen" -->
+<node name="pose_to_plan_node" pkg="flor_pose_to_plan_node" type="pose_to_plan_node" respawn="true" > <!-- output="screen" -->
   
   <!--Trajectory command topics-->
   <remap from="l_arm_trajectory" to="/flor/l_arm_controller/trajectory" />
