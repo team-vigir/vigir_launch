@@ -3,8 +3,8 @@
 <launch>
 
     <node name="sandia_left_image_rotate_ocs" pkg="image_rotate" type="image_rotate" respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
-      <remap from="image" to="/rhl_image_full/image_raw" />
-      <remap from="rotated/image" to="/rhl_image_full/image_raw_rotated" />     
+      <remap from="image" to="/sandia_hands/r_hand/left/image_raw" />
+      <remap from="rotated/image" to="/sandia_hands/l_hand/left/image_raw_rotated" />     
     </node>
     
     <node pkg="dynamic_reconfigure" type="dynparam" name="dynparam_sandia_image_rotate_loader" output="screen" args="load sandia_left_image_rotate_ocs $(find vigir_image_rotate_ocs)/cfg/sandia_left_image_rotate_ocs.yaml" />
