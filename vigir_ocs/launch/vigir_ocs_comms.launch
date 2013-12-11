@@ -2,6 +2,7 @@
 
 <launch>
 
+<!-- Load camera configuration for the UI nodes and nodelets -->
 <rosparam command="load" file="$(find vigir_ocs)/launch/atlas_camera_topics.yaml" />
 <rosparam command="load" file="$(find vigir_ocs)/launch/$(env FLOR_LEFT_HAND_TYPE)_camera_topics.yaml" />
 <rosparam command="load" file="$(find vigir_ocs)/launch/$(env FLOR_RIGHT_HAND_TYPE)_camera_topics.yaml" />
@@ -18,8 +19,9 @@
 
 <include file="$(find vigir_onboard)/launch/vigir_status_relay.launch" />
 
-<node name="comms_supervisor"         pkg="vigir_ocs_supervisor"    type="supervisor"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
-
+<node name="comms_supervisor"         pkg="vigir_ocs_supervisor"    type="supervisor"     respawn="true"  > <!--  output="screen" launch-prefix="xterm -e" / -->
+	<param name="filter_rate" value="0.5" />
+</node>
 <!-- plan to start ocs logging on frodo -->
 <!-- include file="$(find vigir_ocs)/launch/ocs_logging.launch" / -->
 
