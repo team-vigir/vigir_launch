@@ -26,14 +26,16 @@
   <!--Add nodelet intended for full image decimation-->
   <node pkg="nodelet" type="nodelet" name="r_image_full_decimate" respawn="true"
         args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
-    <remap from="camera" to="multisense_sl/camera/right/" />
+    <remap from="camera" to="multisense_sl/right/" />
     <remap from="camera_out" to="r_image_full" />
+    <param name="input_topic_in_camera_namespace" value="image_rect" />
   </node>
   <!--Add nodelet intended for region of interest image crop/decimation-->
   <node pkg="nodelet" type="nodelet" name="r_image_crop_decimate" respawn="true"
         args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
-    <remap from="camera" to="multisense_sl/camera/right/" />
+    <remap from="camera" to="multisense_sl/right/" />
     <remap from="camera_out" to="r_image_cropped" />
+    <param name="input_topic_in_camera_namespace" value="image_rect" />
   </node>
  
 
