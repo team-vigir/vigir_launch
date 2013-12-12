@@ -11,11 +11,19 @@
 <param name="l_hand_type" value="$(env FLOR_LEFT_HAND_TYPE)" />
 <param name="r_hand_type" value="$(env FLOR_RIGHT_HAND_TYPE)" />
 
-<node name="vigir_ocs_main_3d_view"         pkg="vigir_ocs_main_3d_view"         type="main_3d_view"             respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
-<node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"                 respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+<!--Add below for running memcheck, replace == with dashes (due to stupid xml uncommenting-->
+<!--launch-prefix="valgrind ==tool=memcheck  ==track-origins=yes ==leak-check=full ==log-file=/home/vigir/main_view_memcheck.log"-->
+<node name="vigir_ocs_main_view"         pkg="vigir_ocs_main_view"         type="main_view"             respawn="true" > <!--  output="screen" launch-prefix="xterm -e" / -->
+  <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> 
+</node>
+
+<node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"                 respawn="true"      > <!--  output="screen" launch-prefix="xterm -e" / -->
+  <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> 
+</node>
+
 
 <node name="vigir_ocs_main_camera_view"     pkg="vigir_ocs_main_camera_view"     type="main_camera_view"         respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
-<remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> 
+  <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> 
 </node>
 
 
