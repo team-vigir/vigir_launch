@@ -9,10 +9,10 @@
       <param name="child_frame_id" value="/right_hand_model/base" />    
     </node>
     
-    <arg name="right_hand_robot_model" default="$(find flor_irobot_hands_tools)/urdf/irobot_hand_with_extension_right.urdf"/>
+    <arg name="right_hand_robot_model" default="$(find flor_irobot_hands_tools)/urdf/irobot_hand_right.urdf"/>
     <param name="right_hand_robot_description" textfile="$(arg right_hand_robot_model)" />
     
-    <arg name="right_hand_robot_model_semantic" default="$(find flor_irobot_hands_tools)/urdf/irobot_hand_with_extension_right.srdf"/>
+    <arg name="right_hand_robot_model_semantic" default="$(find flor_irobot_hands_tools)/urdf/irobot_hand_right.srdf"/>
     <param name="right_hand_robot_description_semantic" textfile="$(arg right_hand_robot_model_semantic)" />
     
     
