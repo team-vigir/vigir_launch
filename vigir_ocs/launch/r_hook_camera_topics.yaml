@@ -2,7 +2,7 @@
    ocs:{
       camera:{
          # Camera classes will always look for atlas cameras, then left hand, then right hand
-         left_hand:{
+         right_hand:{
             # Camera classes will create four subscribers using prefixes: 
             #   <prefix>_full/image_raw, 
             #   <prefix>_full/image_request, 
