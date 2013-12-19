@@ -22,6 +22,10 @@
 <node name="comms_supervisor"         pkg="vigir_ocs_supervisor"    type="supervisor"     respawn="true"  > <!--  output="screen" launch-prefix="xterm -e" / -->
 	<param name="filter_rate" value="0.5" />
 </node>
+
+<node name="comms_bandwidth"         pkg="vigir_ocs_bandwidth_widget"    type="bandwidth_widget"     respawn="true"  > <!--  output="screen" launch-prefix="xterm -e" / -->
+</node>
+
 <!-- plan to start ocs logging on frodo -->
 <!-- include file="$(find vigir_ocs)/launch/ocs_logging.launch" / -->
 
