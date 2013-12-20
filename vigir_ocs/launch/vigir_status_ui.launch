@@ -7,7 +7,7 @@
       <param name="robotErrorFileLocation" value="$(find flor_ocs_msgs)/include/flor_ocs_msgs/messages.csv"/>
     </node>    
     <!--<node name="$(anon vigir_ocs_bandwidth_widget)"   pkg="vigir_ocs_bandwidth_widget"  type="bandwidth_widget" respawn="true"    />--> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="$(anon vigir_ocs_time_widget)"        pkg="vigir_ocs_time_widget"       type="time_widget"      respawn="true"    /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <!--node name="$(anon vigir_ocs_time_widget)"        pkg="vigir_ocs_time_widget"       type="time_widget"      respawn="true"    /--> <!--  output="screen" launch-prefix="xterm -e" / -->
     <!--<node name="$(anon vigir_rqt_system_command)"     pkg="vigir_rqt_system_command"    type="system_command"   respawn="true"    />--> <!--  output="screen" launch-prefix="xterm -e" / -->
 
 </launch>
