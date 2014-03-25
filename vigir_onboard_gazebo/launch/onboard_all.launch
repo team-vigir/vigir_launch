@@ -11,22 +11,23 @@
 
   <include file="$(find vigir_onboard)/launch/motion.launch" />
 
-  <!-- Handle change in image compression for video with current remapping handled by CommsBridge in real system -->
-  <node name="bridge_image_left_full_ocs_compressed" pkg="image_transport" type="republish" args="compressed in:=/l_image_full_still/image_raw raw out:=/l_image_full/image_raw"  respawn="true"/>
-
-  <node name="bridge_image_left_full_ocs_theora" pkg="image_transport" type="republish" args="theora in:=/l_image_full_video/image_raw raw out:=/l_image_full/image_raw"  respawn="true"/>
-
-  <node name="bridge_image_left_cropped_ocs_compressed" pkg="image_transport" type="republish" args="compressed in:=/l_image_cropped_still/image_raw raw out:=/l_image_cropped/image_raw"  respawn="true"/>
-
-  <node name="bridge_image_left_cropped_ocs_theora" pkg="image_transport" type="republish" args="theora  in:=/l_image_cropped_video/image_raw raw out:=/l_image_cropped/image_raw"  respawn="true"/>
-
-  <node name="bridge_image_right_full_ocs_compressed" pkg="image_transport" type="republish" args="compressed in:=/r_image_full_still/image_raw raw out:=/r_image_full/image_raw"  respawn="true"/>
-
-  <node name="bridge_image_right_full_ocs_theora" pkg="image_transport" type="republish" args="theora in:=/r_image_full_video/image_raw raw out:=/r_image_full/image_raw"  respawn="true"/>
-
-  <node name="bridge_image_right_cropped_ocs_compressed" pkg="image_transport" type="republish" args="compressed in:=/r_image_cropped_still/image_raw raw out:=/r_image_cropped/image_raw"  respawn="true"/>
-
-  <node name="bridge_image_right_cropped_ocs_theora" pkg="image_transport" type="republish" args="theora in:=/r_image_cropped_video/image_raw raw out:=/r_image_cropped/image_raw"  respawn="true"/>
+  <!--Relay gazebo based camera topics to those used on real robot-->
+  <node name="relay_left_image" pkg="topic_tools" type="relay" args="/multisense_sl/camera/left/image_rect_color /multisense_sl/left/image_rect_color" />
+  <node name="relay_left_camera_info" pkg="topic_tools" type="relay" args="/multisense_sl/camera/left/camera_info /multisense_sl/left/camera_info" />
+  <node name="relay_right_image" pkg="topic_tools" type="relay" args="/multisense_sl/camera/right/image_rect /multisense_sl/right/image_rect" />
+  <node name="relay_right_camera_info" pkg="topic_tools" type="relay" args="/multisense_sl/camera/right/camera_info /multisense_sl/right/camera_info" />
+  
+  <!--Relay stills to images displayed in OCS-->
+  <node name="relay_left_image_still" pkg="topic_tools" type="relay" args="/l_image_full_still/image_raw /l_image_full/image_raw"/>
+  <node name="relay_left_camera_info_still" pkg="topic_tools" type="relay" args="/l_image_full_still/camera_info /l_image_full/camera_info"/>
+  <node name="relay_right_image_still" pkg="topic_tools" type="relay" args="/r_image_full_still/image_raw /r_image_full/image_raw" />
+  <node name="relay_right_camera_info_still" pkg="topic_tools" type="relay" args="/r_image_full_still/camera_info /r_image_full/camera_info"/>
+  
+  <!--Relay video to images displayed in OCS-->
+  <node name="relay_left_image_video" pkg="topic_tools" type="relay" args="/l_image_full_video/image_raw /l_image_full/image_raw"/>
+  <node name="relay_left_camera_info_video" pkg="topic_tools" type="relay" args="/l_image_full_video/camera_info /l_image_full/camera_info"/>
+  <node name="relay_right_image_video" pkg="topic_tools" type="relay" args="/r_image_full_video/image_raw /r_image_full/image_raw" />
+  <node name="relay_right_camera_info_video" pkg="topic_tools" type="relay" args="/r_image_full_video/camera_info /r_image_full/camera_info"/>
 
 </launch>
 
