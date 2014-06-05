@@ -10,7 +10,7 @@
 
 	<node name="vigir_ocs_global_hotkey" pkg="vigir_ocs_global_hotkey" type="global_hotkey" respawn="true" />  
 
-    <!-- Start the OCS -->
+    <!-- Start the main OCS -->
     <node name="vigir_ocs_main_view"            pkg="vigir_ocs_main_view"            type="main_view"                respawn="true"> <!--  output="screen" launch-prefix="xterm -e gdb -ex r" / -->
       <!--  <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> -->
     </node>
@@ -21,9 +21,10 @@
      <!--   <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> -->
     </node>
 
-    <node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"             type="control_mode"             respawn="true"/>
+    <!-- Start the all the other windows -->
+    <node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"             type="control_mode_qt"          respawn="true"/>
     <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"            type="joint_control"            respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_glance_hub"           pkg="vigir_ocs_glance_hub"               type="glance_hub"	             respawn="true"/> 
+    <node name="vigir_ocs_glance_hub"           pkg="vigir_ocs_glance_hub"               type="glance_hub"	         respawn="true"/> 
     <node name="footstep_param_control"         pkg="vigir_rqt_footstep_param_control"   type="footstep_param_control"   respawn="true"/>     
     <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget"     type="ghost_control"            respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit"         type="joint_limit"              respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
@@ -33,24 +34,22 @@
     <node name="vigir_rqt_bdi_pelvis_pose"      pkg="vigir_rqt_bdi_pelvis_pose"          type="pelvis_pose"              respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     <!--<node name="vigir_ocs_supervisor"           pkg="vigir_ocs_supervisor"               type="supervisor"               respawn="true"/> --><!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_rqt_system_command"       pkg="vigir_rqt_system_command"           type="system_command"           respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
-   
+    <node name="vigir_ocs_template_joystick"    pkg="vigir_ocs_template_joystick"        type="template_joystick"        respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     
     <!--<node name="rqt_gui"                        pkg="rqt_gui"                  	type="rqt_gui"       respawn="true"      /> --> <!--  output="screen" launch-prefix="xterm -e" / -->
        
     <!-- go ahead and start the manager UI for this -->
-    <!--<node name="vigir_ocs_template_manager"     pkg="vigir_ocs_template_manager"     type="template_manager"     respawn="true"      /> --> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <!--<node name="vigir_ocs_waypoint_manager"     pkg="vigir_ocs_waypoint_manager"     type="waypoint_manager"     respawn="true"      /> --><!--  output="screen" launch-prefix="xterm -e" / -->
     <!--<node name="vigir_ocs_image_video_manager"     pkg="vigir_ocs_image_video_manager"     type="image_video_manager"     respawn="true"      />--> <!--  output="screen" launch-prefix="xterm -e" / -->
 
     <include file="$(find vigir_ocs)/launch/$(env FLOR_LEFT_HAND_TYPE)_grasp_widget.launch" />
     <include file="$(find vigir_ocs)/launch/$(env FLOR_RIGHT_HAND_TYPE)_grasp_widget.launch" />
 
-<!-- =============  Also run the status widgets on the main UI screen ========= -->
-<include file="$(find vigir_ocs)/launch/vigir_status_ui.launch" />
-<include file="$(find vigir_rqt_position_mode)/launch/hand_positions.launch" />
-<!--<include file="$(find vigir_rqt_position_mode)/launch/arm_camera.launch" />-->
+    <!-- =============  Also run the status widgets on the main UI screen ========= -->
+    <include file="$(find vigir_ocs)/launch/vigir_status_ui.launch" />
+    <include file="$(find vigir_rqt_position_mode)/launch/hand_positions.launch" />
+    <!--<include file="$(find vigir_rqt_position_mode)/launch/arm_camera.launch" />-->
 
-<node name="rviz" pkg="rviz" type="rviz" respawn="false" args="-d $(find vigir_ocs)/rviz/ocs_default.rviz"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="rviz" pkg="rviz" type="rviz" respawn="false" args="-d $(find vigir_ocs)/rviz/ocs_default.rviz"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
     
 
 
