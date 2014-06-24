@@ -25,12 +25,12 @@
     <!--<node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"             type="control_mode_qt"          respawn="true"/>-->
     <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"            type="joint_control_qt"         respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_glance_hub"           pkg="vigir_ocs_glance_hub"               type="glance_hub"	           respawn="true"/> 
-    <node name="footstep_param_control"         pkg="vigir_rqt_footstep_param_control"   type="footstep_param_control"   respawn="true"/>     
+    <node name="footstep_param_control"         pkg="vigir_rqt_footstep_param_control"   type="footstep_param_control_qt"   respawn="true"/>     
     <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget"     type="ghost_control"            respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit"         type="joint_limit"              respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     <!--<node name="vigir_ocs_motion_selector"      pkg="vigir_ocs_motion_selector" 	type="motion_selector"       respawn="true"      /> --> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_rqt_step_interface"       pkg="vigir_rqt_step_interface"           type="step_interface"           respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_rqt_step_basic_interface" pkg="vigir_rqt_step_basic_interface"     type="step_basic_interface"     respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_step_interface"       pkg="vigir_rqt_step_interface"           type="step_interface_qt"           respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_step_basic_interface" pkg="vigir_rqt_step_basic_interface"     type="step_basic_interface_qt"     respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_rqt_bdi_pelvis_pose"      pkg="vigir_rqt_bdi_pelvis_pose"          type="pelvis_pose_qt"           respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     <!--<node name="vigir_ocs_supervisor"           pkg="vigir_ocs_supervisor"               type="supervisor"               respawn="true"/> --><!--  output="screen" launch-prefix="xterm -e" / -->
     <!--<node name="vigir_rqt_system_command"       pkg="vigir_rqt_system_command"           type="system_command"           respawn="true"/> --> <!--  output="screen" launch-prefix="xterm -e" / -->
