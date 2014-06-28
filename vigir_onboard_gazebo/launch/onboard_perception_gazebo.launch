@@ -9,8 +9,6 @@
   <node name="relay_left_camera_info" pkg="topic_tools" type="relay" args="/multisense_sl/camera/left/camera_info /multisense_sl/left/camera_info" />
   <node name="relay_right_image" pkg="topic_tools" type="relay" args="/multisense_sl/camera/right/image_rect /multisense_sl/right/image_rect" />
   <node name="relay_right_camera_info" pkg="topic_tools" type="relay" args="/multisense_sl/camera/right/camera_info /multisense_sl/right/camera_info" />
-  
-  <include file="$(find vigir_image_processing)/launch/relay_multisense_crop_decimate_without_comms_bridge.launch" />
-  
+ 
 </launch>
 
