@@ -42,7 +42,7 @@
   <node name="relay_sa_panorama_image_video" pkg="topic_tools" type="relay" args="/psa_image_full_video/image_raw /psa_image_full/image_raw"/>
   <node name="relay_sa_panorama_camera_info_video" pkg="topic_tools" type="relay" args="/psa_image_full_video/camera_info /psa_image_full/camera_info"/>
   <node name="relay_sa_cropped_panorama_image_video" pkg="topic_tools" type="relay" args="/psa_image_cropped_video/image_raw /psa_image_cropped/image_raw"/>
-  <node name="relay_sa_cropped_left_camera_info_video" pkg="topic_tools" type="relay" args="/psa_image_cropped_video/camera_info /psa_image_cropped/camera_info"/>
+  <node name="relay_sa_cropped_panorama_camera_info_video" pkg="topic_tools" type="relay" args="/psa_image_cropped_video/camera_info /psa_image_cropped/camera_info"/>
 
 </launch>
 
