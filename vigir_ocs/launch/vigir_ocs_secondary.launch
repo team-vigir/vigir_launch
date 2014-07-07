@@ -44,9 +44,6 @@
 </node>
 
 
-<node name="vigir_rqt_footstep_param_control" pkg="vigir_rqt_footstep_param_control"     type="footstep_param_control"         respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
-</node>
-
 <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget"     type="ghost_control"            respawn="true">
   <remap from="/flor/ocs/key_event" to="/flor/ocs/secondary/key_event" />
 </node>  

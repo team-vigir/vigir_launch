@@ -3,7 +3,10 @@
 <launch>
 
   <!-- Multisense, SA, and rear camera interfaces -->
-  <include file="$(find flor_atlas_bringup)/launch/camera_sensors.launch" />
+  <!-- Commented out as Multisense moved to Sam temporarily, see #1850)
+  <!--<include file="$(find flor_atlas_bringup)/launch/camera_sensors.launch" />-->
+
+  <include file="$(find pgr_camera)/launch/atlas_sa_cameras.launch"/>
 
   <!-- Onboard software -->
   <include file="$(find vigir_onboard)/launch/perception.launch" />

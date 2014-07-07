@@ -11,5 +11,8 @@
   <!-- Comms bridge -->
   <include file="$(find vigir_comms_bridge)/launch/field_bridge_sam.launch" />
 
+  <!-- For the moment, start Multisense on Sam, see #1850 -->
+  <include file="$(find multisense_bringup)/atlas_multisense.launch"/>
+
 </launch>
 
