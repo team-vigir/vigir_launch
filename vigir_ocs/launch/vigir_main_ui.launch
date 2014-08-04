@@ -51,6 +51,13 @@
 
     <node name="rviz" pkg="rviz" type="rviz" respawn="false" args="-d $(find vigir_ocs)/rviz/ocs_default.rviz"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
     
+      <node pkg="spacenav_node" type="spacenav_node" name="$(anon spacenav_node)" output="screen">
+        <param name="zero_when_static" value="true"/>    
+        <param name="static_count_threshold" value="30"/>
+      </node>
+    
+    <node name="vigir_ocs_space_mouse"    pkg="vigir_ocs_space_mouse"        type="vigir_ocs_space_mouse"        respawn="true"/>
+    
 
 
 </launch>
