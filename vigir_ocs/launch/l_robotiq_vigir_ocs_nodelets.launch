@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <node pkg="message_to_tf" type="message_to_tf" name="ghost_left_hand_state_to_tf" output="screen" respawn="true">
+      <param name="pose_topic" value="/ghost_left_hand_pose" />
+      <param name="footprint_frame_id" value="/ghost_left_hand_footprint" />
+      <param name="stabilized_frame_id" value="/ghost_left_hand_stabilized" />
+      <param name="child_frame_id" value="/left_hand_model/base" />    
+    </node>
+    
+    <!-- Robot descriptions for the ghost data -->
+    <arg name="left_hand_robot_model" default="$(find flor_robotiq_hands_tools)/urdf/robotiq_hand_left.urdf"/>
+    <param name="left_hand_robot_description" textfile="$(arg left_hand_robot_model)" />
+    
+    <arg name="left_hand_robot_model_semantic" default="$(find flor_robotiq_hands_tools)/urdf/robotiq_hand_left.srdf"/>
+    <param name="left_hand_robot_description_semantic" textfile="$(arg left_hand_robot_model_semantic)" />    
+    
+</launch>
