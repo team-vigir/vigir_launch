@@ -11,7 +11,7 @@
 	<node name="vigir_ocs_global_hotkey" pkg="vigir_ocs_global_hotkey" type="global_hotkey" respawn="true" />  
 
     <!-- Start the main OCS -->
-    <node name="vigir_ocs_main_view"            pkg="vigir_ocs_main_view"            type="main_view"                respawn="true"> <!--  output="screen" launch-prefix="xterm -e gdb -ex r" / -->
+    <node name="vigir_ocs_main_view"            pkg="vigir_ocs_main_view"            type="main_view"                respawn="true" output="screen" launch-prefix="xterm -e"> <!--  output="screen" launch-prefix="xterm -e gdb -ex r" / -->
       <!--  <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> -->
     </node>
     <node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"                 respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
