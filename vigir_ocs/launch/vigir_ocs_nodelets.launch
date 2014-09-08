@@ -13,7 +13,7 @@
     <!--<node name="vigir_ocs_image_nodelet"     pkg="vigir_ocs_image_nodelet"     type="image_nodelet"  respawn="true"    />--> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_interactive_marker_server_nodelet"     pkg="vigir_ocs_interactive_marker_server_nodelet"     type="interactive_marker_server_nodelet"  respawn="true"    /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
-    <node name="vigir_ocs_footstep_manager"     pkg="vigir_ocs_footstep_manager"     type="footstep_manager"  respawn="true"   output="screen" launch-prefix="xterm -e gdb -ex r" />
+    <node name="vigir_ocs_footstep_manager"     pkg="vigir_ocs_footstep_manager"     type="footstep_manager"  respawn="true"/> <!--   output="screen" launch-prefix="xterm -e gdb -ex r" />-->
 
     <!--Starts the ocs model node and loads URDF and SRDF to parameters server-->
     <include file="$(find flor_moveit_launch)/launch/ocs_model.launch" />
