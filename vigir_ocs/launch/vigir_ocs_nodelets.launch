@@ -9,7 +9,7 @@
     <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
       <remap from="/template/template_match_feedback" to="/grasp_control/template_selection" />
     </node>
-    <node name="vigir_ocs_waypoint_nodelet"     pkg="vigir_ocs_waypoint_nodelet"     type="waypoint_nodelet"  respawn="true"/> <!--  output="screen" launch-prefix="xterm -e " / -->
+    <!--<node name="vigir_ocs_waypoint_nodelet"     pkg="vigir_ocs_waypoint_nodelet"     type="waypoint_nodelet"  respawn="true"/>--> <!--  output="screen" launch-prefix="xterm -e " / -->
     <!--<node name="vigir_ocs_image_nodelet"     pkg="vigir_ocs_image_nodelet"     type="image_nodelet"  respawn="true"    />--> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_interactive_marker_server_nodelet"     pkg="vigir_ocs_interactive_marker_server_nodelet"     type="interactive_marker_server_nodelet"  respawn="true"    /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
@@ -19,6 +19,11 @@
       <remap from="stitch_step_plan_action" to="/vigir/global_footstep_planner/stitch_step_plan" />
       <remap from="update_step_plan_action" to="/vigir/global_footstep_planner/update_step_plan" />
       <remap from="step_plan_request_action" to="/vigir/global_footstep_planner/step_plan_request" />
+      <remap from="/vigir/global_footstep_planner/execute_step_plan/goal"     to="/behavior_controllers/footstep_controller/execute_step_plan/goal"/>
+      <remap from="/vigir/global_footstep_planner/execute_step_plan/cancel"   to="/behavior_controllers/footstep_controller/execute_step_plan/cancel"/>
+      <remap from="/vigir/global_footstep_planner/execute_step_plan/result"   to="/behavior_controllers/footstep_controller/execute_step_plan/result"/>
+      <remap from="/vigir/global_footstep_planner/execute_step_plan/feedback" to="/behavior_controllers/footstep_controller/execute_step_plan/feedback"/>
+      <remap from="/vigir/global_footstep_planner/execute_step_plan/status"   to="/behavior_controllers/footstep_controller/execute_step_plan/status"/>       
     </node>
 
     <!--Starts the ocs model node and loads URDF and SRDF to parameters server-->
