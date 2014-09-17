@@ -25,6 +25,7 @@
       <remap from="/vigir/global_footstep_planner/execute_step_plan/result"   to="/behavior_controllers/footstep_controller/execute_step_plan/result"/>
       <remap from="/vigir/global_footstep_planner/execute_step_plan/feedback" to="/behavior_controllers/footstep_controller/execute_step_plan/feedback"/>
       <remap from="/vigir/global_footstep_planner/execute_step_plan/status"   to="/behavior_controllers/footstep_controller/execute_step_plan/status"/>-->
+      <remap from="get_all_parameter_sets" to="/vigir/global_footstep_planner/get_all_parameter_sets" />
     </node>
 
     <!--Starts the ocs model node and loads URDF and SRDF to parameters server-->
