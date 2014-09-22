@@ -8,13 +8,11 @@
   <param name="l_hand_type" value="$(env FLOR_LEFT_HAND_TYPE)" />
   <param name="r_hand_type" value="$(env FLOR_RIGHT_HAND_TYPE)" />
 
-  <node name="vigir_ocs_global_hotkey" pkg="vigir_ocs_global_hotkey" type="global_hotkey" respawn="true" />  
+  <node name="$(anon vigir_ocs_global_hotkey)" pkg="vigir_ocs_global_hotkey" type="global_hotkey" respawn="true" />  
 
   <!-- Start the minimal OCS -->
-  <node name="vigir_ocs_main_view"            pkg="vigir_ocs_main_view"                type="main_view"                   respawn="true" />
-  <node name="footstep_param_control"         pkg="vigir_rqt_footstep_param_control"   type="footstep_param_control_qt"   respawn="true" />  
-  <node name="vigir_rqt_step_interface"       pkg="vigir_rqt_step_interface"           type="step_interface_qt"           respawn="true" />  
-  <!-- =============  Also run the status widgets on the main UI screen ========= -->
-  <include file="$(find vigir_rqt_position_mode)/launch/hand_positions.launch" />
+  <node name="$(anon vigir_ocs_main_view)"            pkg="vigir_ocs_main_view"                type="main_view"                   respawn="true" />
+  <node name="$(anon footstep_param_control)"         pkg="vigir_rqt_footstep_param_control"   type="footstep_param_control_qt"   respawn="true" />  
+  <node name="$(anon vigir_rqt_step_interface)"       pkg="vigir_rqt_step_interface"           type="step_interface_qt"           respawn="true" />  
 </launch>
 
