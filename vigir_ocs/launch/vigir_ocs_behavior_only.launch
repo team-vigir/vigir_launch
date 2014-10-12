@@ -3,6 +3,6 @@
 <launch>
 
 <!-- Only launch behavior ocs nodes -->
-<include file="$(find florbe_widget)/launch/behavior_ocs.launch" />
+<include file="$(find vigir_be_widget)/launch/behavior_ocs.launch" />
 
 </launch>

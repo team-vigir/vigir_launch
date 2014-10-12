@@ -11,7 +11,7 @@
 <include file="$(find flor_footstep_planner)/launch/flor_footstep_planner_drc_default.launch"/>
 
 <!--  Start the behavior engine -->
-<include file="$(find florbe_onboard)/launch/behavior_onboard.launch" />
+<include file="$(find vigir_be_onboard)/launch/behavior_onboard.launch" />
 
 <!--  Start motion server  -->
 <node name="motion_service" pkg="flor_motion" type="motion_service" respawn="true"/>
