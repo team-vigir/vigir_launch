@@ -2,13 +2,8 @@
 
 <launch>
   
-  <!--
-  Bringup basics for providing controllable robot, tf and robot model
-  -->
-  <include file="$(find flor_atlas_bringup)/launch/robot_description.launch" />
-  <include file="$(find flor_atlas_bringup)/launch/state_publishers.launch" />
-  <include file="$(find flor_atlas_bringup)/launch/robot_controller.launch" />
-
+  <!-- invoke the newer ROS controllers version of robot controller -->
+  <include file="$(find vigir_atlas_controller)/launch/atlas_controller.launch" />
 
 </launch>
 
