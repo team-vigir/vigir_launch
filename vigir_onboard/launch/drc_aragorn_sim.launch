@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-  <!-- Launches the simulation interface on Aragorn -->
-
-  <include file="$(find flor_robot_controller)/launch/flor_sim_controller.launch">
-      <arg name="launch_prefix" value=""/>
-  </include>
-
-</launch>
