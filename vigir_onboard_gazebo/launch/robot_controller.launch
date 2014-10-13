@@ -3,7 +3,7 @@
 <launch>
 
   <!-- Launch robot controller -->
-  <include file="$(find flor_robot_controller)/launch/flor_sim_controller.launch">
+  <include file="$(find vigir_atlas_controller)/launch/start_simulation_default.launch">
     <arg name="launch_prefix" value=" "/>
   </include>
 

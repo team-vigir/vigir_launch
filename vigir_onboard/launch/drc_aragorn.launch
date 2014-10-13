@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
- <!-- Launches the Atlas robot controller with description server and nothing else on controller computer -->
-  <include file="$(find vigir_onboard)/launch/vigir_onboard_atlas.launch" />
-
-</launch>
