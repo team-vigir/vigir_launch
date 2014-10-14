@@ -1,9 +1,13 @@
 <?xml version="1.0"?>
 
 <launch>
+  <!-- Set laser_scan_topic to the robot topic as default -->
+  <arg name="lidar_topic" default="/multisense_sl/laser/scan" />
 
   <!-- This launches the components affiliated with lidar processing and lidar-based mapping -->
-  <include file="$(find vigir_lidar_processing)/launch/lidar_processing.launch"/>
+  <include file="$(find vigir_lidar_processing)/launch/lidar_processing.launch">
+    <arg name="lidar_topic" value="$(arg lidar_topic)" />
+  </include>
 
   <!-- This launches the image crop/decimate nodelets -->
   <include file="$(find vigir_image_processing)/launch/onboard_crop_decimate_nodelets.launch" />

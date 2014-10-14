@@ -2,7 +2,9 @@
 
 <launch>
 
-  <include file="$(find vigir_onboard)/launch/perception.launch" />
+  <include file="$(find vigir_onboard)/launch/perception.launch">
+    <arg name="lidar_topic" value="/laser/scan" />
+  </include>
 
   <!--Relay gazebo based camera topics to those used on real robot-->
   <node name="relay_left_image" pkg="topic_tools" type="relay" args="/multisense_sl/left/image_raw /multisense_sl/left/image_rect_color" />
