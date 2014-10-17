@@ -14,7 +14,7 @@
     <node name="vigir_ocs_interactive_marker_server_nodelet"     pkg="vigir_ocs_interactive_marker_server_nodelet"     type="interactive_marker_server_nodelet"  respawn="true"    /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
     <node name="vigir_ocs_footstep_manager"     pkg="vigir_ocs_footstep_manager"     type="footstep_manager"  respawn="true"> <!--   output="screen" launch-prefix="xterm -e gdb -ex r" />-->
-      <remap from="update_feet_request" to="/vigir/global_footstep_planner/update_feet" />
+      <remap from="update_feet"         to="/vigir/global_footstep_planner/update_feet" />
       <remap from="step_plan_request"   to="/vigir/global_footstep_planner/step_plan_request" />
       <remap from="edit_step"           to="/vigir/global_footstep_planner/edit_step" />
       <remap from="stitch_step_plan"    to="/vigir/global_footstep_planner/stitch_step_plan" />
