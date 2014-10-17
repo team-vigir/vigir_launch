@@ -14,17 +14,13 @@
     <node name="vigir_ocs_interactive_marker_server_nodelet"     pkg="vigir_ocs_interactive_marker_server_nodelet"     type="interactive_marker_server_nodelet"  respawn="true"    /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
     <node name="vigir_ocs_footstep_manager"     pkg="vigir_ocs_footstep_manager"     type="footstep_manager"  respawn="true"> <!--   output="screen" launch-prefix="xterm -e gdb -ex r" />-->
-      <remap from="step_plan_request" to="/vigir/global_footstep_planner/step_plan_request" />
-      <remap from="edit_step"         to="/vigir/global_footstep_planner/edit_step" />
-      <remap from="stitch_step_plan"  to="/vigir/global_footstep_planner/stitch_step_plan" />
-      <remap from="update_step_plan"  to="/vigir/global_footstep_planner/update_step_plan" />
-      <remap from="step_plan_request" to="/vigir/global_footstep_planner/step_plan_request" />
-      <remap from="execute_step_plan" to="/behavior_controllers/footstep_controller/execute_step_plan" />
-      <!--<remap from="/vigir/global_footstep_planner/execute_step_plan/goal"     to="/behavior_controllers/footstep_controller/execute_step_plan/goal"/>
-      <remap from="/vigir/global_footstep_planner/execute_step_plan/cancel"   to="/behavior_controllers/footstep_controller/execute_step_plan/cancel"/>
-      <remap from="/vigir/global_footstep_planner/execute_step_plan/result"   to="/behavior_controllers/footstep_controller/execute_step_plan/result"/>
-      <remap from="/vigir/global_footstep_planner/execute_step_plan/feedback" to="/behavior_controllers/footstep_controller/execute_step_plan/feedback"/>
-      <remap from="/vigir/global_footstep_planner/execute_step_plan/status"   to="/behavior_controllers/footstep_controller/execute_step_plan/status"/>-->
+      <remap from="update_feet_request" to="/vigir/global_footstep_planner/update_feet" />
+      <remap from="step_plan_request"   to="/vigir/global_footstep_planner/step_plan_request" />
+      <remap from="edit_step"           to="/vigir/global_footstep_planner/edit_step" />
+      <remap from="stitch_step_plan"    to="/vigir/global_footstep_planner/stitch_step_plan" />
+      <remap from="update_step_plan"    to="/vigir/global_footstep_planner/update_step_plan" />
+      <remap from="step_plan_request"   to="/vigir/global_footstep_planner/step_plan_request" />
+      <remap from="execute_step_plan"   to="/behavior_controllers/footstep_controller/execute_step_plan" />
       <remap from="get_all_parameter_sets" to="/vigir/global_footstep_planner/get_all_parameter_sets" />
     </node>
 
