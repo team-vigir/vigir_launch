@@ -12,7 +12,6 @@
   <depend package="vigir_state_estimation"/>
   <depend package="vigir_image_processing"/>
   <depend package="vigir_worldmodel_main"/>
-  <depend package="vigir_simple_position_ctrl_plugin"/>
   <depend package="flor_footstep_planner"/>
 
 </package>
