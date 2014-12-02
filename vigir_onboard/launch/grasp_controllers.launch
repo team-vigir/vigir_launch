@@ -3,11 +3,11 @@
 <launch>
 
 <!-- Make depend on FLOR_HAND_TYPE -->
-<rosparam file="$(find flor_grasp_controllers)/launch/$(env FLOR_LEFT_HAND_TYPE)_tf.yaml" ns="l_hand_tf"/>
-<rosparam file="$(find flor_grasp_controllers)/launch/$(env FLOR_RIGHT_HAND_TYPE)_tf.yaml" ns="r_hand_tf"/>
+<rosparam file="$(find vigir_grasp_controllers)/launch/$(env FLOR_LEFT_HAND_TYPE)_tf.yaml" ns="l_hand_tf"/>
+<rosparam file="$(find vigir_grasp_controllers)/launch/$(env FLOR_RIGHT_HAND_TYPE)_tf.yaml" ns="r_hand_tf"/>
 
-<include file="$(find flor_grasp_controllers)/launch/$(env FLOR_LEFT_HAND_TYPE)_grasp_control.launch"/>
-<include file="$(find flor_grasp_controllers)/launch/$(env FLOR_RIGHT_HAND_TYPE)_grasp_control.launch"/>
+<include file="$(find vigir_grasp_controllers)/launch/$(env FLOR_LEFT_HAND_TYPE)_grasp_control.launch"/>
+<include file="$(find vigir_grasp_controllers)/launch/$(env FLOR_RIGHT_HAND_TYPE)_grasp_control.launch"/>
 
 </launch>
 
