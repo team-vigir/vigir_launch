@@ -5,7 +5,7 @@
 <arg name="launch_prefix" default=""/>
 
 <!-- Load robot specific configuration -->
-<include file="$(find flor_moveit_launch)/launch/onboard_planner.launch"/>
+<include file="$(find vigir_atlas_moveit_config)/launch/vigir_move_group.launch"/>
 
 <node name="pose_to_plan_node" pkg="flor_pose_to_plan_node" type="pose_to_plan_node" respawn="true" > <!-- output="screen" -->
   
@@ -28,7 +28,6 @@
   <remap from="refine_r_arm_trajectory" to="/flor/planning/r_arm/refine_trajectory" />
   <remap from="refine_torso_trajectory" to="/flor/planning/torso/refine_trajectory" />
   <remap from="refine_neck_trajectory" to="/flor/planning/neck/refine_trajectory" />
-  
   
   <remap from="plan_status" to="flor/planning/upper_body/status" />
   
