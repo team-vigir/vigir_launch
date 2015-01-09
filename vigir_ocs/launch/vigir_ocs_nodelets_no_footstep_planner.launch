@@ -28,10 +28,6 @@
       <remap from="execute_step_plan"   to="/robot_controllers/footstep_controller/execute_step_plan" />
       <remap from="get_all_parameter_sets" to="$(arg footstep_planning_ns)/get_all_parameter_sets" />
     </node>
-    
-    <include file="$(find vigir_atlas_footstep_planner)/launch/atlas_footstep_planner.launch" >
-      <arg name="namespace" value="$(arg footstep_planning_ns)" />
-    </include>
 
     <!--Starts the ocs model node and loads URDF and SRDF to parameters server-->
     <include file="$(find flor_moveit_launch)/launch/ocs_model.launch" />
