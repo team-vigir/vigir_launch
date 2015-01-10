@@ -12,7 +12,7 @@
   <depend package="vigir_state_estimation"/>
   <depend package="vigir_image_processing"/>
   <depend package="vigir_worldmodel_main"/>
-  <depend package="flor_footstep_planner"/>
+  <depend package="vigir_footstep_planner"/>
 
 </package>
 
