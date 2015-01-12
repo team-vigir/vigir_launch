@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <launch>
-  <arg name="footstep_planning_ns" default="/vigir/footstep_planning" />
+  <arg name="footstep_planning_ns" default="/vigir/ocs/footstep_planning" />
 
   <!-- Load camera configuration for the UI nodes and nodelets -->
   <rosparam command="load" file="$(find vigir_ocs)/launch/atlas_camera_topics.yaml" />
