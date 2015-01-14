@@ -40,7 +40,7 @@
 </node>
 
 
-<node name="vigir_rqt_step_interface"     pkg="vigir_rqt_step_interface"     type="step_interface"         respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
+<node name="vigir_rqt_step_interface"     pkg="vigir_footstep_planning"     type="step_interface"         respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
 </node>
 
 
