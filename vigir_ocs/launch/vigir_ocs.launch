@@ -8,7 +8,8 @@
 <rosparam command="load" file="$(find vigir_ocs)/launch/$(env FLOR_RIGHT_HAND_TYPE)_camera_topics.yaml" />
 
 <include file="$(find vigir_onboard)/launch/vigir_status_relay.launch" />
-<include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets.launch" />
+<include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets.launch">
+  <arg name="footstep_planning_ns" value="/vigir/global_footstep_planner" />
+</include>
 <include file="$(find vigir_ocs)/launch/vigir_main_ui.launch" />
-
 </launch>

@@ -8,7 +8,7 @@
 <include file="$(find vigir_onboard)/launch/moveit_planning.launch" />
 
 <!-- Start footstep planner -->
-<include file="$(find vigir_atlas_footstep_planner)/launch/atlas_footstep_planner.launch"/>
+<!-- <include file="$(find vigir_atlas_footstep_planner)/launch/atlas_footstep_planner.launch"/> -->
 
 <!--  Start the behavior engine -->
 <include file="$(find vigir_be_onboard)/launch/behavior_onboard.launch" />
