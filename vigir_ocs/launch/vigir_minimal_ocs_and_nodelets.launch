@@ -1,13 +1,17 @@
 <?xml version="1.0"?>
 
 <launch>
+  <arg name="footstep_planning_ns" default="/vigir/ocs/footstep_planning" />
+
   <!-- Load camera configuration for the UI nodes and nodelets -->
   <rosparam command="load" file="$(find vigir_ocs)/launch/atlas_camera_topics.yaml" />
   <rosparam command="load" file="$(find vigir_ocs)/launch/$(env FLOR_LEFT_HAND_TYPE)_camera_topics.yaml" />
   <rosparam command="load" file="$(find vigir_ocs)/launch/$(env FLOR_RIGHT_HAND_TYPE)_camera_topics.yaml" />
 
   <include file="$(find vigir_onboard)/launch/vigir_status_relay.launch" />
-  <include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets.launch" />
+  <include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets.launch">
+    <arg name="footstep_planning_ns" value="$(arg footstep_planning_ns)" />
+  </include>
 
   <include file="$(find vigir_ocs)/launch/vigir_minimal_ocs.launch" />
   
