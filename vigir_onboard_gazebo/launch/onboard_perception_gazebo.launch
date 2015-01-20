@@ -3,7 +3,7 @@
 <launch>
 
   <include file="$(find vigir_onboard)/launch/perception.launch">
-    <arg name="lidar_topic" value="/laser/scan" />
+    <arg name="lidar_topic" value="/multisense/lidar_scan" />
   </include>
 
   <!--Relay gazebo based camera topics to those used on real robot-->

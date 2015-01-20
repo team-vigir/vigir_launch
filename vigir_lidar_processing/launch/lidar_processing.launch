@@ -7,8 +7,8 @@
   <!-- Convert laser scan to 3D point cloud in sensor frame -->
   <node pkg="flor_laserscan_to_pointcloud" type="laserscan_to_pointcloud_node" name="scan_to_ptcld" respawn="true">
     <param name="min_range" value="0.05" />
-    <param name="use_high_fidelity_projection" value="true" />
-    <param name="target_frame" value="motor" />
+    <param name="use_high_fidelity_projection" value="false" />
+    <param name="target_frame" value="head_hokuyo_frame" />
     <remap from="/scan" to="$(arg lidar_topic)" />
     <rosparam command="load" file="$(find flor_laserscan_to_pointcloud)/config/atlas_scan_filter.yaml" />
   </node>
