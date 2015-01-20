@@ -9,7 +9,7 @@
 
 <include file="$(find vigir_onboard)/launch/vigir_status_relay.launch" />
 <include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets.launch">
-  <arg name="footstep_planning_ns" value="/vigir/global_footstep_planner" />
+  <arg name="footstep_planning_ns" value="/vigir/ocs/footstep_planning" />
 </include>
 <include file="$(find vigir_ocs)/launch/vigir_main_ui.launch" />
 </launch>
