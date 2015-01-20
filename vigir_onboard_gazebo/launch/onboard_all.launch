@@ -4,7 +4,7 @@
 
   <!-- Launch robot controller -->
   <include file="$(find vigir_atlas_controller)/launch/atlas_simulation.launch">
-    <arg name="launch_prefix" value=" "/>
+    <arg name="launch_prefix" value=""/>
   </include>
 
   <include file="$(find vigir_onboard)/launch/motion.launch" />
