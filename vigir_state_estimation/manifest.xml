@@ -10,8 +10,7 @@
   <url>http://ros.org/wiki/vigir_state_estimation</url>
   <depend package="roscpp"/>
   <depend package="tf"/>
-  <depend package="message_to_tf"/>
-
+ 
 </package>
 
 
