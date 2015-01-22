@@ -19,13 +19,13 @@ Test the ghost robot standalone (only OCS)
   
   <node pkg="tf" type="static_transform_publisher" name="world_to_pelvis_tf_pub" args="0 0 0.85 0 0 0 world pelvis 100"/>
   
-  <node pkg="hector_interactive_marker_pose_server" type="interactive_marker_pose_server" name="center_interactive_marker_pose_server"  >
+  <node pkg="vigir_interactive_marker_pose_server" type="interactive_marker_pose_server" name="center_interactive_marker_pose_server"  >
     <param name="marker_name" value="center_im" />
     <param name="frame_id" value="world" />
     <remap from="pose" to="/rotation_center_pose" />
   </node>
   
-<!--  <node pkg="hector_interactive_marker_pose_server" type="interactive_marker_pose_server" name="robot_interactive_marker_pose_server"  >
+<!--  <node pkg="vigir_interactive_marker_pose_server" type="interactive_marker_pose_server" name="robot_interactive_marker_pose_server"  >
     <param name="marker_name" value="robot_im" />
     <param name="frame_id" value="world" />
     <remap from="pose" to="/robot_pose_2d" />

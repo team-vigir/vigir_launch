@@ -24,19 +24,19 @@ Test the ghost robot standalone (only OCS)
   
   <include file="$(find simox_inv_reach_ros)/launch/vigir_onboard.launch" />-->
   
-  <node pkg="hector_interactive_marker_pose_server" type="interactive_marker_pose_server" name="l_hand_target_interactive_marker_pose_server"  >
+  <node pkg="vigir_interactive_marker_pose_server" type="interactive_marker_pose_server" name="l_hand_target_interactive_marker_pose_server"  >
     <param name="marker_name" value="l_hand_target" />
     <param name="frame_id" value="/world" />
     <remap from="pose" to="/grasp_control/l_hand/planning_target_pose" />
   </node> 
   
-  <node pkg="hector_interactive_marker_pose_server" type="interactive_marker_pose_server" name="start_interactive_marker_pose_server"  >
+  <node pkg="vigir_interactive_marker_pose_server" type="interactive_marker_pose_server" name="start_interactive_marker_pose_server"  >
     <param name="marker_name" value="start_im" />
     <param name="frame_id" value="/world" />
     <remap from="pose" to="start_pose" />
   </node>    
         
-  <node pkg="hector_interactive_marker_pose_server" type="interactive_marker_pose_server" name="center_interactive_marker_pose_server"  >
+  <node pkg="vigir_interactive_marker_pose_server" type="interactive_marker_pose_server" name="center_interactive_marker_pose_server"  >
    <param name="marker_name" value="center_im" />
    <param name="frame_id" value="/world" />
    <remap from="pose" to="/flor/ocs/planning/rotation_center_pose" />
