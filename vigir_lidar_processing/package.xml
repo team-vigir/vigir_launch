@@ -1,0 +1,14 @@
+<package>
+  <name>vigir_lidar_processing</name>
+  <version>0.0.1</version>
+  <description>
+     vigir_lidar_processing
+  </description>
+  <maintainer email="conner@torcrobotics.com">David Conner</maintainer>
+  <license>BSD</license>
+  <url>http://ros.org/wiki/vigir_lidar_processing</url>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>vigir_self_filter</run_depend>
+  <run_depend>flor_laserscan_to_pointcloud</run_depend>
+</package>

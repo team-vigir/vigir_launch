@@ -1,0 +1,12 @@
+<package>
+  <name>flor_qual_task_1</name>
+  <version>0.0.1</version>
+  <description>
+     flor_qual_task_1
+  </description>
+  <maintainer email="kohlbrecher@sim.tu-darmstadt.de">Stefan Kohlbrecher</maintainer>
+  <license>BSD</license>
+  <url>http://ros.org/wiki/flor_qual_task_1</url>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

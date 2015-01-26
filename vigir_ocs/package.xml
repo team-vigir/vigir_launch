@@ -1,0 +1,13 @@
+<package>
+  <name>vigir_ocs</name>
+  <version>0.0.1</version>
+  <description>
+     vigir_ocs
+  </description>
+  <maintainer email="kohlbrecher@sim.tu-darmstadt.de">Stefan Kohlbrecher</maintainer>
+  <license>BSD</license>
+  <url>http://ros.org/wiki/vigir_ocs</url>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>geometry_msgs</run_depend>
+</package>

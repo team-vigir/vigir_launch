@@ -1,0 +1,15 @@
+<package>
+  <name>vigir_state_estimation</name>
+  <version>0.0.1</version>
+  <description>
+     vigir_state_estimation
+  </description>
+  <maintainer email="conner@torcrobotics.com">David Conner</maintainer>
+  <license>BSD</license>
+  <url>http://ros.org/wiki/vigir_state_estimation</url>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>tf</run_depend>
+</package>
