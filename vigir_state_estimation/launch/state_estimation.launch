@@ -2,6 +2,6 @@
 
 <launch>    
  
-  <node pkg="flor_bdi_to_tf_utils" type="bdi_to_tf_node" name="bdi_to_tf_node" output="screen"  respawn="true"/>   
+  <node pkg="vigir_bdi_to_tf_utils" type="bdi_to_tf_node" name="bdi_to_tf_node" output="screen"  respawn="true"/>   
     
 </launch>
