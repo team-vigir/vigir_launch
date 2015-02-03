@@ -8,7 +8,7 @@
   
   
 <!--  <include file="$(find vigir_image_processing)/launch/crop_decimate_common_setup.launch">
-    <arg name="incoming_base_name" value="multisense_sl/left/"/>
+    <arg name="incoming_base_name" value="multisense/left/"/>
     <arg name="outgoing_base_name" value="l_image_full"/>
     <arg name="input_topic_in_camera_namespace" value="image_rect_color"/>
   </include>-->
@@ -17,7 +17,7 @@
   <!--Add nodelet intended for full image decimation-->
   <node pkg="nodelet" type="nodelet" name="l_image_full_decimate" respawn="true"
         args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
-    <remap from="camera" to="multisense_sl/left/" />
+    <remap from="camera" to="multisense/camera/left/" />
     <remap from="camera_out" to="l_image_full" />
     <remap from="camera_out_still" to="l_image_full_still" />
     <remap from="camera_out_video" to="l_image_full_video" />
@@ -26,7 +26,7 @@
   <!--Add nodelet intended for region of interest image crop/decimation-->
   <node pkg="nodelet" type="nodelet" name="l_image_crop_decimate" respawn="true"
         args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
-    <remap from="camera" to="multisense_sl/left/" />
+    <remap from="camera" to="multisense/camera/left/" />
     <remap from="camera_out" to="l_image_cropped" />
     <remap from="camera_out_still" to="l_image_cropped_still" />
     <remap from="camera_out_video" to="l_image_cropped_video" />
@@ -37,7 +37,7 @@
   <!--Add nodelet intended for full image decimation-->
   <node pkg="nodelet" type="nodelet" name="r_image_full_decimate" respawn="true"
         args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
-    <remap from="camera" to="multisense_sl/right/" />
+    <remap from="camera" to="multisense/camera/right/" />
     <remap from="camera_out" to="r_image_full" />
     <remap from="camera_out_still" to="r_image_full_still" />
     <remap from="camera_out_video" to="r_image_full_video" />
@@ -46,7 +46,7 @@
   <!--Add nodelet intended for region of interest image crop/decimation-->
   <node pkg="nodelet" type="nodelet" name="r_image_crop_decimate" respawn="true"
         args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
-    <remap from="camera" to="multisense_sl/right/" />
+    <remap from="camera" to="multisense/camera/right/" />
     <remap from="camera_out" to="r_image_cropped" />
     <remap from="camera_out_still" to="r_image_cropped_still" />
     <remap from="camera_out_video" to="r_image_cropped_video" />
