@@ -2,12 +2,26 @@
 
 <launch>
 
-<!-- Make depend on FLOR_HAND_TYPE -->
-<rosparam file="$(find vigir_grasp_controllers_old)/launch/$(env FLOR_LEFT_HAND_TYPE)_tf.yaml" ns="l_hand_tf"/>
-<rosparam file="$(find vigir_grasp_controllers_old)/launch/$(env FLOR_RIGHT_HAND_TYPE)_tf.yaml" ns="r_hand_tf"/>
+<rosparam file = "$(find vigir_template_library)/object_templates/object_templates.xml"
+          ns   = "ot_library"/>
 
-<include file="$(find vigir_grasp_controllers_old)/launch/$(env FLOR_LEFT_HAND_TYPE)_grasp_control.launch"/>
-<include file="$(find vigir_grasp_controllers_old)/launch/$(env FLOR_RIGHT_HAND_TYPE)_grasp_control.launch"/>
+<rosparam file = "$(find vigir_template_library)/robot_poses/$(env FLOR_ROBOT_TYPE)_stand_poses.xml"
+          ns   = "stand_poses_library"/>
+
+<rosparam file = "$(find vigir_template_library)/grasp_templates/$(env FLOR_RIGHT_HAND_TYPE)_grasp_library.xml"
+          ns   = "r_hand_library"/>
+
+<rosparam file = "$(find vigir_template_library)/grasp_templates/$(env FLOR_LEFT_HAND_TYPE)_grasp_library.xml"
+          ns   = "l_hand_library"/>
+
+<rosparam file = "$(find vigir_grasp_controllers_old)/launch/$(env FLOR_LEFT_HAND_TYPE)_tf.yaml"
+          ns   = "l_hand_tf"/>
+
+<rosparam file = "$(find vigir_grasp_controllers_old)/launch/$(env FLOR_RIGHT_HAND_TYPE)_tf.yaml"
+          ns   = "r_hand_tf"/>
+
+<include  file = "$(find vigir_grasp_controllers_old)/launch/$(env FLOR_LEFT_HAND_TYPE)_grasp_control.launch" />
+<include  file = "$(find vigir_grasp_controllers_old)/launch/$(env FLOR_RIGHT_HAND_TYPE)_grasp_control.launch"/>
 
 </launch>
 

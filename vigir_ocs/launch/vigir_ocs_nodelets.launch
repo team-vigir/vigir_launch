@@ -6,19 +6,8 @@
     <include  file="$(find vigir_ocs)/launch/$(env FLOR_LEFT_HAND_TYPE)_vigir_ocs_nodelets.launch" />
     <include  file="$(find vigir_ocs)/launch/$(env FLOR_RIGHT_HAND_TYPE)_vigir_ocs_nodelets.launch" />
 
-    <rosparam file    = "$(find vigir_template_library)/grasp_templates/$(env FLOR_RIGHT_HAND_TYPE)_grasp_library.xml"
-              command = "load"
-              ns      = "r_hand_library"/>
-
-    <rosparam file    = "$(find vigir_template_library)/grasp_templates/$(env FLOR_LEFT_HAND_TYPE)_grasp_library.xml"
-              command = "load"
-              ns      = "l_hand_library"/>
-    
-
-    <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" respawn="true"> <!--   output="screen"launch-prefix="xterm -e" / -->
-        <param name="ot_filename"       value="$(find vigir_template_library)/object_templates/object_templates.csv" />
-	<param name="stand_filename"    value="$(find vigir_template_library)/robot_poses/$(env FLOR_ROBOT_TYPE)_stand_poses.csv" />
-	<remap from="/template/template_match_feedback" to="/grasp_control/template_selection" />
+    <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" respawn="true"   output="screen"> <!--launch-prefix="xterm -e" / -->
+        <remap from="/template/template_match_feedback" to="/grasp_control/template_selection" />
     </node>
     <!--<node name="vigir_ocs_waypoint_nodelet"     pkg="vigir_ocs_waypoint_nodelet"     type="waypoint_nodelet"  respawn="true"/>--> <!--  output="screen" launch-prefix="xterm -e " / -->
     <!--<node name="vigir_ocs_image_nodelet"     pkg="vigir_ocs_image_nodelet"     type="image_nodelet"  respawn="true"    />--> <!--  output="screen" launch-prefix="xterm -e" / -->
