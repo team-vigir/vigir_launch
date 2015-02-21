@@ -6,7 +6,7 @@
     <include  file="$(find vigir_ocs)/launch/$(env FLOR_LEFT_HAND_TYPE)_vigir_ocs_nodelets.launch" />
     <include  file="$(find vigir_ocs)/launch/$(env FLOR_RIGHT_HAND_TYPE)_vigir_ocs_nodelets.launch" />
 
-    <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" respawn="true"   output="screen"> <!--launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" respawn="true" > <!--  output="screen"launch-prefix="xterm -e" / -->
         <remap from="/template/template_match_feedback" to="/grasp_control/template_selection" />
     </node>
     <!--<node name="vigir_ocs_waypoint_nodelet"     pkg="vigir_ocs_waypoint_nodelet"     type="waypoint_nodelet"  respawn="true"/>--> <!--  output="screen" launch-prefix="xterm -e " / -->
