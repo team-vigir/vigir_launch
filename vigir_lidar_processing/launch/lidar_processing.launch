@@ -4,20 +4,21 @@
   <!-- Set laser_scan_topic to the robot topic as default -->
   <arg name="lidar_topic" default="/multisense_sl/laser/scan" />
   
-  <!-- Convert laser scan to 3D point cloud in sensor frame -->
-  <node pkg="flor_laserscan_to_pointcloud" type="laserscan_to_pointcloud_node" name="scan_to_ptcld" respawn="true">
-    <param name="min_range" value="0.3" />
-    <param name="use_high_fidelity_projection" value="false" />
-    <param name="target_frame" value="head_hokuyo_frame" />
-    <remap from="/scan" to="$(arg lidar_topic)" />
-    <rosparam command="load" file="$(find flor_laserscan_to_pointcloud)/config/atlas_scan_filter.yaml" />
-  </node>
-
-  <!-- Filter the scan cloud to remove robot intersections -->
-  <include file="$(find vigir_self_filter)/launch/self_filter_lidar.launch" />
+  <!--Setup things on the parameters server-->
+  <rosparam file="$(find vigir_lidar_proc_launch)/config/atlas_lidar_self_filter.yaml" command="load" ns="self_filter_lidar" />
+  <param name="robot_description_self_filter" command="$(find xacro)/xacro.py $(find atlas_self_filter_description)/robots/vigir_atlas_self_filter.urdf.xacro"/>
   
-  <!-- Start the spindle with default speed -->
-  <node type="rostopic" pkg="rostopic" name="spindle_speed_cmd" respawn="false" args="pub --once /multisense/set_spindle_speed std_msgs/Float64 '{data: 3.0}'" output="screen"  />
-
+  <!--Start lidar processing-->
+  <include file="$(find vigir_lidar_proc_launch)/launch/lidar_proc.launch">
+    <arg name="scan_topic" value="$(arg lidar_topic)" />
+    <arg name="scan_cloud_topic" value="/scan_cloud" />
+    <arg name="scan_cloud_filtered_topic" value="/scan_cloud_filtered" />
+    <arg name="min_range" value="0.3"/>
+  
+    <arg name="target_frame" value="hokuyo_spin_axis_frame" />
+    <arg name="use_high_fidelity_projection" value="true" />
+    <arg name="robot_description_name" value="robot_description_self_filter"/> 
+  </include>
+  
 </launch>
 
