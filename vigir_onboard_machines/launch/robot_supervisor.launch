@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Robot description and main robot controller interface -->
+  <include file="$(find vigir_ocs)/launch/vigir_ocs.launch" />
+
+  <node pkg="vigir_ocs_supervisor" type="supervisor" name="supervisor" output="screen" respawn="true" />
+
+  <node pkg="vigir_ocs_logging" type="logging_widget" name="logging_widget" output="screen" respawn="true" />
+
+   <include file="$(find vigir_be_widget)/launch/flexbe.launch" />
+
+</launch>
+
