@@ -7,8 +7,8 @@ Test the ghost robot standalone (only OCS)
 <launch>
     
   <!-- Make depend on FLOR_HAND_TYPE -->
-  <rosparam file="$(find vigir_manipulation_controller)/launch/$(env FLOR_LEFT_HAND_TYPE)_tf.yaml" ns="l_hand_tf"/>
-  <rosparam file="$(find vigir_manipulation_controller)/launch/$(env FLOR_RIGHT_HAND_TYPE)_tf.yaml" ns="r_hand_tf"/>
+  <rosparam file="$(find vigir_ocs_grasp_widget)/launch/$(env FLOR_LEFT_HAND_TYPE)_tf.yaml" ns="l_hand_tf"/>
+  <rosparam file="$(find vigir_ocs_grasp_widget)/launch/$(env FLOR_RIGHT_HAND_TYPE)_tf.yaml" ns="r_hand_tf"/>
 
 
   <include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets.launch" />
