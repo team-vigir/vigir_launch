@@ -6,7 +6,7 @@
   
   <include file="$(find vigir_ocs)/launch/vigir_ocs.launch" />
   
-  <include file="$(find ihmc_msgs)/launch/ihmc_sim.launch" />
+  <include file="$(find ihmc_sim)/launch/ihmc_sim.launch" />
   
 </launch>
 

@@ -8,7 +8,7 @@
     <arg name="lidar_topic" value="/multisense/lidar_scan" />
   </include>
   
-  <param name="robot_description" textfile="$(find ihmc_msgs)/description/drc_no_hands.urdf" />
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find atlas_description)/robots/vigir_atlas.urdf.xacro'" />
 
   <!--Relay gazebo based camera topics to those used on real robot-->
   <node name="relay_left_image" pkg="topic_tools" type="relay" args="/multisense/left/image_rect_color/compressed /multisense/camera/left/image_rect_color" />
