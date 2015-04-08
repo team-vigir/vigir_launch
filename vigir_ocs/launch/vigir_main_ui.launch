@@ -25,7 +25,7 @@
     <node name="footstep_param_control"         pkg="vigir_rqt_footstep_param_control"   type="footstep_param_control_qt"   respawn="true"/>     
     <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget"     type="ghost_control"            respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     
-    <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit"         type="joint_limit"              respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit"         type="joint_limit"              respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
       <param name="joint_names" value="back_bkz back_bky back_bkx" />
       <param name="joint_name_descriptions" value="yaw pitch roll" />
     </node>
