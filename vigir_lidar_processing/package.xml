@@ -10,5 +10,4 @@
   
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>vigir_self_filter</run_depend>
-  <run_depend>flor_laserscan_to_pointcloud</run_depend>
 </package>
