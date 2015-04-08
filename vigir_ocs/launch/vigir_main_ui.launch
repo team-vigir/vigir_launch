@@ -20,7 +20,8 @@
 
     <!-- Start the all the other windows -->
     <!--<node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"             type="control_mode_qt"          respawn="true"/>-->
-    <!--<node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"            type="joint_control_qt"         respawn="true"/>--> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <rosparam file="$(find vigir_rqt_joint_control)/config/displayed_groups.yaml" command="load" ns="vigir_rqt_joint_control"/>
+    <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"            type="joint_control_qt"         respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_glance_hub"           pkg="vigir_ocs_glance_hub"               type="glance_hub"	           respawn="true"/> 
     <node name="footstep_param_control"         pkg="vigir_rqt_footstep_param_control"   type="footstep_param_control_qt"   respawn="true"/>     
     <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget"     type="ghost_control"            respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
