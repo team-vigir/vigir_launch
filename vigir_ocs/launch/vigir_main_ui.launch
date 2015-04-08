@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 
 <launch>
+    <arg name="footstep_planning_ns" default="/vigir/ocs/footstep_planning" />
+
     <!-- Make depend on FLOR_HAND_TYPE -->
     <rosparam file="$(find vigir_ocs_grasp_widget)/launch/$(env FLOR_LEFT_HAND_TYPE)_tf.yaml" ns="l_hand_tf"/>
     <rosparam file="$(find vigir_ocs_grasp_widget)/launch/$(env FLOR_RIGHT_HAND_TYPE)_tf.yaml" ns="r_hand_tf"/>
@@ -21,23 +23,22 @@
     <!-- Start the all the other windows -->
     <!--<node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"             type="control_mode_qt"          respawn="true"/>-->
     <rosparam file="$(find vigir_rqt_joint_control)/config/displayed_groups.yaml" command="load" ns="vigir_rqt_joint_control"/>
-    <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"            type="joint_control_qt"         respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_glance_hub"           pkg="vigir_ocs_glance_hub"               type="glance_hub"	           respawn="true"/> 
-    <node name="footstep_param_control"         pkg="vigir_rqt_footstep_param_control"   type="footstep_param_control_qt"   respawn="true"/>     
-    <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget"     type="ghost_control"            respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"            type="joint_control_qt"        respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_glance_hub"           pkg="vigir_ocs_glance_hub"               type="glance_hub"	            respawn="true"/>   
+    <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget"     type="ghost_control"           respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     
-    <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit"         type="joint_limit"              respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit"         type="joint_limit"             respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
       <param name="joint_names" value="back_bkz back_bky back_bkx" />
       <param name="joint_name_descriptions" value="yaw pitch roll" />
     </node>
     
     <!--<node name="vigir_ocs_motion_selector"      pkg="vigir_ocs_motion_selector" 	type="motion_selector"       respawn="true"      /> --> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_rqt_step_interface"       pkg="vigir_footstep_planning"           type="step_interface_qt"           respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <!--<node name="vigir_rqt_step_basic_interface" pkg="vigir_rqt_step_basic_interface"     type="step_basic_interface_qt"     respawn="true"/> --> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_rqt_bdi_pelvis_pose"      pkg="vigir_rqt_bdi_pelvis_pose"          type="pelvis_pose_qt"           respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_step_interface"       pkg="vigir_footstep_planning"           type="step_interface_qt"    respawn="true"   ns="$(arg footstep_planning_ns)"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_parameter_editor"     pkg="vigir_footstep_planning"           type="parameter_editor_qt"  respawn="true"   ns="$(arg footstep_planning_ns)"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_bdi_pelvis_pose"      pkg="vigir_rqt_bdi_pelvis_pose"         type="pelvis_pose_qt"       respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     <!--<node name="vigir_ocs_supervisor"           pkg="vigir_ocs_supervisor"               type="supervisor"               respawn="true"/> --><!--  output="screen" launch-prefix="xterm -e" / -->
     <!--<node name="vigir_rqt_system_command"       pkg="vigir_rqt_system_command"           type="system_command"           respawn="true"/> --> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_ocs_template_joystick"    pkg="vigir_ocs_template_joystick"        type="template_joystick"        respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_ocs_template_joystick"    pkg="vigir_ocs_template_joystick"       type="template_joystick"    respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     
     <!--<node name="rqt_gui"                        pkg="rqt_gui"                  	type="rqt_gui"       respawn="true"      /> --> <!--  output="screen" launch-prefix="xterm -e" / -->
        
