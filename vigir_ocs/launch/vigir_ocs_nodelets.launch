@@ -1,4 +1,4 @@
-<?<xml version="1.0"?>
+<?xml version="1.0"?>
 
 <launch>
     <arg name="footstep_planning_ns" default="/vigir/ocs/footstep_planning" />
