@@ -6,6 +6,7 @@
     <!-- Make depend on FLOR_HAND_TYPE -->
     <rosparam file="$(find vigir_ocs_grasp_widget)/launch/$(env FLOR_LEFT_HAND_TYPE)_tf.yaml" ns="l_hand_tf"/>
     <rosparam file="$(find vigir_ocs_grasp_widget)/launch/$(env FLOR_RIGHT_HAND_TYPE)_tf.yaml" ns="r_hand_tf"/>
+    <rosparam file="$(find vigir_ocs)/launch/hand_parameters.yaml" />
 
     <node name="vigir_ocs_global_hotkey" pkg="vigir_ocs_global_hotkey" type="global_hotkey" respawn="true" />
 
