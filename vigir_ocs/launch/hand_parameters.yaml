@@ -1,0 +1,7 @@
+left_wrist_link:  l_hand
+right_wrist_link: r_hand
+left_palm_link:   left_palm
+right_palm_link:  right_palm
+left_hand_group:  left_hand
+right_hand_group: right_hand
+
