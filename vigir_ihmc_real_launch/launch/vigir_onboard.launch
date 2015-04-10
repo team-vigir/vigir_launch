@@ -18,7 +18,10 @@
   
   <include file="$(find vigir_ihmc_footstep_integration)/launch/ihmc_footstep_server.launch" />
   
-  <include file="$(find ihmc_msgs)/launch/ihmc_robot.launch" />
+  <include file="$(find ihmc_atlas)/launch/ihmc_atlas.launch">
+    <arg name="description_model" value="$(find ihmc_models)/urdf/atlas_unplugged_v5_no_hands.urdf"/>
+    <arg name="ihmc_model" default="ATLAS_UNPLUGGED_V5_NO_HANDS" />
+  </include>
   
 </launch>
 

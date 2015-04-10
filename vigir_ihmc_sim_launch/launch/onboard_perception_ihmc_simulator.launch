@@ -16,8 +16,7 @@
   <node name="relay_right_image" pkg="topic_tools" type="relay" args="/multisense/right/image_rect/compressed /multisense/right/camera/image_rect" />
   <!--<node name="relay_right_camera_info" pkg="topic_tools" type="relay" args="/multisense_sl/camera/right/camera_info /multisense_sl/right/camera_info" />-->
   
-  <node name="relay_joint_states" pkg="topic_tools" type="relay" args="/atlas/outputs/joint_states /atlas/joint_states" />
+  <node name="relay_joint_states" pkg="topic_tools" type="relay" args="/atlas/output/joint_states /atlas/joint_states" />
   
- 
 </launch>
 
