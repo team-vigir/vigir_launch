@@ -22,8 +22,8 @@
       <remap from="get_all_parameter_sets" to="/vigir/footstep_planning/params/get_all_parameter_sets" />
       <remap from="onboard_step_plan_request" to="/vigir/footstep_planning/vis/step_plan_request" />
       <remap from="onboard_step_plan" to="/vigir/footstep_planning/vis/step_plan" />
-      <!--remap from="ocs_step_plan_request" to="/vigir/ocs/footstep_planning/vis/step_plan_request" />
-      <remap from="ocs_step_plan" to="/vigir/ocs/footstep_planning/vis/step_plan" / -->
+      <remap from="ocs_step_plan_request" to="/vigir/ocs/footstep_planning/vis/step_plan_request" />
+      <remap from="ocs_step_plan" to="/vigir/ocs/footstep_planning/vis/step_plan" />
     </node>
     
     <include file="$(find vigir_atlas_footstep_planner)/launch/atlas_footstep_planner.launch" >
