@@ -39,4 +39,7 @@
     
     <include file="$(find vigir_image_rotate_ocs)/launch/vigir_image_rotate_ocs_default.launch" />
     
+    <!--Behavior manager-->
+    <node name="vigir_ocs_behavior_manager" pkg="vigir_ocs_behavior_manager" type="behavior_manager" />
+    
 </launch>
