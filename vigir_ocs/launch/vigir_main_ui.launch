@@ -34,8 +34,8 @@
     </node>
     
     <!--<node name="vigir_ocs_motion_selector"      pkg="vigir_ocs_motion_selector" 	type="motion_selector"       respawn="true"      /> --> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_rqt_step_interface"       pkg="vigir_footstep_planning"           type="step_interface_qt"    respawn="true"   ns="$(arg footstep_planning_ns)"/> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <node name="vigir_rqt_parameter_editor"     pkg="vigir_footstep_planning"           type="parameter_editor_qt"  respawn="true"   ns="$(arg footstep_planning_ns)"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_step_interface"       pkg="vigir_footstep_planning_widgets"   type="step_interface_qt"    respawn="true"   ns="$(arg footstep_planning_ns)"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <node name="vigir_rqt_parameter_editor"     pkg="vigir_footstep_planning_widgets"   type="parameter_editor_qt"  respawn="true"   ns="$(arg footstep_planning_ns)"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_rqt_bdi_pelvis_pose"      pkg="vigir_rqt_bdi_pelvis_pose"         type="pelvis_pose_qt"       respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     <!--<node name="vigir_ocs_supervisor"           pkg="vigir_ocs_supervisor"               type="supervisor"               respawn="true"/> --><!--  output="screen" launch-prefix="xterm -e" / -->
     <!--<node name="vigir_rqt_system_command"       pkg="vigir_rqt_system_command"           type="system_command"           respawn="true"/> --> <!--  output="screen" launch-prefix="xterm -e" / -->
