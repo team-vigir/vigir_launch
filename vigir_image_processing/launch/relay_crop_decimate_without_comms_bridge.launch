@@ -5,6 +5,7 @@
   <!-- Use without comms_bridge to relay the cropped images to OCS -->
   <include file="$(find vigir_image_processing)/launch/relay_multisense_crop_decimate_without_comms_bridge.launch" />
   <include file="$(find vigir_image_processing)/launch/relay_sa_camera_crop_decimate_without_comms_bridge.launch" />
+  <include file="$(find vigir_image_processing)/launch/relay_palm_camera_crop_decimate_without_comms_bridge.launch" />
 
 </launch>
 

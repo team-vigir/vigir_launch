@@ -232,5 +232,40 @@
     <remap from="camera_out_video" to="rhr_image_cropped_video" />
   </node>
    
+  <!--Right palm camera-->
+  <!--Add nodelet intended for full image decimation-->
+  <node pkg="nodelet" type="nodelet" name="r_palm_image_full_decimate" respawn="true"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager" output="screen">
+    <remap from="camera" to="right_palm/camera/image_decompressed/" />
+    <remap from="camera_out" to="r_palm_image_full" />
+    <remap from="camera_out_still" to="r_palm_image_full_still" />
+    <remap from="camera_out_video" to="r_palm_image_full_video" />
+  </node>
+  <!--Add nodelet intended for region of interest image crop/decimation-->
+  <node pkg="nodelet" type="nodelet" name="r_palm_image_crop_decimate" respawn="true"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager" output="screen">
+    <remap from="camera" to="right_palm/camera/image_decompressed/" />
+    <remap from="camera_out" to="r_palm_image_cropped" />
+    <remap from="camera_out_still" to="r_palm_image_cropped_still" />
+    <remap from="camera_out_video" to="r_palm_image_cropped_video" />
+  </node>
+  
+  <!--Left palm camera-->
+  <!--Add nodelet intended for full image decimation-->
+  <node pkg="nodelet" type="nodelet" name="l_palm_image_full_decimate" respawn="true"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager" output="screen">
+    <remap from="camera" to="left_palm/camera/image_decompressed/" />
+    <remap from="camera_out" to="l_palm_image_full" />
+    <remap from="camera_out_still" to="l_palm_image_full_still" />
+    <remap from="camera_out_video" to="l_palm_image_full_video" />
+  </node>
+  <!--Add nodelet intended for region of interest image crop/decimation-->
+  <node pkg="nodelet" type="nodelet" name="l_palm_image_crop_decimate" respawn="true"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager" output="screen">
+    <remap from="camera" to="left_palm/camera/image_decompressed/" />
+    <remap from="camera_out" to="l_palm_image_cropped" />
+    <remap from="camera_out_still" to="l_palm_image_cropped_still" />
+    <remap from="camera_out_video" to="l_palm_image_cropped_video" />
+  </node>
 </launch>
 
