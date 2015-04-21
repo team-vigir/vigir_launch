@@ -2,6 +2,11 @@
 
 <launch>
 
+  <!-- common parameters -->
+  <include file="$(find flor_atlas_bringup)/launch/common_parameters.launch" />
+
+  <include file="$(find flor_atlas_bringup)/launch/state_publishers.launch" />
+
   <!-- Launch robot controller -->
   <include file="$(find vigir_atlas_controller)/launch/atlas_simulation.launch">
     <arg name="launch_prefix" value=""/>
