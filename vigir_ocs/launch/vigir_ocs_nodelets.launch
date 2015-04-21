@@ -10,7 +10,7 @@
               ns   = "ot_library"/>
 
 
-    <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" respawn="true" output="screen" launch-prefix="xterm -e gdb --ex run --args" >
+    <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" respawn="true"> <!--output="screen" launch-prefix="xterm -e gdb " > -->
         <remap from="/template/template_match_feedback" to="/grasp_control/template_selection" />
     </node>
     <!--<node name="vigir_ocs_waypoint_nodelet"     pkg="vigir_ocs_waypoint_nodelet"     type="waypoint_nodelet"  respawn="true"/>--> <!--  output="screen" launch-prefix="xterm -e " / -->
