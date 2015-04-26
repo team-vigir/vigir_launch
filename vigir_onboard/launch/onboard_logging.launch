@@ -80,7 +80,9 @@
       '/vigir/footstep_planning/params/get_all_parameter_sets/status',
       '/robot_controllers/footstep_controller/execute_step_plan/status',
       '/vigir/ocs/footstep_planning/step_plan_request/status',
-      '/vigir/ocs/footstep_planning/step_plan_request/feedback'
+      '/vigir/ocs/footstep_planning/step_plan_request/feedback',
+      '/robot_controllers/right_arm_joint_impedance_controller/dyn_rec/right_arm/parameter_updates',
+      '/robot_controllers/left_arm_joint_impedance_controller/dyn_rec/left_arm/parameter_updates',
    ] </rosparam>
 </node>
 </launch>
