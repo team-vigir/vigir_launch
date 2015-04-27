@@ -9,5 +9,6 @@
   <url>http://ros.org/wiki/vigir_lidar_processing</url>
   
   <buildtool_depend>catkin</buildtool_depend>
-  <run_depend>vigir_self_filter</run_depend>
+  <build_depend>vigir_filtered_localized_scan_utils</build_depend>
+  <run_depend>vigir_filtered_localized_scan_utils</run_depend>
 </package>
