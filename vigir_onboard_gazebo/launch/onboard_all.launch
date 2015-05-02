@@ -6,6 +6,12 @@
   <include file="$(find flor_atlas_bringup)/launch/common_parameters.launch" />
 
   <include file="$(find flor_atlas_bringup)/launch/state_publishers.launch" />
+  
+  <!-- Since Conner took this out of the atlas_simulation.launch -->
+  <node pkg="robot_state_publisher" type="state_publisher" name="multisense_robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0" />
+    <remap from="joint_states" to="/multisense/joint_states" />
+  </node>
 
   <!-- Launch robot controller -->
   <include file="$(find vigir_atlas_controller)/launch/atlas_simulation.launch">
