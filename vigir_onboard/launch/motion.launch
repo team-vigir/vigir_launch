@@ -14,7 +14,7 @@
 <include file="$(find vigir_be_onboard)/launch/behavior_onboard.launch" />
 
 <!--  Start motion server  -->
-<node name="motion_service" pkg="flor_motion" type="motion_service" respawn="true"/>
+<include file="$(find motion_editor_core)/launch/atlas_motion_service.launch" />
 
 </launch>
 
