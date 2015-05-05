@@ -84,7 +84,7 @@
       '/robot_controllers/right_arm_joint_impedance_controller/dyn_rec/right_arm/parameter_updates',
       '/robot_controllers/left_arm_joint_impedance_controller/dyn_rec/left_arm/parameter_updates',
       '/robot_controllers/left_arm_joint_impedance_controller/tau_obs',
-      '/robot_controllers/left_arm_joint_impedance_controller/tau_obs',
+      '/robot_controllers/right_arm_joint_impedance_controller/tau_obs',
    ] </rosparam>
 </node>
 </launch>
