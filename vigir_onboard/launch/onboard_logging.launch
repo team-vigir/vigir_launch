@@ -4,7 +4,6 @@
 <node name="onboard_logging" pkg="vigir_ocs_logging" type="logger.py">
     <param name="enable_Log_grabbing" type="bool" value="true" />
     <param name="logging_location" type="str" value="/home/testing/Experiments" />
-    <param name="enable_Log_grabbing" type="bool" value="true" />
     <rosparam param="to_log">[ '/flor/controller/mode', '/flor/controller/mode_command', '/flor/controller/robot_status', ' /flor/controller/status',
       ' /flor/controller/atlas_state', ' /flor/controller/joint_command', ' /flor/controller/joint_control', ' /flor/controller/raw_state', ' /flor/controller/actuator_state',
       ' /flor/controller/raw_actuator', ' /joint_controllers/right_arm_traj_controller/state', ' /joint_controllers/right_arm_traj_controller/command',
