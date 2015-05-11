@@ -14,7 +14,7 @@
 <include file="$(find vigir_atlas_footstep_planner)/launch/atlas_terrain_classifier.launch"/>
 
 <!--  Start the behavior engine -->
-<include file="$(find vigir_be_onboard)/launch/behavior_onboard.launch" />
+<include file="$(find vigir_be_launch)/launch/behavior_onboard_atlas.launch" />
 
 <!--  Start motion server  -->
 <include file="$(find motion_editor_core)/launch/atlas_motion_service.launch" />
