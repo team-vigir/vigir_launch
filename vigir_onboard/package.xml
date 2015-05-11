@@ -13,6 +13,6 @@
   <run_depend>vigir_lidar_processing</run_depend>
   <run_depend>vigir_state_estimation</run_depend>
   <run_depend>vigir_image_processing</run_depend>
-  <run_depend>vigir_worldmodel_main</run_depend>
+  <run_depend>vigir_worldmodel_server</run_depend>
   <run_depend>vigir_footstep_planner</run_depend>
 </package>
