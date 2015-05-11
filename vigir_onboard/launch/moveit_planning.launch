@@ -10,10 +10,10 @@
   <node name="plan_to_action_node" pkg="vigir_plan_to_action" type="plan_to_action_node" respawn="true" output="screen" > <!-- output="screen" -->
   
     <!--Trajectory command topics-->
-    <remap from="l_arm_trajectory" to="/flor/l_arm_controller/trajectory" />
-    <remap from="r_arm_trajectory" to="/flor/r_arm_controller/trajectory" />
-    <remap from="torso_trajectory" to="/flor/torso_controller/trajectory" />
-    <remap from="neck_trajectory" to="/flor/neck_controller/trajectory" />
+    <remap from="l_arm_trajectory" to="/trajectory_controllers/l_arm_traj_controller/command" />
+    <remap from="r_arm_trajectory" to="/trajectory_controllers/r_arm_traj_controller/command" />
+    <remap from="torso_trajectory" to="/trajectory_controllers/torso_traj_controller/command" />
+    <remap from="neck_trajectory"  to="/trajectory_controllers/neck_traj_controller/command" />
   
     <!--Incoming requests-->
     <remap from="plan_request" to="/flor/planning/upper_body/plan_request" />
