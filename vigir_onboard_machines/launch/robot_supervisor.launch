@@ -11,5 +11,7 @@
 
    <include file="$(find vigir_be_widget)/launch/flexbe.launch" />
 
+  <node pkg="vigir_onboard_machines" type="atlas_log_downloader.py" name="bdi_logger" output="screen" respawn="true" />
+
 </launch>
 
