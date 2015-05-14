@@ -120,7 +120,11 @@
       '/vigir_move_group/goal',
       '/vigir_move_group/result',
       '/vigir_move_group/status',
-      '/flexbe/log'
+      '/flexbe/log',
+      '/pose_body',
+      '/flor/controller/bdi_to_world_frame',
+      '/flor/controller/raw_bdi_pose',
+      '/move_group/display_planned_path'
    ] </rosparam>
 </node>
 </launch>
