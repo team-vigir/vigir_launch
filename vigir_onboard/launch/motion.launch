@@ -13,6 +13,9 @@
 <!-- Start terrain classifier -->
 <include file="$(find vigir_atlas_footstep_planner)/launch/atlas_terrain_classifier.launch"/>
 
+<!-- Start onboard footstep manager -->
+<include file="$(find vigir_onboard_footstep_manager)/launch/vigir_footstep_manager.launch"/>
+
 <!--  Start the behavior engine -->
 <include file="$(find vigir_be_launch)/launch/behavior_onboard_atlas.launch" />
 
