@@ -18,5 +18,7 @@
     <param name="logging_location" type="str" value="/home/vigir/Experiments" />
   </node>
 
+  <node name="$(anon time_widget)" pkg="vigir_ocs_time_widget" type="time_widget" />
+
 </launch>
 
