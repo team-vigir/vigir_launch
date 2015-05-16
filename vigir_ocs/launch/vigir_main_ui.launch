@@ -3,10 +3,8 @@
 <launch>
     <arg name="footstep_planning_ns" default="/vigir/ocs/footstep_planning" />
 
-    <!-- Make depend on FLOR_HAND_TYPE -->
-    <rosparam file="$(find vigir_ocs_grasp_widget)/launch/$(env FLOR_LEFT_HAND_TYPE)_tf.yaml" ns="l_hand_tf"/>
-    <rosparam file="$(find vigir_ocs_grasp_widget)/launch/$(env FLOR_RIGHT_HAND_TYPE)_tf.yaml" ns="r_hand_tf"/>
-    <rosparam file="$(find vigir_ocs)/config/hand_parameters.yaml" />
+    <!-- Load camera configuration, params for hands and grasp widget tf -->
+    <include file="$(find vigir_ocs)/launch/common/common_parameter_setup.launch"/>
 
     <node name="vigir_ocs_global_hotkey" pkg="vigir_ocs_global_hotkey" type="global_hotkey" respawn="true" />
 

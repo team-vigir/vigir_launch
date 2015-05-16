@@ -1,37 +1,19 @@
 <?xml version="1.0"?>
 
 <launch>
-
-    <!-- Make depend on FLOR_HAND_TYPE -->
-    <rosparam file="$(find vigir_ocs_grasp_widget)/launch/$(env FLOR_LEFT_HAND_TYPE)_tf.yaml" ns="l_hand_tf"/>
-    <rosparam file="$(find vigir_ocs_grasp_widget)/launch/$(env FLOR_RIGHT_HAND_TYPE)_tf.yaml" ns="r_hand_tf"/>
-
-    <param name="l_hand_type" value="$(env FLOR_LEFT_HAND_TYPE)" />
-    <param name="r_hand_type" value="$(env FLOR_RIGHT_HAND_TYPE)" />
-
-
-<!-- Load camera configuration for the UI nodes and nodelets -->
-<rosparam command="load" file="$(find vigir_ocs)/config/atlas_camera_topics.yaml" />
-<rosparam command="load" file="$(find vigir_ocs)/config/$(env FLOR_LEFT_HAND_TYPE)_camera_topics.yaml" />
-<rosparam command="load" file="$(find vigir_ocs)/config/$(env FLOR_RIGHT_HAND_TYPE)_camera_topics.yaml" />
-
-<include file="$(find vigir_onboard)/launch/vigir_status_relay.launch" />
-<include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets.launch" />
-
-
-
-   
-
-
-    <!-- Start the main OCS -->
-
-     <node name="vigir_ocs_manipulation_test"   pkg="vigir_ocs_manipulation_test"            type="manipulation_test" respawn="true"> <!--  output="screen" launch-prefix="xterm -e gdb -ex r" / -->
-      <!--  <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> -->
-    </node>
-
-    
-   
-    
-
-
+  
+  <!-- Load camera configuration, params for hands and grasp widget tf -->
+  <include file="$(find vigir_ocs)/launch/common/common_parameter_setup.launch"/>
+  
+  <include file="$(find vigir_onboard)/launch/vigir_status_relay.launch" />
+  <include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets.launch" />
+  
+  
+  
+  <!-- Start the main OCS -->
+  
+  <node name="vigir_ocs_manipulation_test"   pkg="vigir_ocs_manipulation_test"            type="manipulation_test" respawn="true"> <!--  output="screen" launch-prefix="xterm -e gdb -ex r" / -->
+    <!--  <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> -->
+  </node>
+  
 </launch>

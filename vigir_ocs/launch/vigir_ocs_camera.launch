@@ -2,10 +2,8 @@
 
 <launch>
 
-	<!-- Load camera configuration for the UI nodes and nodelets -->
-	<rosparam command="load" file="$(find vigir_ocs)/config/atlas_camera_topics.yaml" />
-	<rosparam command="load" file="$(find vigir_ocs)/config/$(env FLOR_LEFT_HAND_TYPE)_camera_topics.yaml" />
-	<rosparam command="load" file="$(find vigir_ocs)/config/$(env FLOR_RIGHT_HAND_TYPE)_camera_topics.yaml" />
+    <!-- Load camera configuration, params for hands and grasp widget tf -->
+    <include file="$(find vigir_ocs)/launch/common/common_parameter_setup.launch">
 
     <include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets.launch" />
 	<!--<node name="vigir_ocs_image_nodelet"       pkg="vigir_ocs_image_nodelet"       type="image_nodelet"       respawn="false"/>-->

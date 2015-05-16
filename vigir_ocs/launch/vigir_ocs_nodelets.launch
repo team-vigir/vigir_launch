@@ -3,8 +3,8 @@
 <launch>
     <arg name="footstep_planning_ns" default="/vigir/ocs/footstep_planning" />
 
-    <include  file="$(find vigir_ocs)/launch/nodelets/$(env FLOR_LEFT_HAND_TYPE)_vigir_ocs_nodelets.launch" />
-    <include  file="$(find vigir_ocs)/launch/nodelets/$(env FLOR_RIGHT_HAND_TYPE)_vigir_ocs_nodelets.launch" />
+    <!-- Load camera configuration, params for hands and grasp widget tf -->
+    <include file="$(find vigir_ocs)/launch/common/common_parameter_setup.launch"/>
 
     <rosparam file = "$(find vigir_template_library)/object_templates/object_templates.xml"
               ns   = "ot_library"/>
