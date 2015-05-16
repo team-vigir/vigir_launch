@@ -13,6 +13,12 @@ install(DIRECTORY launch
   PATTERN "*~" EXCLUDE  
 )
 
+#install the config files.
+install(DIRECTORY config
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+  PATTERN "*~" EXCLUDE  
+)
+
 #install the rviz files.
 install(DIRECTORY rviz
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
