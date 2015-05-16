@@ -17,7 +17,7 @@
     <include  file = "$(find vigir_manipulation_controller)/launch/$(env FLOR_LEFT_HAND_TYPE)_manipulation_control.launch" />
     <include  file = "$(find vigir_manipulation_controller)/launch/$(env FLOR_RIGHT_HAND_TYPE)_manipulation_control.launch"/>
 
-    <rosparam file="$(find vigir_ocs)/launch/hand_parameters.yaml" />
+    <rosparam file="$(find vigir_ocs)/config/hand_parameters.yaml" />
 
     <!--<node name="vigir_onboard_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" respawn="true"> --><!--output="screen" launch-prefix="xterm -e gdb " > -->
         <!--<remap from="/template/template_match_feedback" to="/grasp_control/template_selection" /> -->

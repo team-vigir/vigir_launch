@@ -4,9 +4,9 @@
 <env name="ROS_NAMESPACE" value="secondary_ocs" />
 
 <!-- Load camera configuration for the UI nodes and nodelets -->
-<rosparam command="load" file="$(find vigir_ocs)/launch/atlas_camera_topics.yaml" />
-<rosparam command="load" file="$(find vigir_ocs)/launch/$(env FLOR_LEFT_HAND_TYPE)_camera_topics.yaml" />
-<rosparam command="load" file="$(find vigir_ocs)/launch/$(env FLOR_RIGHT_HAND_TYPE)_camera_topics.yaml" />
+<rosparam command="load" file="$(find vigir_ocs)/config/atlas_camera_topics.yaml" />
+<rosparam command="load" file="$(find vigir_ocs)/config/$(env FLOR_LEFT_HAND_TYPE)_camera_topics.yaml" />
+<rosparam command="load" file="$(find vigir_ocs)/config/$(env FLOR_RIGHT_HAND_TYPE)_camera_topics.yaml" />
 
 <param name="l_hand_type" value="$(env FLOR_LEFT_HAND_TYPE)" />
 <param name="r_hand_type" value="$(env FLOR_RIGHT_HAND_TYPE)" />

@@ -2,20 +2,21 @@
    ocs:{
       camera:{
          # Camera classes will always look for atlas cameras, then left hand, then right hand
-         atlas:{
+         right_hand:{
             # Camera classes will create four subscribers using prefixes: 
             #   <prefix>_full/image_raw, 
             #   <prefix>_full/image_request, 
             #   <prefix>_cropped/image_raw, 
             #   <prefix>_cropped/image_request
-            topic_prefix:["/l_image","/r_image","/lsa_image","/rsa_image","/lrsa_image","/rrsa_image","/psa_image"], 
+            topic_prefix:["/r_palm_image"],
+            topic_name:["/image_raw"],
             
             # Name the cameras for the OCS
-            name:["Head Camera (Left)", "Head Camera (Right)", "Left Fisheye", "Right Fisheye", "Left Fisheye (Rectified)", "Right Fisheye (Rectified)", "Panorama"],
+            name:["Right Robotiq Palm Camera"],
             
             # Camera resolution (full width/height) - this is for the 2D UI only, it doesn't affect rendering of the image
-            width:[800,800,800,800,800,800,800],
-            height:[800,800,800,800,800,800,800]
+            width:[640],
+            height:[480]
          }
       }
    }
