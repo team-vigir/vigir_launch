@@ -8,11 +8,11 @@
             #   <prefix>_full/image_request, 
             #   <prefix>_cropped/image_raw, 
             #   <prefix>_cropped/image_request
-            topic_prefix:["/l_palm_image"],
+            topic_prefix:["/left_palm/camera"],
             topic_name:["/image_raw"],
             
             # Name the cameras for the OCS
-            name:["Left Robotiq Palm Camera"],
+            name:["Left Robotiq Camera"],
             
             # Camera resolution (full width/height) - this is for the 2D UI only, it doesn't affect rendering of the image
             width:[640],

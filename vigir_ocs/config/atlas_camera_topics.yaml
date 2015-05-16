@@ -8,11 +8,11 @@
             #   <prefix>_full/image_request, 
             #   <prefix>_cropped/image_raw, 
             #   <prefix>_cropped/image_request
-            topic_prefix:["/multisense/camera/left","/r_image","/lsa_image","/rsa_image","/lrsa_image","/rrsa_image","/psa_image"], 
-            topic_name:["/image_rect_color","/image_raw","/image_raw","/image_raw","/image_raw","/image_raw","/image_raw"],
+            topic_prefix:["/multisense/camera/left","/left_sa_camera","/right_sa_camera"], 
+            topic_name:["/image_rect_color","/image_raw","/image_raw"],
             
             # Name the cameras for the OCS
-            name:["Head Camera (Left)", "Head Camera (Right)", "Left Fisheye", "Right Fisheye", "Left Fisheye (Rectified)", "Right Fisheye (Rectified)", "Panorama"],
+            name:["Head Camera (Left)", "Left SA", "Right SA"],
             
             # Camera resolution (full width/height) - this is for the 2D UI only, it doesn't affect rendering of the image
             width:[800,800,800,800,800,800,800],
