@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
 
 <launch>
+    <arg name="footstep_planning_ns" default="/vigir/ocs/footstep_planning" />
 
     <!-- Load camera configuration, params for hands and grasp widget tf -->
-    <include file="$(find vigir_ocs)/launch/common/common_parameter_setup.launch">
+    <include file="$(find vigir_ocs)/launch/common/common_parameter_setup.launch"/>
 
     <!-- Start the Auxiliary OCS -->
     <!-- Start the OCS -->
