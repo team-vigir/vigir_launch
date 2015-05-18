@@ -20,7 +20,6 @@
     </node>
 
     <!-- Start the all the other windows -->
-    <!--<node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"             type="control_mode_qt"          respawn="true"/>-->
     <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"            type="joint_control_qt"        respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_glance_hub"           pkg="vigir_ocs_glance_hub"               type="glance_hub"	            respawn="true"/>   
     <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget"     type="ghost_control"           respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
@@ -30,23 +29,15 @@
       <param name="joint_name_descriptions" value="yaw pitch roll" />
     </node>
     
-    <!--<node name="vigir_ocs_motion_selector"      pkg="vigir_ocs_motion_selector" 	type="motion_selector"       respawn="true"      /> --> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_rqt_step_interface"       pkg="vigir_footstep_planning_widgets"   type="step_interface_qt"    respawn="true"   ns="$(arg footstep_planning_ns)"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_rqt_parameter_editor"     pkg="vigir_footstep_planning_widgets"   type="parameter_editor_qt"  respawn="true"   ns="$(arg footstep_planning_ns)"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_rqt_bdi_pelvis_pose"      pkg="vigir_rqt_bdi_pelvis_pose"         type="pelvis_pose_qt"       respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <!--<node name="vigir_ocs_supervisor"           pkg="vigir_ocs_supervisor"               type="supervisor"               respawn="true"/> --><!--  output="screen" launch-prefix="xterm -e" / -->
-    <!--<node name="vigir_rqt_system_command"       pkg="vigir_rqt_system_command"           type="system_command"           respawn="true"/> --> <!--  output="screen" launch-prefix="xterm -e" / -->
     <node name="vigir_ocs_template_joystick"    pkg="vigir_ocs_template_joystick"       type="template_joystick"    respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     
-    <!--<node name="rqt_gui"                        pkg="rqt_gui"                  	type="rqt_gui"       respawn="true"      /> --> <!--  output="screen" launch-prefix="xterm -e" / -->
        
-    <!-- go ahead and start the manager UI for this -->
-    <!--<node name="vigir_ocs_image_video_manager"     pkg="vigir_ocs_image_video_manager"     type="image_video_manager"     respawn="true"      />--> <!--  output="screen" launch-prefix="xterm -e" / -->
 
     <!-- =============  Also run the status widgets on the main UI screen ========= -->
-    <!--<include file="$(find vigir_ocs)/launch/vigir_status_ui.launch" />-->
     <include file="$(find vigir_rqt_position_mode)/launch/hand_positions.launch" />
-    <!--<include file="$(find vigir_rqt_position_mode)/launch/arm_camera.launch" />-->
 
     <node name="rviz" pkg="rviz" type="rviz" respawn="false" args="-d $(find vigir_ocs)/rviz/ocs_default.rviz"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
     
@@ -57,6 +48,4 @@
     
     <node name="vigir_ocs_space_mouse"    pkg="vigir_ocs_space_mouse"        type="vigir_ocs_space_mouse"        respawn="true"/>
     
-
-
 </launch>
