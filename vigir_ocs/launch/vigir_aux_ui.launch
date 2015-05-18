@@ -10,8 +10,9 @@
       <remap from="/flor/ocs/key_event" to="/flor/ocs/secondary/key_event" />
     </node>  
 
-    <node name="vigir_ocs_hotkey_relay" pkg="vigir_ocs_hotkey_relay" type="hotkey_relay" respawn="true" >
-    </node>  
+    <!-- Need to setup this correctly otherwise it will lead to unwanted actions -->
+    <!--<node name="vigir_ocs_hotkey_relay" pkg="vigir_ocs_hotkey_relay" type="hotkey_relay" respawn="true" >
+    </node>-->
 
     <!-- Start the Auxiliary OCS -->
     <!-- Start the OCS -->
