@@ -9,7 +9,7 @@
 
   <include file="$(find vigir_be_widget)/launch/flexbe.launch" />
 
-  <node pkg="vigir_ocs_logging" type="logging_widget" name="logging_widget" output="screen" respawn="true" />
+  <include file="$(find vigir_ocs_logging)/launch/logging_widget.launch" />
 
   <node name="$(anon time_widget)" pkg="vigir_ocs_time_widget" type="time_widget" />
 
