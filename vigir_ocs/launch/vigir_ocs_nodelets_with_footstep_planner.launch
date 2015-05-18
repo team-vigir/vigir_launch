@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+  <include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets.launch">
+    <arg name="footstep_planning_ns" value="/vigir/ocs/footstep_planning" />
+  </include>
+</launch>

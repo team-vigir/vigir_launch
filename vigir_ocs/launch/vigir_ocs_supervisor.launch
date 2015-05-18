@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Robot description and main robot controller interface -->
+  <include file="$(find vigir_ocs)/launch/common/common_parameter_setup.launch"/>
+
+  <node pkg="vigir_ocs_supervisor" type="supervisor" name="supervisor" output="screen" respawn="true" />
+
+  <include file="$(find vigir_be_widget)/launch/flexbe.launch" />
+
+  <node pkg="vigir_ocs_logging" type="logging_widget" name="logging_widget" output="screen" respawn="true" />
+
+  <node name="$(anon time_widget)" pkg="vigir_ocs_time_widget" type="time_widget" />
+
+
+</launch>
+
