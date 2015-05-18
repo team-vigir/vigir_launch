@@ -8,13 +8,10 @@
     <!-- Start the Auxiliary OCS -->
     <!-- Start the OCS -->
     <node name="$(anon vigir_ocs_main_view)"            pkg="vigir_ocs_main_view"            type="main_view"                respawn="true"> <!--  output="screen" launch-prefix="xterm -e gdb -ex r" / -->
-      <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> 
     </node>
     <node name="$(anon vigir_ocs_map_view)"             pkg="vigir_ocs_map_view"             type="map_view"                 respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
-      <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> 
     </node>
     <node name="$(anon vigir_ocs_main_camera_view)"     pkg="vigir_ocs_main_camera_view"     type="main_camera_view"         respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
-      <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> 
     </node>
 
     <!-- Start the all the other windows -->
@@ -38,12 +35,5 @@
     <include file="$(find vigir_rqt_position_mode)/launch/hand_positions.launch" />
 
     <node name="$(anon rviz)" pkg="rviz" type="rviz" respawn="false" args="-d $(find vigir_ocs)/rviz/ocs_default.rviz"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
-
-      <node pkg="spacenav_node" type="spacenav_node" name="$(anon spacenav_node)" output="screen">
-        <param name="zero_when_static" value="true"/>
-        <param name="static_count_threshold" value="30"/>
-      </node>
-
-    <node name="$(anon vigir_ocs_space_mouse)"    pkg="vigir_ocs_space_mouse"        type="vigir_ocs_space_mouse"        respawn="true"/>
 
 </launch>
