@@ -19,7 +19,5 @@
 
     <rosparam file="$(find vigir_ocs)/config/hand_parameters.yaml" />
 
-    <include  file="$(find vigir_template_library)/launch/$(env FLOR_MULTISENSE_TYPE)_vigir_onboard_template_server.launch" />
-
 </launch>
 
