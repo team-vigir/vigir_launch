@@ -11,7 +11,9 @@
 
   <include file="$(find vigir_ocs_logging)/launch/logging_widget.launch" />
 
-  <node name="$(anon time_widget)" pkg="vigir_ocs_time_widget" type="time_widget" />
+  <node name="$(anon time_widget)" pkg="vigir_ocs_time_widget" type="time_widget" respawn="true"/>
+
+  <node name="$(anon vigir_ocs_glance_hub)" pkg="vigir_ocs_glance_hub" type="glance_hub" respawn="true"/>
 
 
 </launch>
