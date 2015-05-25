@@ -149,9 +149,13 @@
       '/flor/controller/bdi_to_world_frame',
       '/flor/controller/raw_bdi_pose',
       '/move_group/display_planned_path',
-      '/vigir_foobar',
+      '/hand_controllers/left_hand_traj_controller/follow_joint_trajectory/goal',
+      '/hand_controllers/right_hand_traj_controller/follow_joint_trajectory/goal',
+      '/hand_controllers/left_hand_traj_controller/command',
+      '/hand_controllers/right_hand_traj_controller/command',
       '/flor_ocs_bandwidth',
-      '/bridge_status'
+      '/bridge_status',
+      '/vigir_foobar'
    ] </rosparam>
 </node>
 </launch>
