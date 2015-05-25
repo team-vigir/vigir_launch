@@ -79,7 +79,7 @@
       '/vigir/ocs/footstep_planning/update_step_plan/feedback',
       '/flor/ocs/footstep/plan_update',
       '/vigir/ocs/footstep_planning/stitch_step_plan/result',
-      '/vigir/ocs/footstep_planning/step_plan_request/feedback',
+      '/vigir/ocs/footstep_planning/step_plan_roslaunch vigir_onboard onboard_logging.launchrequest/feedback',
       '/robot_controllers/right_arm_joint_impedance_controller/dyn_rec/right_arm/parameter_updates',
       '/robot_controllers/left_arm_joint_impedance_controller/dyn_rec/left_arm/parameter_updates',
       '/robot_controllers/left_arm_joint_impedance_controller/tau_obs',
@@ -131,7 +131,9 @@
       '/flor/controller/bdi_to_world_frame',
       '/flor/controller/raw_bdi_pose',
       '/move_group/display_planned_path',
-      '/vigir_foobar'
+      '/vigir_foobar',
+      '/flor_ocs_bandwidth',
+      '/bridge_status'
    ] </rosparam>
 </node>
 </launch>

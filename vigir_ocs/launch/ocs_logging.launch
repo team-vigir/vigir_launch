@@ -1,83 +1,75 @@
 <?xml version="1.0"?>
 
 <launch>
-
-<node pkg="rosbag" type="record" name="rosbag_record_ocs"
-       args=" -o ~/task_logs/vrc_ocs_run 
-       /atlas/joint_states 
-       /comms_bridge_reference_pose 
-       /vrc_data 
-       /sim_pelvis_pose_world/pose 
-       /syscommand 
-       /rhl_image_full/image_raw 
-       /rhl_image_cropped/image_raw 
-       /rhr_image_full/image_raw 
-       /rhr_image_cropped/image_raw 
-       /lhl_image_full/image_raw 
-       /lhl_image_cropped/image_raw 
-       /lhr_image_full/image_raw 
-       /lhr_image_cropped/image_raw 
-       /l_image_full/image_raw 
-       /l_image_cropped/image_raw 
-       /r_image_full/image_raw 
-       /r_image_cropped/image_raw 
-       /grasp_control/l_hand/active_state 
-       /grasp_control/l_hand/grasp_selection 
-       /grasp_control/l_hand/grasp_status 
-       /grasp_control/l_hand/mode_command 
-       /grasp_control/l_hand/release_grasp 
-       /grasp_control/l_hand/sandia_states 
-       /grasp_control/r_hand/active_state 
-       /grasp_control/r_hand/grasp_selection 
-       /grasp_control/r_hand/grasp_status 
-       /grasp_control/r_hand/mode_command 
-       /grasp_control/r_hand/release_grasp 
-       /grasp_control/r_hand/sandia_states 
-       /grasp_control/template_selection 
-       /grasp_planning/l_hand/status 
-       /grasp_planning/r_hand/status 
-       /goalpose 
-       /flor_ocs_bandwidth 
-       /flor/worldmodel/ocs/gridmap_request 
-       /flor/worldmodel/ocs/gridmap_result 
-       /flor/worldmodel/ocs/octomap_request 
-       /flor/worldmodel/ocs/octomap_result 
-       /flor/motion_service/motion_command 
-       /flor/motion_service/status 
-       /flor/neck_controller/function_update 
-       /flor/ocs/planning/plan_to_joint_state 
-       /flor/ocs/planning/plan_to_pose_state 
-       /flor/planning/upper_body/configuration 
-       /flor/planning/upper_body/plan_request 
-       /flor/planning/upperbody/status 
-       /flor/behavior/autonomy_level 
-       /flor/behavior/input_request 
-       /flor/behavior/input_response 
-       /flor/behavior/preempt 
-       /flor/behavior/silent 
-       /flor/behavior/smach_initialization 
-       /flor/behavior/smach_outcome 
-       /flor/behavior/smach_outcome_request 
-       /flor/behavior/smach_state 
-       /flor/behavior/start_task 
-       /flor/behavior/state 
-       /flor/behavior/status 
-       /flor/behavior/transition 
-       /flor/comms_bridge_status 
-       /flor/controller/bdi_desired_pelvis_pose 
-       /flor/controller/mode 
-       /flor/controller/mode_command 
-       /flor/controller/stability 
-       /flor/controller/statistics 
-       /flor/controller/status 
-       /flor/footstep_planner/status 
-       /flor/ghost/get_joint_states 
-       /flor/ghost/pose/left_hand 
-       /flor/ghost/pose/right_hand 
-       /flor/ghost/robot_state_vis 
-       /flor/ghost/set_appendage_poses 
-       /flor/ghost/set_joint_states 
-       /flor/ghost/set_root_pose            " />
-
+<node name="ocs_logging" pkg="vigir_ocs_logging" type="logger.py">
+    <param name="enable_Log_grabbing" type="bool" value="true" />
+    <param name="logging_location" type="str" value="/home/testing/Experiments" />
+    <rosparam param="to_log">[ '/flor/controller/mode', '/flor/controller/mode_command', '/flor/controller/robot_status', ' /flor/controller/status',
+      '/vigir/ocs/footstep_planning/step_plan_request/goal',
+      '/flor/ocs/footstep/plan_goal_array',
+      '/vigir/ocs/footstep_planning/edit_step/goal',
+      '/vigir/ocs/footstep_planning/step_plan_request/cancel',
+      '/flor/ocs/footstep/goal_pose_feedback',
+      '/flor/ocs/footstep/list',
+      '/vigir/ocs/footstep_planning/stitch_step_plan/goal',
+      '/flor/ocs/footstep/parameter_set_list',
+      '/vigir/footstep_planning/params/get_all_parameter_sets/goal',
+      '/vigir/ocs/footstep_planning/stitch_step_plan/cancel',
+      '/flor/ocs/footstep/path',
+      '/vigir/ocs/footstep_planning/edit_step/cancel',
+      '/vigir/ocs/footstep_planning/update_step_plan/cancel',
+      '/flor/ocs/footstep/footsteps_array',
+      '/vigir/ocs/footstep_planning/update_step_plan/goal',
+      '/flor/ocs/footstep/footsteps_path_body_array',
+      '/vigir/ocs/footstep_planning/update_feet/cancel',
+      '/vigir/ocs/footstep_planning/update_feet/goal',
+      '/flor/ocs/footstep/plan_request_feedback',
+      '/flor/ocs/footstep/plan_goal',
+      '/vigir/ocs/footstep_planning/vis/step_plan_request',
+      '/flor/ocs/footstep/redo',
+      '/vigir/ocs/footstep_planning/edit_step/result',
+      '/vigir/ocs/footstep_planning/update_feet/feedback',
+      '/robot_controllers/footstep_controller/execute_step_plan/result',
+      '/vigir/ocs/footstep_planning/update_step_plan/result',
+      '/flor/ocs/footstep/execute',
+      '/flor/ocs/footstep/undo',
+      '/vigir/ocs/footstep_planning/stitch_step_plan/feedback',
+      '/vigir/ocs/footstep_planning/vis/step_plan',
+      '/vigir/footstep_planning/vis/step_plan_request',
+      '/vigir/ocs/footstep_planning/update_feet/result',
+      '/flor/ocs/footstep/parameter_set_selected',
+      '/flor/ocs/footstep/stitch',
+      '/flor/ocs/footstep/plan_request',
+      '/vigir/ocs/footstep_planning/step_plan_request/result',
+      '/vigir/footstep_planning/vis/step_plan',
+      '/flor/ocs/footstep/step_update',
+      '/vigir/ocs/footstep_planning/edit_step/feedback',
+      '/flor/ocs/footstep/set_start_index',
+      '/flor/ocs/footstep/goal_pose_feedback',
+      '/vigir/ocs/footstep_planning/update_step_plan/feedback',
+      '/flor/ocs/footstep/plan_update',
+      '/vigir/ocs/footstep_planning/stitch_step_plan/result',
+      '/vigir/ocs/footstep_planning/step_plan_request/feedback',
+      '/vigir_move_group/cancel',
+      '/vigir_move_group/feedback',
+      '/vigir_move_group/goal',
+      '/vigir_move_group/result',
+      '/vigir_move_group/status',
+      '/flexbe/log',
+      '/flexbe/mirror/outcome',
+      '/flexbe/mirror/sync',
+      '/flexbe/command/sync',
+      '/flexbe/status',
+      '/flexbe/request_behavior',
+      '/flexbe/start_behavior',
+      '/rosout',
+      '/pose_body',
+      '/flor/controller/bdi_to_world_frame',
+      '/flor/controller/raw_bdi_pose',
+      '/move_group/display_planned_path',
+      '/vigir_foobar',
+      '/flor_ocs_bandwidth',
+      '/bridge_status'
+   ] </rosparam>
+</node>
 </launch>
-
