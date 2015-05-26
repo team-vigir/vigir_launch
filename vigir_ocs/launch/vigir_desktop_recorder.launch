@@ -2,7 +2,7 @@
 
 <launch>
 
-  <node name="desktop_recorder_$(env ROS_HOSTNAME)" pkg="vigir_ocs_logging" type="recorder.py">
+  <node name="desktop_recorder_$(env ROS_HOSTNAME)" pkg="vigir_ocs_logging" type="recorder.py" output="screen">
     <param name="logging_location" type="str" value="/home/testing/Experiments" />
   </node>
 
