@@ -138,6 +138,7 @@
       '/vigir_move_group/result',
       '/vigir_move_group/status',
       '/vigir_move_group/status',
+      '/move_group/display_planned_path',
       '/tf',
       '/flor/controller/elec_motor_data',
       '/flexbe/behavior_input/feedback',
