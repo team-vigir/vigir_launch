@@ -137,6 +137,8 @@
       '/vigir_move_group/goal',
       '/vigir_move_group/result',
       '/vigir_move_group/status',
+      '/vigir_move_group/status',
+      '/tf',
       '/flor/controller/elec_motor_data',
       '/flexbe/behavior_input/feedback',
       '/flexbe/behavior_input/goal',
