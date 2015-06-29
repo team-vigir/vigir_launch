@@ -4,6 +4,7 @@
 <node name="onboard_logging_2" pkg="vigir_ocs_logging" type="logger.py" output="screen">
     <param name="enable_Log_grabbing" type="bool" value="true" />
     <param name="logging_location" type="str" value="/home/testing/finals_logs" />
+    <param name="logger_name" type="str" value="onboard_" />
     <rosparam param="to_log">[ '/flor/controller/mode',
       '/flor/controller/mode_command',
       '/flor/controller/robot_status',

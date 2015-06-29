@@ -4,7 +4,7 @@
 
     <!-- Start the OCS -->
     <node name="$(anon status_window)"                  pkg="vigir_ocs_status_window"   type="status_window"    respawn="true" >
-      <param name="robotErrorFileLocation" value="$(find flor_ocs_msgs)/include/flor_ocs_msgs/messages.csv"/>
+      <param name="robotErrorFileLocation" value="$(find vigir_ocs_msgs)/include/vigir_ocs_msgs/messages.csv"/>
     </node>    
     <!--<node name="$(anon vigir_ocs_bandwidth_widget)"   pkg="vigir_ocs_bandwidth_widget"  type="bandwidth_widget" respawn="true"    />--> <!--  output="screen" launch-prefix="xterm -e" / -->
     <!--node name="$(anon vigir_ocs_time_widget)"        pkg="vigir_ocs_time_widget"       type="time_widget"      respawn="true"    /--> <!--  output="screen" launch-prefix="xterm -e" / -->
