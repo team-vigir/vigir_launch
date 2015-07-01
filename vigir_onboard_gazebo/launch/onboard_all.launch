@@ -5,6 +5,9 @@
   <!-- common parameters -->
   <include file="$(find flor_atlas_bringup)/launch/common_parameters.launch" />
 
+  <!-- common ocs parameters -->
+  <include file="$(find vigir_ocs)/launch/common/common_parameter_setup.launch" />
+
   <!-- Launch robot controller -->
   <include file="$(find vigir_atlas_controller)/launch/atlas_simulation.launch">
     <arg name="launch_prefix" value=""/>
