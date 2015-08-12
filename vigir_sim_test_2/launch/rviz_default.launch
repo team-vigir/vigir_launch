@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-
-<launch>
-    
-  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find vigir_sim_test_1)/rviz_config/sim_test_1_rviz.rviz"/>
-    
-</launch>

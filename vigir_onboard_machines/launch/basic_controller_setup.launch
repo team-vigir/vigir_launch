@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-
-<launch>
-  
-  <!-- invoke the newer ROS controllers version of robot controller -->
-  <include file="$(find vigir_atlas_controller)/launch/atlas_controller.launch" />
-
-</launch>
-
