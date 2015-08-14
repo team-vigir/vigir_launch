@@ -3,17 +3,15 @@
 <launch>
 
   <!-- common parameters -->
-  <include file="$(find flor_atlas_bringup)/launch/common_parameters.launch" />
+  <include file="$(find atlas_description)/launch/xacrodisplay_common.launch" />
 
   <!-- common ocs parameters -->
   <include file="$(find vigir_ocs)/launch/common/common_parameter_setup.launch" />
 
   <!-- Launch robot controller -->
-  <include file="$(find vigir_atlas_controller)/launch/atlas_simulation.launch">
+  <!--<include file="$(find vigir_atlas_controller)/launch/atlas_simulation.launch">
     <arg name="launch_prefix" value=""/>
-  </include>
-
-  <include file="$(find flor_atlas_bringup)/launch/state_publishers.launch" />
+  </include>-->
   
   <!-- Since Conner took this out of the atlas_simulation.launch -->
   <node pkg="robot_state_publisher" type="state_publisher" name="multisense_robot_state_publisher">
@@ -32,7 +30,7 @@
 
 
   <!-- connect /trajectory_controllers  to multiple /joint_controllers -->
-  <include file="$(find vigir_atlas_controller)/launch/multiplex_trajectory_controllers.launch"/>
+  <!--<include file="$(find vigir_atlas_controller)/launch/multiplex_trajectory_controllers.launch"/>-->
 
 
 </launch>
