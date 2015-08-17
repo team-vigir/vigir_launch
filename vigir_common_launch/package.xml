@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <name>vigir_common_launch</name>
+  <version>0.0.0</version>
+  <description>The vigir_common_launch package contains common launch files used mainly for basic setup such as setup parameters</description>
+
+  <maintainer email="kohlbrecher@sim.tu-darmstadt.de">Stefan Kohlbrecher</maintainer>
+  <author email="kohlbrecher@sim.tu-darmstadt.de">Stefan Kohlbrecher</author>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+  </export>
+  
+</package>
