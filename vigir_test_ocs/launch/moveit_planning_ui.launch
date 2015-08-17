@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<!--
+Test the ghost robot standalone (only OCS)
+-->
+
+<launch>
+
+  <include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets.launch" />
+
+  <node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"         type="control_mode"             respawn="true"      />
+  <node name="vigir_ocs_main_view"         pkg="vigir_ocs_main_view"         type="main_view"             respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget" type="ghost_control"            respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"        type="joint_control"            respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+
+</launch>

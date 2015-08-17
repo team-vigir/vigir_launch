@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <arg name="multisense_namespace" default="multisense" />
+
+  <include file="$(find vigir_onboard)/launch/perception.launch">
+    <arg name="lidar_topic" value="/multisense/lidar_scan" />
+  </include>
+  
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find atlas_description)/robots/vigir_atlas.urdf.xacro'" />
+
+  <!--Relay gazebo based camera topics to those used on real robot-->
+  <node name="relay_left_image" pkg="topic_tools" type="relay" args="/multisense/left/image_rect_color/compressed /multisense/camera/left/image_rect_color" />
+  <!--<node name="relay_left_camera_info" pkg="topic_tools" type="relay" args="/multisense_sl/camera/left/camera_info /multisense_sl/left/camera_info" />-->
+  <node name="relay_right_image" pkg="topic_tools" type="relay" args="/multisense/right/image_rect/compressed /multisense/right/camera/image_rect" />
+  <!--<node name="relay_right_camera_info" pkg="topic_tools" type="relay" args="/multisense_sl/camera/right/camera_info /multisense_sl/right/camera_info" />-->
+  
+  <node name="relay_joint_states" pkg="topic_tools" type="relay" args="/ihmc_ros/atlas/output/joint_states /atlas/joint_states" />
+  
+</launch>
+

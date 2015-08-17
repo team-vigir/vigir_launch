@@ -1,0 +1,12 @@
+<package>
+  <name>vigir_image_rotate_ocs</name>
+  <version>0.0.1</version>
+  <description>
+     vigir_image_rotate_ocs
+  </description>
+  <maintainer email="kohlbrecher@sim.tu-darmstadt.de">Stefan Kohlbrecher</maintainer>
+  <license>BSD</license>
+  <url>http://ros.org/wiki/vigir_image_rotate_ocs</url>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

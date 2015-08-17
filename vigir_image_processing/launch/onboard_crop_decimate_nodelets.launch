@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- NOTE: There may be a limited number of nodelets that can start. Be wary of adding more cameras, it may cause nodelets to die. (Jackson Carter 21/4/2015) -->  
+  <!--Start nodelet manager that will contain all crop_decimate nodelets-->
+  <node pkg="nodelet" type="nodelet" name="crop_decimate_nodelet_manager"  args="manager" respawn="true" />
+  <node pkg="nodelet" type="nodelet" name="crop_decimate_requester_nodelet_manager"  args="manager" respawn="true"/>
+  
+  
+<!--  <include file="$(find vigir_image_processing)/launch/crop_decimate_common_setup.launch">
+    <arg name="incoming_base_name" value="multisense/left/"/>
+    <arg name="outgoing_base_name" value="l_image_full"/>
+    <arg name="input_topic_in_camera_namespace" value="image_rect_color"/>
+  </include>-->
+
+  <!--Head-LEFT CAMERA-->
+  <!--Add nodelet intended for full image decimation-->
+  <node pkg="nodelet" type="nodelet" name="l_image_full_decimate" respawn="true"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
+    <remap from="camera" to="multisense/camera/left/" />
+    <remap from="camera_out" to="l_image_full" />
+    <remap from="camera_out_still" to="l_image_full_still" />
+    <remap from="camera_out_video" to="l_image_full_video" />
+    <param name="input_topic_in_camera_namespace" value="image_rect_color" />
+  </node>
+  <!--Add nodelet intended for region of interest image crop/decimation-->
+  <node pkg="nodelet" type="nodelet" name="l_image_crop_decimate" respawn="true"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
+    <remap from="camera" to="multisense/camera/left/" />
+    <remap from="camera_out" to="l_image_cropped" />
+    <remap from="camera_out_still" to="l_image_cropped_still" />
+    <remap from="camera_out_video" to="l_image_cropped_video" />
+    <param name="input_topic_in_camera_namespace" value="image_rect_color" />
+  </node>
+
+  <!--Head-RIGHT CAMERA-->
+  <!--Add nodelet intended for full image decimation-->
+  <node pkg="nodelet" type="nodelet" name="r_image_full_decimate" respawn="true"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
+    <remap from="camera" to="multisense/camera/right/" />
+    <remap from="camera_out" to="r_image_full" />
+    <remap from="camera_out_still" to="r_image_full_still" />
+    <remap from="camera_out_video" to="r_image_full_video" />
+    <param name="input_topic_in_camera_namespace" value="image_rect" />
+  </node>
+  <!--Add nodelet intended for region of interest image crop/decimation-->
+  <node pkg="nodelet" type="nodelet" name="r_image_crop_decimate" respawn="true"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
+    <remap from="camera" to="multisense/camera/right/" />
+    <remap from="camera_out" to="r_image_cropped" />
+    <remap from="camera_out_still" to="r_image_cropped_still" />
+    <remap from="camera_out_video" to="r_image_cropped_video" />
+    <param name="input_topic_in_camera_namespace" value="image_rect" />
+  </node>
+ 
+
+  <!--SA-RIGHT CAMERA-->
+
+  <!-- RAW FISHEYE -->
+  <!--Add nodelet intended for full image decimation-->
+  <node pkg="nodelet" type="nodelet" name="rsa_image_full_decimate" respawn="true"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager" >
+    <remap from="camera" to="sa/right" />
+    <remap from="camera_out" to="rsa_image_full" />
+    <remap from="camera_out_still" to="rsa_image_full_still" />
+    <remap from="camera_out_video" to="rsa_image_full_video" />
+
+  </node>
+  <!--Add nodelet intended for region of interest image crop/decimation-->
+  <node pkg="nodelet" type="nodelet" name="rsa_image_crop_decimate" respawn="true"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
+    <remap from="camera" to="sa/right" />
+    <remap from="camera_out" to="rsa_image_cropped" />
+    <remap from="camera_out_still" to="rsa_image_cropped_still" />
+    <remap from="camera_out_video" to="rsa_image_cropped_video" />
+  </node>
+   
+  <!-- RECTIFIED -->
+  <!--Add nodelet intended for full image decimation-->
+  <node pkg="nodelet" type="nodelet" name="rrsa_image_full_decimate" respawn="true"
+        args="load vigir_crop_decimate_requester_nodelet/CropDecimateRequesterNodelet crop_decimate_requester_nodelet_manager" >
+    <remap from="camera" to="sa/right/equirectangular" />
+    <remap from="camera_out" to="rrsa_image_full" />
+    <remap from="camera_out_still" to="rrsa_image_full_still" />
+    <remap from="camera_out_video" to="rrsa_image_full_video" />
+    <param name="max_video_framerate" value="0" />
+    <param name="cam_request_topic" value="request"/>
+  </node>
+  <!--Add nodelet intended for region of interest image crop/decimation-->
+  <node pkg="nodelet" type="nodelet" name="rrsa_image_crop_decimate" respawn="true"
+        args="load vigir_crop_decimate_requester_nodelet/CropDecimateRequesterNodelet crop_decimate_requester_nodelet_manager">
+    <remap from="camera" to="sa/right/equirectangular" />
+    <remap from="camera_out" to="rrsa_image_cropped" />
+    <remap from="camera_out_still" to="rrsa_image_cropped_still" />
+    <remap from="camera_out_video" to="rrsa_image_cropped_video" />
+    <param name="max_video_framerate" value="0" />
+    <param name="cam_request_topic" value="request"/>
+  </node>
+
+  <!--SA-LEFT CAMERA-->
+
+  <!-- RAW FISHEYE -->
+  <!--Add nodelet intended for full image decimation-->
+  <node pkg="nodelet" type="nodelet" name="lsa_image_full_decimate" respawn="true"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
+    <remap from="camera" to="sa/left" />
+    <remap from="camera_out" to="lsa_image_full" />
+    <remap from="camera_out_still" to="lsa_image_full_still" />
+    <remap from="camera_out_video" to="lsa_image_full_video" />
+  </node>
+  <!--Add nodelet intended for region of interest image crop/decimation-->
+  <node pkg="nodelet" type="nodelet" name="lsa_image_crop_decimate" respawn="true"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
+    <remap from="camera" to="sa/left" />
+    <remap from="camera_out" to="lsa_image_cropped" />
+    <remap from="camera_out_still" to="lsa_image_cropped_still" />
+    <remap from="camera_out_video" to="lsa_image_cropped_video" />        
+  </node>
+  
+  <!-- RECTIFIED -->
+  <!--Add nodelet intended for full image decimation-->
+  <node pkg="nodelet" type="nodelet" name="lrsa_image_full_decimate" respawn="true"
+        args="load vigir_crop_decimate_requester_nodelet/CropDecimateRequesterNodelet crop_decimate_requester_nodelet_manager" >
+    <remap from="camera" to="sa/left/equirectangular" />
+    <remap from="camera_out" to="lrsa_image_full" />
+    <remap from="camera_out_still" to="lrsa_image_full_still" />
+    <remap from="camera_out_video" to="lrsa_image_full_video" /> 
+    <param name="max_video_framerate" value="0" />
+    <param name="cam_request_topic" value="request"/>
+  </node>
+  <!--Add nodelet intended for region of interest image crop/decimation-->
+  <node pkg="nodelet" type="nodelet" name="lrsa_image_crop_decimate" respawn="true"
+        args="load vigir_crop_decimate_requester_nodelet/CropDecimateRequesterNodelet crop_decimate_requester_nodelet_manager" >
+    <remap from="camera" to="sa/left/equirectangular" />
+    <remap from="camera_out" to="lrsa_image_cropped" />
+    <remap from="camera_out_still" to="lrsa_image_cropped_still" />
+    <remap from="camera_out_video" to="lrsa_image_cropped_video" /> 
+    <param name="max_video_framerate" value="0" />
+    <param name="cam_request_topic" value="request"/>
+  </node>
+
+  <!-- SA PANORAMA-->
+  <node pkg="nodelet" type="nodelet" name="psa_image_full_decimate" respawn="true"
+        args="load vigir_crop_decimate_requester_nodelet/CropDecimateRequesterNodelet crop_decimate_requester_nodelet_manager" >
+    <remap from="camera" to="sa/panorama" />
+    <remap from="camera_out" to="psa_image_full" />
+    <remap from="camera_out_still" to="psa_image_full_still" />
+    <remap from="camera_out_video" to="psa_image_full_video" /> 
+    <param name="max_video_framerate" value="0" />
+    <param name="cam_request_topic" value="request"/>    
+  </node>
+  
+  <node pkg="nodelet" type="nodelet" name="psa_image_crop_decimate" respawn="true"
+        args="load vigir_crop_decimate_requester_nodelet/CropDecimateRequesterNodelet crop_decimate_requester_nodelet_manager" >
+    <remap from="camera" to="sa/panorama" />
+    <remap from="camera_out" to="psa_image_cropped" />
+    <remap from="camera_out_still" to="psa_image_cropped_still" />
+    <remap from="camera_out_video" to="psa_image_cropped_video" /> 
+    <param name="max_video_framerate" value="0" />
+    <param name="cam_request_topic" value="request"/>    
+  </node>
+
+
+  <!--Right palm camera-->
+  <!--Add nodelet intended for full image decimation-->
+  <node pkg="nodelet" type="nodelet" name="l_palm_image_full_decimate" respawn="true"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
+    <remap from="camera" to="left_palm/camera/" />
+    <remap from="camera_out" to="l_palm_image_full" />
+    <remap from="camera_out_still" to="l_palm_image_full_still" />
+    <remap from="camera_out_video" to="l_palm_image_full_video" />
+    <param name="input_topic_in_camera_namespace" value="image_raw" />
+  </node>
+  <!--Add nodelet intended for region of interest image crop/decimation-->
+  <node pkg="nodelet" type="nodelet" name="l_palm_image_crop_decimate" respawn="true"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
+    <remap from="camera" to="left_palm/camera/" />
+    <remap from="camera_out" to="l_palm_image_cropped" />
+    <remap from="camera_out_still" to="l_palm_image_cropped_still" />
+    <remap from="camera_out_video" to="l_palm_image_cropped_video" />
+    <param name="input_topic_in_camera_namespace" value="image_raw" />
+  </node>
+ 
+  <!--Left palm camera -->
+  <!--Add nodelet intended for full image decimation-->
+  <node pkg="nodelet" type="nodelet" name="r_palm_image_full_decimate" respawn="true"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager">
+    <remap from="camera" to="right_palm/camera/" />
+    <remap from="camera_out" to="r_palm_image_full" />
+    <remap from="camera_out_still" to="r_palm_image_full_still" />
+    <remap from="camera_out_video" to="r_palm_image_full_video" />
+    <param name="input_topic_in_camera_namespace" value="image_raw" />
+  </node>
+  <!--Add nodelet intended for region of interest image crop/decimation-->
+  <node pkg="nodelet" type="nodelet" name="r_palm_image_crop_decimate" respawn="true"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager" output="screen">
+    <remap from="camera" to="right_palm/camera/" />
+    <remap from="camera_out" to="r_palm_image_cropped" />
+    <remap from="camera_out_still" to="r_palm_image_cropped_still" />
+    <remap from="camera_out_video" to="r_palm_image_cropped_video" />
+  </node>
+  
+</launch>
+

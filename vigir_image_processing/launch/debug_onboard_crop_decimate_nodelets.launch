@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <!--Start nodelet manager that will contain all crop_decimate nodelets-->
+  <node pkg="nodelet" type="nodelet" name="crop_decimate_nodelet_manager"  args="manager" />
+  <node pkg="nodelet" type="nodelet" name="crop_decimate_requester_nodelet_manager"  args="manager" />
+
+  <!--Head-LEFT CAMERA-->
+  <!--Add nodelet intended for full image decimation-->
+  <node pkg="nodelet" type="nodelet" name="l_image_full_decimate" respawn="true"
+        args="load vigir_crop_decimate_nodelet/CropDecimateNodelet crop_decimate_nodelet_manager" output="screen">
+    <remap from="camera" to="multisense_sl/left/" />
+    <remap from="camera_out" to="l_image_full" />
+    <param name="input_topic_in_camera_namespace" value="image_rect_color" />
+  </node>
+
+</launch>
+

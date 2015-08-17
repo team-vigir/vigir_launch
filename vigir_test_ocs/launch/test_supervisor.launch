@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <node name="$(anon supervisor)"         pkg="vigir_ocs_supervisor"    type="supervisor"     respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="$(anon ocs_control_mode)"       pkg="vigir_rqt_control_mode"  type="control_mode"   respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <!-- node name="ocs_joint_control"      pkg="vigir_rqt_joint_control" type="joint_control"  respawn="true"      / --> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="$(anon ocs_status)"             pkg="vigir_ocs_status_window" type="status_window"  respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <include file="$(find vigir_onboard)/launch/vigir_status_relay.launch"/>
+
+</launch>
