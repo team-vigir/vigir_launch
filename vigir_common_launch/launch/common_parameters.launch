@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- main robot description that depends on environment variables for hands and other data -->
+  <include file="$(find vigir_common_launch)/launch/robot_description.launch" />
+
+  <!-- robot_description_semantic and special limits -->
+  <include file="$(find vigir_atlas_moveit_config)/launch/planning_context.launch" />
+
+</launch>
