@@ -1,0 +1,15 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\b vigir_lidar_processing 
+
+<!-- 
+This package provides launch files to bundle the lidar processing components into one launch file.  
+This launch will evolves as the packages are modified, and new capabilities added.  For now, it depends on existing external packages.
+-->
+
+-->
+
+
+*/

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- Set laser_scan_topic to the robot topic as default -->
+  <arg name="lidar_topic" default="/multisense_sl/laser/scan" />
+  
+  <!--Setup things on the parameters server-->
+<!--  <rosparam file="$(find vigir_lidar_proc_launch)/config/atlas_lidar_self_filter.yaml" command="load" ns="self_filter_lidar" />
+  <param name="robot_description_self_filter" command="$(find xacro)/xacro.py $(find atlas_self_filter_description)/robots/vigir_atlas_self_filter.urdf.xacro"/>-->
+  
+  <!--Start lidar processing-->
+<!--  <include file="$(find vigir_lidar_proc_launch)/launch/lidar_proc.launch">
+    <arg name="scan_topic" value="$(arg lidar_topic)" />
+    <arg name="scan_cloud_topic" value="/scan_cloud" />
+    <arg name="scan_cloud_filtered_topic" value="/scan_cloud_filtered" />
+    <arg name="min_range" value="0.3"/>
+  
+    <arg name="target_frame" value="hokuyo_spin_axis_frame" />
+    <arg name="use_high_fidelity_projection" value="true" />
+    <arg name="robot_description_name" value="robot_description_self_filter"/> 
+  </include>-->
+  
+  <include file="$(find vigir_filtered_localized_scan_utils)/launch/atlas_scan_to_cloud.launch">
+  </include>
+
+  <!-- Start the spindle with default speed -->    
+  <node type="rostopic" pkg="rostopic" name="spindle_speed_cmd" respawn="false" args="pub --once /multisense/set_spindle_speed std_msgs/Float64 '{data: 3.0}'" output="screen"  />
+  
+</launch>
+
