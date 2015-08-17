@@ -3,7 +3,7 @@
 <launch>
 
   <!-- common parameters -->
-  <include file="$(find atlas_description)/launch/xacrodisplay_common.launch" />
+  <include file="$(find vigir_common_launch)/launch/common_parameters.launch" />
 
   <!-- common ocs parameters -->
   <include file="$(find vigir_ocs)/launch/common/common_parameter_setup.launch" />
