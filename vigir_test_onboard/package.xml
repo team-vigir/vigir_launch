@@ -1,0 +1,12 @@
+<package>
+  <name>vigir_test_onboard</name>
+  <version>0.0.1</version>
+  <description>
+     vigir_test_onboard
+  </description>
+  <maintainer email="kohlbrecher@sim.tu-darmstadt.de">Stefan Kohlbrecher</maintainer>
+  <license>BSD</license>
+  <url>http://ros.org/wiki/vigir_test_onboard</url>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

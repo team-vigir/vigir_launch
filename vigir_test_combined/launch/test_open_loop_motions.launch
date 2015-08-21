@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <include file="$(find vigir_test_ocs)/launch/test_open_loop_motions.launch"/>
+  
+  <include file="$(find vigir_test_onboard)/launch/test_open_loop_motions.launch"/>
+    
+</launch>

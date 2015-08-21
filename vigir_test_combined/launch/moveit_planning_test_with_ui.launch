@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<!--
+Allows running MoveIt! motion planning and moving arms. Does not retrieve Octomap data.
+Starts UI components to easily be able to specify plans
+-->
+
+<launch>
+  
+  <include file="$(find vigir_test_onboard)/launch/moveit_planning_test.launch"/>
+  
+  <include file="$(find vigir_test_ocs)/launch/moveit_planning_ui.launch"/>
+  
+</launch>
+    

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Launch robot controller -->
+<!--  <include file="$(find vigir_atlas_controller)/launch/atlas_simulation.launch">
+    <arg name="launch_prefix" value=""/>
+  </include>-->
+
+  <include file="$(find vigir_onboard)/launch/motion.launch" />
+
+  <!-- Includes perception and relays for non-comms bridge setup -->
+  <!--<include file="$(find vigir_onboard_gazebo)/launch/onboard_perception_gazebo.launch" />-->
+  <include file="$(find vigir_ihmc_sim_launch)/launch/onboard_perception_ihmc_simulator.launch" />-
+
+  <!-- Includes relay that we need if we are not running comms bridge -->
+  <!--<include file="$(find vigir_image_processing)/launch/relay_multisense_crop_decimate_without_comms_bridge.launch" />-->
+  <!--<include file="$(find vigir_image_processing)/launch/relay_palm_camera_crop_decimate_without_comms_bridge.launch" />-->
+  
+  <include file="$(find vigir_ihmc_footstep_integration)/launch/ihmc_footstep_server.launch" />
+  
+<!--  <include file="$(find ihmc_atlas)/launch/ihmc_atlas.launch">
+    <arg name="description_model" value="$(find ihmc_models)/urdf/atlas_unplugged_v5_no_hands.urdf"/>
+    <arg name="ihmc_model" default="ATLAS_UNPLUGGED_V5_NO_HANDS" />
+  </include>-->
+  
+  
+  <!--
+  Below is a copy of ihmc_atlas/launch/ihmc_atlas.launch that does not use a robot_state_publisher
+  with IHMC's model (would mess with our setup)
+  -->  
+  <param name="use_sim_time" value="false"/>
+  <arg name="ihmc_network_file" default="$(find ihmc_atlas)/configurations/IHMCNetworkParameters.ini" />
+  <arg name="joint_offset_file" default="$(find ihmc_atlas)/configurations/AtlasJointOffsets.ini" />
+  <arg name="description_model" default="$(find ihmc_models)/urdf/atlas_unplugged_v5_no_hands.urdf" />
+  <arg name="ihmc_model" default="ATLAS_UNPLUGGED_V5_NO_HANDS" />
+  <param name="/atlas/robot_description" textfile="$(arg description_model)" />
+
+  <node name="IHMCAtlasAPI" pkg="ihmc_sim" type="IHMCAtlasAPI" args="-m $(arg ihmc_model)" required="true" output="screen" cwd="node">
+        <env name="IHMC_ATLAS_API_OPTS" value="-DnetworkParameterFile=$(arg ihmc_network_file) -DjointOffsetFile=$(arg joint_offset_file)" />
+  </node>
+  
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" >
+    <remap from="joint_states" to="/atlas/joint_states" />
+    <!--<remap from="robot_description" to="/atlas/robot_description" />-->
+  </node>
+  
+</launch>
+

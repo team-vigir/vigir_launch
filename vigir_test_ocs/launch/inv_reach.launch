@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<!--
+Test the ghost robot standalone (only OCS)
+-->
+
+<launch>
+
+  <include file="$(find vigir_ocs)/launch/vigir_ocs_nodelets.launch" />
+  
+  <include file="$(find flor_atlas_description)/launch/xacrodisplay.launch" />
+  
+  <include file="$(find vigir_onboard)/launch/moveit_planning.launch" />
+  
+  <node pkg="tf" type="static_transform_publisher" name="world_to_pelvis_tf_pub" args="0 0 0.0 0 0 0 /world /pelvis 100"/>
+     
+  <node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"         type="control_mode"             respawn="true"      />
+  <node name="vigir_ocs_main_view"         pkg="vigir_ocs_main_view"         type="main_view"             respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget" type="ghost_control"            respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"        type="joint_control"            respawn="true"      /> <!--  output="screen" launch-prefix="xterm -e" / -->
+  
+  
+<!--  <node pkg="flor_inv_reach_manager" type="inv_reach_manager_node" name="inv_reach_manager_node" output="screen"/>
+  
+  <include file="$(find simox_inv_reach_ros)/launch/vigir_onboard.launch" />-->
+  
+  <node pkg="vigir_interactive_marker_pose_server" type="interactive_marker_pose_server" name="l_hand_target_interactive_marker_pose_server"  >
+    <param name="marker_name" value="l_hand_target" />
+    <param name="frame_id" value="/world" />
+    <remap from="pose" to="/grasp_control/l_hand/planning_target_pose" />
+  </node> 
+  
+  <node pkg="vigir_interactive_marker_pose_server" type="interactive_marker_pose_server" name="start_interactive_marker_pose_server"  >
+    <param name="marker_name" value="start_im" />
+    <param name="frame_id" value="/world" />
+    <remap from="pose" to="start_pose" />
+  </node>    
+        
+  <node pkg="vigir_interactive_marker_pose_server" type="interactive_marker_pose_server" name="center_interactive_marker_pose_server"  >
+   <param name="marker_name" value="center_im" />
+   <param name="frame_id" value="/world" />
+   <remap from="pose" to="/flor/ocs/planning/rotation_center_pose" />
+  </node>
+    
+  <node pkg="flor_moveit_testing" type="constrained_motion_test" name="constrained_motion_test" />
+  
+ 
+</launch>

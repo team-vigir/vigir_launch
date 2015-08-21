@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!--
+Minimal launch file for running footstep_planner and testing walking.
+Loads a empty/free environment map and does not use any sensor data.
+Thus, also does not avoid any obstacles.
+-->
+
+<launch>
+
+  <!--State Estimation, provides /world -> /pelvis transform-->
+  <!-- include file="$(find vigir_state_estimation)/launch/state_estimation.launch"/ -->
+
+  <!-- Start the default vrc footstep planner setup -->
+  <include file="$(find vigir_atlas_footstep_planner)/launch/atlas_footstep_planner.launch"/>
+
+  <!-- Two map servers for publishing maps  -->
+  <node name="map_server_ground_level" pkg="map_server" type="map_server" args="$(find flor_environment_maps)/maps/empty_map.yaml">
+    <param name="frame_id" value="/world"/>
+    <remap from="map" to="/flor/worldmodel/grid_map"/>
+  </node>
+
+</launch>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <include file="$(find vigir_ihmc_sim_launch)/launch/vigir_onboard.launch" />  
+  <include file="$(find vigir_ocs)/launch/vigir_ocs.launch" />  
+  
+</launch>
+

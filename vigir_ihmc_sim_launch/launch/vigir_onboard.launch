@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Launch robot controller -->
+<!--  <include file="$(find vigir_atlas_controller)/launch/atlas_simulation.launch">
+    <arg name="launch_prefix" value=""/>
+  </include>-->
+
+  <include file="$(find vigir_onboard)/launch/motion.launch" />
+
+  <!-- Includes perception and relays for non-comms bridge setup -->
+  <!--<include file="$(find vigir_onboard_gazebo)/launch/onboard_perception_gazebo.launch" />-->
+  <include file="$(find vigir_ihmc_sim_launch)/launch/onboard_perception_ihmc_simulator.launch" />-
+
+  <!-- Includes relay that we need if we are not running comms bridge -->
+<!--  <include file="$(find vigir_image_processing)/launch/relay_multisense_crop_decimate_without_comms_bridge.launch" />
+  <include file="$(find vigir_image_processing)/launch/relay_palm_camera_crop_decimate_without_comms_bridge.launch" />-->
+
+  <include file="$(find vigir_ihmc_footstep_integration)/launch/ihmc_footstep_server.launch" />
+  <include file="$(find vigir_ihmc_control_integration)/launch/ihmc_arm_control_action_servers.launch" />  
+  
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" >
+    <remap from="joint_states" to="/atlas/joint_states" />
+  </node>
+  
+</launch>
+
