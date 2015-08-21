@@ -9,14 +9,18 @@
   <include file="$(find vigir_ocs)/launch/common/common_parameter_setup.launch" />
 
   <!-- Launch robot controller -->
-  <!--<include file="$(find vigir_atlas_controller)/launch/atlas_simulation.launch">
+  <include file="$(find vigir_atlas_controller)/launch/atlas_simulation.launch">
     <arg name="launch_prefix" value=""/>
-  </include>-->
+  </include>
   
-  <!-- Since Conner took this out of the atlas_simulation.launch -->
   <node pkg="robot_state_publisher" type="state_publisher" name="multisense_robot_state_publisher">
     <param name="publish_frequency" type="double" value="50.0" />
     <remap from="joint_states" to="/multisense/joint_states" />
+  </node>
+  
+  <node pkg="robot_state_publisher" type="state_publisher" name="atlas_robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0" />
+    <remap from="joint_states" to="/atlas/joint_states" />
   </node>
 
   <include file="$(find vigir_onboard)/launch/motion.launch" />

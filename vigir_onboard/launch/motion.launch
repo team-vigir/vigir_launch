@@ -8,10 +8,10 @@
 <include file="$(find vigir_onboard)/launch/moveit_planning.launch" />
 
 <!-- Start footstep planner -->
-<!--<include file="$(find vigir_atlas_footstep_planner)/launch/atlas_footstep_planner.launch"/>-->
+<include file="$(find vigir_atlas_footstep_planner)/launch/atlas_footstep_planner.launch"/>
 
 <!-- Start terrain classifier -->
-<!--<include file="$(find vigir_atlas_footstep_planner)/launch/atlas_terrain_classifier.launch"/>-->
+<include file="$(find vigir_atlas_footstep_planner)/launch/atlas_terrain_classifier.launch"/>
 
 <!-- Start onboard footstep manager -->
 <!--<include file="$(find vigir_onboard_footstep_manager)/launch/vigir_footstep_manager.launch"/>-->
