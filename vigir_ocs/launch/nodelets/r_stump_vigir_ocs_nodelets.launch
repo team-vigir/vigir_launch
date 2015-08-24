@@ -12,9 +12,9 @@
     <arg name="right_hand_robot_model" command="rosrun xacro xacro.py $(find flor_robot_description)/hands/l_hook.urdf.xacro"/>
     <param name="right_hand_robot_description" textfile="$(arg right_hand_robot_model)" />
     -->
-    <param name="right_hand_robot_description" command="rosrun xacro xacro.py $(find flor_hook_hands_tools)/urdf/hook_hand_right.urdf.xacro" />
+    <param name="right_hand_robot_description" command="rosrun xacro xacro.py $(find vigir_atlas_addons_description)/ocs_models/hook_hand_right.urdf.xacro" />
     
-    <arg name="right_hand_robot_model_semantic" default="$(find flor_hook_hands_tools)/urdf/hook_hand_right.srdf"/>
+    <arg name="right_hand_robot_model_semantic" default="$(find vigir_atlas_addons_description)/ocs_models/hook_hand_right.srdf"/>
     <param name="right_hand_robot_description_semantic" textfile="$(arg right_hand_robot_model_semantic)" />  
     
 </launch>
