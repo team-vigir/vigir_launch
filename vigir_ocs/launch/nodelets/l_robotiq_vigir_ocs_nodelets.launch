@@ -9,9 +9,7 @@
       <param name="child_frame_id" value="/left_hand_model/base" />    
     </node>
     
-    <!-- Robot descriptions for the ghost data -->
-    <!--arg name="left_hand_robot_model" default="$(find flor_robotiq_hands_tools)/urdf/robotiq_hand_left.urdf"/>
-    <param name="left_hand_robot_description" textfile="$(arg left_hand_robot_model)" /-->
+    <!-- Robot descriptions for the (detachable) ghost hands -->
     <param name="left_hand_robot_description" command="$(find xacro)/xacro.py '$(find vigir_atlas_addons_description)/ocs_models/robotiq_hand_left.urdf.xacro'" />
     
     <arg name="left_hand_robot_model_semantic" default="$(find vigir_atlas_addons_description)/ocs_models/robotiq_hand_left.srdf"/>
