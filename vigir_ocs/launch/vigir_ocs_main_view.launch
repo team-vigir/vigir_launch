@@ -5,8 +5,8 @@
     <!-- Load camera configuration, params for hands and grasp widget tf -->
     <include file="$(find vigir_ocs)/launch/common/common_parameter_setup.launch"/>
       
-    <include file="$(find vigir_ocs)/launch/nodelets/$(env FLOR_LEFT_HAND_TYPE)_vigir_ocs_nodelets.launch" />
-    <include file="$(find vigir_ocs)/launch/nodelets/$(env FLOR_RIGHT_HAND_TYPE)_vigir_ocs_nodelets.launch" />    
+    <include file="$(find vigir_ocs)/launch/nodelets/$(env VIGIR_ATLAS_LEFT_HAND_TYPE)_vigir_ocs_nodelets.launch" />
+    <include file="$(find vigir_ocs)/launch/nodelets/$(env VIGIR_ATLAS_RIGHT_HAND_TYPE)_vigir_ocs_nodelets.launch" />    
     
     <!--<node name="vigir_ocs_image_nodelet"       pkg="vigir_ocs_image_nodelet"       type="image_nodelet"       respawn="false"/>-->
     <node name="vigir_ocs_main_view_gandalf"    pkg="vigir_ocs_main_view"    type="main_view"    respawn="false"  output="screen"/>

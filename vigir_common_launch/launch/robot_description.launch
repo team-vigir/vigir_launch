@@ -7,7 +7,7 @@ This uploads the robot_description to the parameter server.
 <launch>
   
   <!--
-  Upload robot_description using the FLOR_ROBOT_TYPE environment variable to select the actual type of robot used
+  Upload robot_description using the VIGIR_ATLAS_ROBOT_TYPE environment variable to select the actual type of robot used
   -->
   <param name="robot_description" command="$(find xacro)/xacro.py '$(find atlas_description)/robots/vigir_atlas.urdf.xacro'" />
   
